@@ -1,4 +1,4 @@
-import ContactInformation from "./ContactInformation/ContactInformation";
+import ContactInformation from "../ContactInformation/ContactInformation";
 
 const Home = () => {
   return (
