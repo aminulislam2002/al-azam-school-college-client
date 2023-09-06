@@ -21,7 +21,7 @@ const MadrasahInfoAndNotice = () => {
   };
 
   return (
-    <div className="container mx-auto py-10 lg:py-20 bg-orange-300">
+    <div className="container mx-auto py-10 lg:py-20">
       <div className="lg:flex flex-col lg:flex-row justify-center items-start gap-5">
         <div className="w-full lg:w-8/12 h-full">
           <div className="grid grid-cols-2 gap-5 bg-white">
