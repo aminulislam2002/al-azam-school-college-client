@@ -12,15 +12,15 @@ const ContactInformation = () => {
   };
 
   return (
-    <div className="container mx-auto h-screen bg-gray-300">
+    <div className="container mx-auto py-10 lg:py-20">
       <div className="flex justify-center items-center gap-10">
         <div className="w-full">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum sed quam, non libero magnam fugiat! Corrupti sint
           est animi quos repudiandae illum possimus culpa, veniam blanditiis minima totam tempora iste?
         </div>
         <div className="w-full" id="Contact">
-          <div className="text-center mb-10">
-            <h1 className="text-3xl font-semibold text-blue-950">CONTACT US</h1>
+          <div className="bg-green-500 lg:px-5 py-4 mb-1">
+            <h1 className="lg:text-lg text-center">CONTACT US</h1>
           </div>
           <div className="bg-gray-200 p-4 rounded-lg shadow-md">
             <form onSubmit={handleSubmit(onSubmit)}>
