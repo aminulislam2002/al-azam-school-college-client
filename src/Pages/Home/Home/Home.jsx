@@ -1,3 +1,4 @@
+import AboutMadrasah from "../AboutMadrasah/AboutMadrasah";
 import ContactInformation from "../ContactInformation/ContactInformation";
 import MadrasahInfoAndNotice from "../MadrasahInfoAndNotice/MadrasahInfoAndNotice";
 import MadrasahInformation from "../MadrasahInformation/MadrasahInformation";
@@ -8,6 +9,7 @@ const Home = () => {
   return (
     <div>
       <MadrasahInformation></MadrasahInformation>
+      <AboutMadrasah></AboutMadrasah>
       <TeachersSection></TeachersSection>
       <MadrasahInfoAndNotice></MadrasahInfoAndNotice>
       <Statistics></Statistics>
