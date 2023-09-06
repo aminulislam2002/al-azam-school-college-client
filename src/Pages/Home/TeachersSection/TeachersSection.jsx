@@ -65,7 +65,7 @@ const TeachersSection = () => {
           </button>
         ) : (
           <button
-            className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 w-full md:w-auto font-semibold text-base rounded-lg shadow-md"
+            className="btn bg-yellow-500 hover:bg-yellow-600 text-blue-950 w-full lg:w-6/12 mx-auto py-3 font-semibold text-base rounded-lg shadow-md"
             onClick={handleSeeLessClick}
           >
             SEE LESS...
