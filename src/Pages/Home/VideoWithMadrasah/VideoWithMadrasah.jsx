@@ -18,7 +18,7 @@ const VideoWithMadrasah = () => {
     }
     setCurrentPlayingIndex(index);
   };
-
+  
   return (
     <div className="container mx-auto py-10 lg:py-20">
       <div className="w-full lg:w-6/12 mx-auto py-3 mb-10 bg-green-500">
