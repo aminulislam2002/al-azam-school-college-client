@@ -12,16 +12,10 @@ const Statistics = () => {
     <div className="my-20 bg-green-500">
       <div className="header-bg">
         <div className="text-center mb-5">
-          <h1 className="text-lg lg:text-2xl font-semibold text-white">Some facts of our Madrasah</h1>
-          <p className="py-5 text-base text-white">
-            <span className="font-bold text-lg">Address:</span>
-            <span className="ms-1">Golbunia,</span>
-            <span className="ms-1">Telikhali,</span>
-            <span className="ms-1">Bhandaria Upazila,</span>
-            <span className="ms-1">Pirojpur District,</span>
-            <span className="ms-1">Barisal Division,</span>
-            <span className="ms-1">Bangladesh.</span>
-          </p>
+          <h1 className="text-lg lg:text-2xl font-semibold text-black uppercase py-2">
+            Some facts of Al-Azam High School and College
+          </h1>
+          <p className="text-base text-white">Amtoli-3130, Bishwanath Upazil. Sylhet, Bangladesh</p>
         </div>
       </div>
 

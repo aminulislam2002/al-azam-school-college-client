@@ -12,7 +12,7 @@ const AboutMadrasah = () => {
             </div>
             <div>
               <img src={image} className="w-full h-72 bg-cover bg-center" alt="" />
-              <h5 className="text-center font-bold">Photo: Golbunia Nesaria Dakhil Madrash</h5>
+              <h5 className="text-center py-1">ছবি : আল-আজম হাইস্কুল এন্ড কলেজ</h5>
               <div>
                 <p className="">
                   <span className="font-bold">Overview:</span> Golbunia Nesaria Dakhil Madrash is an educational
