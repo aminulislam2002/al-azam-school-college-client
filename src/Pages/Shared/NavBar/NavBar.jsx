@@ -135,7 +135,7 @@ const NavBar = () => {
           }
         }}
       >
-        <div className="flex justify-center items-center">
+        <div className="flex justify-start items-center">
           <p>About Us</p>
           <span className={`${isAboutDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
@@ -180,7 +180,7 @@ const NavBar = () => {
           }
         }}
       >
-        <div className="flex justify-center items-center">
+        <div className="flex justify-start items-center">
           <p>Academics</p>
           <span className={`${isAcademicsDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
@@ -231,7 +231,7 @@ const NavBar = () => {
           }
         }}
       >
-        <div className="flex justify-center items-center">
+        <div className="flex justify-start items-center">
           <p>Admission</p>
           <span className={`${isAdmissionDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
@@ -282,7 +282,7 @@ const NavBar = () => {
           }
         }}
       >
-        <div className="flex justify-center items-center">
+        <div className="flex justify-start items-center">
           <p>Students</p>
           <span className={`${isStudentsDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
@@ -333,7 +333,7 @@ const NavBar = () => {
           }
         }}
       >
-        <div className="flex justify-center items-center">
+        <div className="flex justify-start items-center">
           <p>Facilities</p>
           <span className={`${isFacilitiesDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
@@ -384,7 +384,7 @@ const NavBar = () => {
           }
         }}
       >
-        <div className="flex justify-center items-center">
+        <div className="flex justify-start items-center">
           <p>Results</p>
           <span className={`${isResultsDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
@@ -435,7 +435,7 @@ const NavBar = () => {
           }
         }}
       >
-        <div className="flex justify-center items-center">
+        <div className="flex justify-start items-center">
           <p>Others</p>
           <span className={`${isOthersDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
@@ -480,7 +480,7 @@ const NavBar = () => {
       <div className="navbar-start flex lg:w-2/12">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <AiOutlineMenu className="text-black"></AiOutlineMenu>
+            <AiOutlineMenu className="text-white h-6 w-6"></AiOutlineMenu>
           </label>
           <ul tabIndex={0} className="menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-blue-950 rounded-box w-52">
             {navOptions}
