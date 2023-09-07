@@ -6,6 +6,7 @@ import MadrasahInformation from "../MadrasahInformation/MadrasahInformation";
 import MadrasahPhotoGallery from "../MadrasahPhotoGallery/MadrasahPhotoGallery";
 import Statistics from "../Statistics/Statistics";
 import TeachersSection from "../TeachersSection/TeachersSection";
+import VideoWithMadrasah from "../VideoWithMadrasah/VideoWithMadrasah";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <MadrasahInfoAndNotice></MadrasahInfoAndNotice>
       <Statistics></Statistics>
       <MadrasahPhotoGallery></MadrasahPhotoGallery>
+      <VideoWithMadrasah></VideoWithMadrasah>
       <ContactInformation></ContactInformation>
       <LocationAndAddress></LocationAndAddress>
       <h1>Home</h1>
