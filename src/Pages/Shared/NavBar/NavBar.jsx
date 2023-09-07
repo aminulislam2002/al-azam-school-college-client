@@ -14,7 +14,7 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-52 bg-gray-200 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-52 bg-green-500 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/history-of-madrasah">
               <li className="hover:bg-white hover:text-black ps-2 rounded">History of Madrasah</li>
@@ -41,7 +41,7 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-gray-200 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-48  bg-green-500 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/notice-board">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -74,7 +74,7 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-gray-200 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-48  bg-green-500 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/notice-board">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -107,7 +107,7 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-gray-200 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-48  bg-green-500 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/notice-board">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -140,7 +140,7 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-gray-200 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-48  bg-green-500 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/notice-board">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -173,7 +173,7 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-gray-200 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-48  bg-green-500 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="/notice-board">
               <li className="hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -206,7 +206,7 @@ const NavBar = () => {
             <AiOutlineDown></AiOutlineDown>
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-52  bg-gray-200 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div className="absolute z-50 hidden top-full w-48  bg-green-500 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
           <ul>
             <Link to="https://bmeb.gov.bd/">
               <li className="hover:bg-white hover:text-black ps-2 rounded">e S I F</li>
@@ -242,13 +242,13 @@ const NavBar = () => {
   );
 
   return (
-    <div className="navbar bg-gray-200">
+    <div className="navbar bg-green-500">
       <div className="navbar-start flex lg:w-2/12">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <AiOutlineMenu className="text-black"></AiOutlineMenu>
           </label>
-          <ul tabIndex={0} className="menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-gray-200 rounded-box w-52">
+          <ul tabIndex={0} className="menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-green-500 rounded-box w-52">
             {navOptions}
           </ul>
         </div>
