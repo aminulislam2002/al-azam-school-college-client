@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { AiOutlineDown, AiOutlineMenu } from "react-icons/ai";
 
+import "./NavBar.css";
+
 const NavBar = () => {
   const navOptions = (
     <>
@@ -264,11 +266,7 @@ const NavBar = () => {
         <ul className="flex justify-center items-center gap-8 menu-horizontal px-1">{navOptions}</ul>
       </div>
       <div className="navbar-end flex justify-end lg:justify-center items-center lg:w-2/12">
-        <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="bg-yellow-500 hover:bg-yellow-600 text-gray-200 py-1 px-5 rounded font-semibold">
-            Online Apply
-          </label>
-        </div>
+        <button className="animated-button">Online Apply</button>
       </div>
     </div>
   );
