@@ -3,7 +3,6 @@ import { AiOutlineDown, AiOutlineMenu } from "react-icons/ai";
 
 import "./NavBar.css";
 
-import logo from "../../../assets/image/logo.png";
 import { useState } from "react";
 
 const NavBar = () => {
@@ -18,7 +17,13 @@ const NavBar = () => {
   const toggleAboutDropdown = () => {
     setIsAboutDropdownOpen(!isAboutDropdownOpen);
     // Close other dropdowns
+    // setIsAboutDropdownOpen(false);
     setIsAcademicsDropdownOpen(false);
+    setIsAdmissionDropdownOpen(false);
+    setIsStudentsDropdownOpen(false);
+    setIsFacilitiesDropdownOpen(false);
+    setIsResultsDropdownOpen(false);
+    setIsOthersDropdownOpen(false);
     // Close other dropdowns here as needed
   };
 
@@ -26,6 +31,12 @@ const NavBar = () => {
     setIsAcademicsDropdownOpen(!isAcademicsDropdownOpen);
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
+    // setIsAcademicsDropdownOpen(false);
+    setIsAdmissionDropdownOpen(false);
+    setIsStudentsDropdownOpen(false);
+    setIsFacilitiesDropdownOpen(false);
+    setIsResultsDropdownOpen(false);
+    setIsOthersDropdownOpen(false);
     // Close other dropdowns here as needed
   };
 
@@ -33,6 +44,12 @@ const NavBar = () => {
     setIsAdmissionDropdownOpen(!isAdmissionDropdownOpen);
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
+    setIsAcademicsDropdownOpen(false);
+    // setIsAdmissionDropdownOpen(false);
+    setIsStudentsDropdownOpen(false);
+    setIsFacilitiesDropdownOpen(false);
+    setIsResultsDropdownOpen(false);
+    setIsOthersDropdownOpen(false);
     // Close other dropdowns here as needed
   };
 
@@ -40,6 +57,12 @@ const NavBar = () => {
     setIsStudentsDropdownOpen(!isStudentsDropdownOpen);
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
+    setIsAcademicsDropdownOpen(false);
+    setIsAdmissionDropdownOpen(false);
+    // setIsStudentsDropdownOpen(false);
+    setIsFacilitiesDropdownOpen(false);
+    setIsResultsDropdownOpen(false);
+    setIsOthersDropdownOpen(false);
     // Close other dropdowns here as needed
   };
 
@@ -47,6 +70,12 @@ const NavBar = () => {
     setIsFacilitiesDropdownOpen(!isFacilitiesDropdownOpen);
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
+    setIsAcademicsDropdownOpen(false);
+    setIsAdmissionDropdownOpen(false);
+    setIsStudentsDropdownOpen(false);
+    // setIsFacilitiesDropdownOpen(false);
+    setIsResultsDropdownOpen(false);
+    setIsOthersDropdownOpen(false);
     // Close other dropdowns here as needed
   };
 
@@ -54,6 +83,12 @@ const NavBar = () => {
     setIsResultsDropdownOpen(!isResultsDropdownOpen);
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
+    setIsAcademicsDropdownOpen(false);
+    setIsAdmissionDropdownOpen(false);
+    setIsStudentsDropdownOpen(false);
+    setIsFacilitiesDropdownOpen(false);
+    // setIsResultsDropdownOpen(false);
+    setIsOthersDropdownOpen(false);
     // Close other dropdowns here as needed
   };
 
@@ -61,6 +96,12 @@ const NavBar = () => {
     setIsOthersDropdownOpen(!isOthersDropdownOpen);
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
+    setIsAcademicsDropdownOpen(false);
+    setIsAdmissionDropdownOpen(false);
+    setIsStudentsDropdownOpen(false);
+    setIsFacilitiesDropdownOpen(false);
+    setIsResultsDropdownOpen(false);
+    // setIsOthersDropdownOpen(false);
     // Close other dropdowns here as needed
   };
 
@@ -86,10 +127,17 @@ const NavBar = () => {
         className={`relative group text-white ${isAboutDropdownOpen ? "dropdown-open" : ""}`}
         onMouseEnter={toggleAboutDropdown}
         onMouseLeave={closeDropdowns}
+        onClick={() => {
+          if (isAboutDropdownOpen) {
+            closeDropdowns(); // Close the dropdown
+          } else {
+            toggleAboutDropdown(); // Toggle open the dropdown
+          }
+        }}
       >
-        <div className="flex">
+        <div className="flex justify-center items-center">
           <p>About Us</p>
-          <span className="group-hover:rotate-180">
+          <span className={`${isAboutDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
           </span>
         </div>
@@ -124,10 +172,17 @@ const NavBar = () => {
         className={`relative group text-white ${isAcademicsDropdownOpen ? "dropdown-open" : ""}`}
         onMouseEnter={toggleAcademicsDropdown}
         onMouseLeave={closeDropdowns}
+        onClick={() => {
+          if (isAcademicsDropdownOpen) {
+            closeDropdowns(); // Close the dropdown
+          } else {
+            toggleAcademicsDropdown(); // Toggle open the dropdown
+          }
+        }}
       >
-        <div className="flex">
+        <div className="flex justify-center items-center">
           <p>Academics</p>
-          <span className="group-hover:rotate-180">
+          <span className={`${isAcademicsDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
           </span>
         </div>
@@ -168,10 +223,17 @@ const NavBar = () => {
         className={`relative group text-white ${isAdmissionDropdownOpen ? "dropdown-open" : ""}`}
         onMouseEnter={toggleAdmissionDropdown}
         onMouseLeave={closeDropdowns}
+        onClick={() => {
+          if (isAdmissionDropdownOpen) {
+            closeDropdowns(); // Close the dropdown
+          } else {
+            toggleAdmissionDropdown(); // Toggle open the dropdown
+          }
+        }}
       >
-        <div className="flex">
+        <div className="flex justify-center items-center">
           <p>Admission</p>
-          <span className="group-hover:rotate-180">
+          <span className={`${isAdmissionDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
           </span>
         </div>
@@ -212,10 +274,17 @@ const NavBar = () => {
         className={`relative group text-white ${isStudentsDropdownOpen ? "dropdown-open" : ""}`}
         onMouseEnter={toggleStudentsDropdown}
         onMouseLeave={closeDropdowns}
+        onClick={() => {
+          if (isStudentsDropdownOpen) {
+            closeDropdowns(); // Close the dropdown
+          } else {
+            toggleStudentsDropdown(); // Toggle open the dropdown
+          }
+        }}
       >
-        <div className="flex">
+        <div className="flex justify-center items-center">
           <p>Students</p>
-          <span className="group-hover:rotate-180">
+          <span className={`${isStudentsDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
           </span>
         </div>
@@ -256,10 +325,17 @@ const NavBar = () => {
         className={`relative group text-white ${isFacilitiesDropdownOpen ? "dropdown-open" : ""}`}
         onMouseEnter={toggleFacilitiesDropdown}
         onMouseLeave={closeDropdowns}
+        onClick={() => {
+          if (isFacilitiesDropdownOpen) {
+            closeDropdowns(); // Close the dropdown
+          } else {
+            toggleFacilitiesDropdown(); // Toggle open the dropdown
+          }
+        }}
       >
-        <div className="flex">
+        <div className="flex justify-center items-center">
           <p>Facilities</p>
-          <span className="group-hover:rotate-180">
+          <span className={`${isFacilitiesDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
           </span>
         </div>
@@ -300,10 +376,17 @@ const NavBar = () => {
         className={`relative group text-white ${isResultsDropdownOpen ? "dropdown-open" : ""}`}
         onMouseEnter={toggleResultsDropdown}
         onMouseLeave={closeDropdowns}
+        onClick={() => {
+          if (isResultsDropdownOpen) {
+            closeDropdowns(); // Close the dropdown
+          } else {
+            toggleResultsDropdown(); // Toggle open the dropdown
+          }
+        }}
       >
-        <div className="flex">
+        <div className="flex justify-center items-center">
           <p>Results</p>
-          <span className="group-hover:rotate-180">
+          <span className={`${isResultsDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
           </span>
         </div>
@@ -344,10 +427,17 @@ const NavBar = () => {
         className={`relative group text-white ${isOthersDropdownOpen ? "dropdown-open" : ""}`}
         onMouseEnter={toggleOthersDropdown}
         onMouseLeave={closeDropdowns}
+        onClick={() => {
+          if (isOthersDropdownOpen) {
+            closeDropdowns(); // Close the dropdown
+          } else {
+            toggleOthersDropdown(); // Toggle open the dropdown
+          }
+        }}
       >
-        <div className="flex">
+        <div className="flex justify-center items-center">
           <p>Others</p>
-          <span className="group-hover:rotate-180">
+          <span className={`${isOthersDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
           </span>
         </div>
