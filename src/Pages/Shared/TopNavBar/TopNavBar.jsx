@@ -10,7 +10,7 @@ const TopNavBar = () => {
       <div className="bg-blue-500 text-white grid grid-cols-1 lg:grid-cols-2 py-1 px-2">
         <div className="flex justify-start items-center gap-5">
           <div className="flex justify-between lg:justify-center items-center gap-1">
-            <IoMdCall></IoMdCall> <span className="text-xs md:text-sm">+880 1715-356338</span>
+            <IoMdCall></IoMdCall> <span className="text-xs md:text-sm">01715-356338</span>
           </div>
           <div className="flex justify-center items-center gap-1">
             <MdEmail></MdEmail> <span className="text-xs md:text-sm">alazamhighschoolandcollege@gmail.com</span>

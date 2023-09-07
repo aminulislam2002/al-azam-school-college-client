@@ -7,18 +7,72 @@ import logo from "../../../assets/image/logo.png";
 import { useState } from "react";
 
 const NavBar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isAcademicsDropdownOpen, setIsAcademicsDropdownOpen] = useState(false);
+  const [isAdmissionDropdownOpen, setIsAdmissionDropdownOpen] = useState(false);
+  const [isStudentsDropdownOpen, setIsStudentsDropdownOpen] = useState(false);
+  const [isFacilitiesDropdownOpen, setIsFacilitiesDropdownOpen] = useState(false);
+  const [isResultsDropdownOpen, setIsResultsDropdownOpen] = useState(false);
+  const [isOthersDropdownOpen, setIsOthersDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleAboutDropdown = () => {
+    setIsAboutDropdownOpen(!isAboutDropdownOpen);
+    // Close other dropdowns
+    setIsAcademicsDropdownOpen(false);
+    // Close other dropdowns here as needed
   };
 
-  const closeDropdown = () => {
-    setIsDropdownOpen(false);
+  const toggleAcademicsDropdown = () => {
+    setIsAcademicsDropdownOpen(!isAcademicsDropdownOpen);
+    // Close other dropdowns
+    setIsAboutDropdownOpen(false);
+    // Close other dropdowns here as needed
   };
 
-  const openDropdown = () => {
-    setIsDropdownOpen(true);
+  const toggleAdmissionDropdown = () => {
+    setIsAdmissionDropdownOpen(!isAdmissionDropdownOpen);
+    // Close other dropdowns
+    setIsAboutDropdownOpen(false);
+    // Close other dropdowns here as needed
+  };
+
+  const toggleStudentsDropdown = () => {
+    setIsStudentsDropdownOpen(!isStudentsDropdownOpen);
+    // Close other dropdowns
+    setIsAboutDropdownOpen(false);
+    // Close other dropdowns here as needed
+  };
+
+  const toggleFacilitiesDropdown = () => {
+    setIsFacilitiesDropdownOpen(!isFacilitiesDropdownOpen);
+    // Close other dropdowns
+    setIsAboutDropdownOpen(false);
+    // Close other dropdowns here as needed
+  };
+
+  const toggleResultsDropdown = () => {
+    setIsResultsDropdownOpen(!isResultsDropdownOpen);
+    // Close other dropdowns
+    setIsAboutDropdownOpen(false);
+    // Close other dropdowns here as needed
+  };
+
+  const toggleOthersDropdown = () => {
+    setIsOthersDropdownOpen(!isOthersDropdownOpen);
+    // Close other dropdowns
+    setIsAboutDropdownOpen(false);
+    // Close other dropdowns here as needed
+  };
+
+  const closeDropdowns = () => {
+    setIsAboutDropdownOpen(false);
+    setIsAcademicsDropdownOpen(false);
+    setIsAdmissionDropdownOpen(false);
+    setIsStudentsDropdownOpen(false);
+    setIsFacilitiesDropdownOpen(false);
+    setIsResultsDropdownOpen(false);
+    setIsOthersDropdownOpen(false);
+    // Close other dropdowns here as needed
   };
 
   const navOptions = (
@@ -26,12 +80,14 @@ const NavBar = () => {
       <li className="text-white">
         <Link to="/">Home</Link>
       </li>
+
+      {/* About Us Dropdown */}
       <li
-        className={`relative group text-white ${isDropdownOpen ? "dropdown-open" : ""}`}
-        onMouseEnter={openDropdown}
-        onMouseLeave={closeDropdown}
+        className={`relative group text-white ${isAboutDropdownOpen ? "dropdown-open" : ""}`}
+        onMouseEnter={toggleAboutDropdown}
+        onMouseLeave={closeDropdowns}
       >
-        <div className="flex" onClick={toggleDropdown}>
+        <div className="flex">
           <p>About Us</p>
           <span className="group-hover:rotate-180">
             <AiOutlineDown />
@@ -39,7 +95,7 @@ const NavBar = () => {
         </div>
         <div
           className={`absolute z-50 ${
-            isDropdownOpen ? "block" : "hidden"
+            isAboutDropdownOpen ? "block" : "hidden"
           } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
         >
           {/* Dropdown content */}
@@ -62,14 +118,25 @@ const NavBar = () => {
           </ul>
         </div>
       </li>
-      <li className="text-white relative group">
+
+      {/* Academics Dropdown */}
+      <li
+        className={`relative group text-white ${isAcademicsDropdownOpen ? "dropdown-open" : ""}`}
+        onMouseEnter={toggleAcademicsDropdown}
+        onMouseLeave={closeDropdowns}
+      >
         <div className="flex">
           <p>Academics</p>
           <span className="group-hover:rotate-180">
-            <AiOutlineDown></AiOutlineDown>
+            <AiOutlineDown />
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div
+          className={`absolute z-50 ${
+            isAcademicsDropdownOpen ? "block" : "hidden"
+          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
+        >
+          {/* Dropdown content */}
           <ul>
             <Link to="/notice-board">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -95,14 +162,25 @@ const NavBar = () => {
           </ul>
         </div>
       </li>
-      <li className="text-white relative group">
+
+      {/* Admission Dropdown */}
+      <li
+        className={`relative group text-white ${isAdmissionDropdownOpen ? "dropdown-open" : ""}`}
+        onMouseEnter={toggleAdmissionDropdown}
+        onMouseLeave={closeDropdowns}
+      >
         <div className="flex">
           <p>Admission</p>
           <span className="group-hover:rotate-180">
-            <AiOutlineDown></AiOutlineDown>
+            <AiOutlineDown />
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div
+          className={`absolute z-50 ${
+            isAdmissionDropdownOpen ? "block" : "hidden"
+          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
+        >
+          {/* Dropdown content */}
           <ul>
             <Link to="/notice-board">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -128,14 +206,25 @@ const NavBar = () => {
           </ul>
         </div>
       </li>
-      <li className="text-white relative group">
+
+      {/* Students Dropdown */}
+      <li
+        className={`relative group text-white ${isStudentsDropdownOpen ? "dropdown-open" : ""}`}
+        onMouseEnter={toggleStudentsDropdown}
+        onMouseLeave={closeDropdowns}
+      >
         <div className="flex">
           <p>Students</p>
           <span className="group-hover:rotate-180">
-            <AiOutlineDown></AiOutlineDown>
+            <AiOutlineDown />
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div
+          className={`absolute z-50 ${
+            isStudentsDropdownOpen ? "block" : "hidden"
+          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
+        >
+          {/* Dropdown content */}
           <ul>
             <Link to="/notice-board">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -161,14 +250,25 @@ const NavBar = () => {
           </ul>
         </div>
       </li>
-      <li className="text-white relative group">
+
+      {/* Facilities Dropdown */}
+      <li
+        className={`relative group text-white ${isFacilitiesDropdownOpen ? "dropdown-open" : ""}`}
+        onMouseEnter={toggleFacilitiesDropdown}
+        onMouseLeave={closeDropdowns}
+      >
         <div className="flex">
           <p>Facilities</p>
           <span className="group-hover:rotate-180">
-            <AiOutlineDown></AiOutlineDown>
+            <AiOutlineDown />
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div
+          className={`absolute z-50 ${
+            isFacilitiesDropdownOpen ? "block" : "hidden"
+          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
+        >
+          {/* Dropdown content */}
           <ul>
             <Link to="/notice-board">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -194,14 +294,25 @@ const NavBar = () => {
           </ul>
         </div>
       </li>
-      <li className="text-white relative group">
+
+      {/* Results Dropdown */}
+      <li
+        className={`relative group text-white ${isResultsDropdownOpen ? "dropdown-open" : ""}`}
+        onMouseEnter={toggleResultsDropdown}
+        onMouseLeave={closeDropdowns}
+      >
         <div className="flex">
-          <p>Result</p>
+          <p>Results</p>
           <span className="group-hover:rotate-180">
-            <AiOutlineDown></AiOutlineDown>
+            <AiOutlineDown />
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div
+          className={`absolute z-50 ${
+            isResultsDropdownOpen ? "block" : "hidden"
+          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
+        >
+          {/* Dropdown content */}
           <ul>
             <Link to="/notice-board">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
@@ -227,41 +338,46 @@ const NavBar = () => {
           </ul>
         </div>
       </li>
-      <li className="text-white relative group">
+
+      {/* Others Dropdown */}
+      <li
+        className={`relative group text-white ${isOthersDropdownOpen ? "dropdown-open" : ""}`}
+        onMouseEnter={toggleOthersDropdown}
+        onMouseLeave={closeDropdowns}
+      >
         <div className="flex">
           <p>Others</p>
           <span className="group-hover:rotate-180">
-            <AiOutlineDown></AiOutlineDown>
+            <AiOutlineDown />
           </span>
         </div>
-        <div className="absolute z-50 hidden top-full w-48  bg-blue-950 p-3 group-hover:block left-1/2 transform -translate-x-1/2">
+        <div
+          className={`absolute z-50 ${
+            isOthersDropdownOpen ? "block" : "hidden"
+          } top-full w-52 bg-blue-950 p-3 left-1/2 transform -translate-x-1/2`}
+        >
+          {/* Dropdown content */}
           <ul>
-            <Link to="https://bmeb.gov.bd/">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">e S I F</li>
-            </Link>
-            <Link to="https://bmeb.gov.bd/">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">e F F</li>
-            </Link>
-            <Link to="https://bmeb.gov.bd/">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">e T I F</li>
-            </Link>
-            <Link to="https://bmeb.gov.bd/">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">e R P S</li>
+            <Link to="/notice-board">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
             </Link>
             <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Madrasah Education Board</li>
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Student Protal</li>
+            </Link>
+            <Link to="/students-results">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Result</li>
             </Link>
             <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Ministry Of Education</li>
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Events</li>
             </Link>
             <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">National Web Protal</li>
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">News</li>
             </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Dhaka Education Board</li>
+            <Link to="/students-routines">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
             </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">National Curriculum Textbook</li>
+            <Link to="/classes-syllabus">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Class Syllabus</li>
             </Link>
           </ul>
         </div>
