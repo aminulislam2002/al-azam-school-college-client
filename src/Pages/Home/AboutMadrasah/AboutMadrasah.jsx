@@ -8,7 +8,7 @@ const AboutMadrasah = () => {
         <div className="md:col-span-8">
           <div>
             <div className="w-full py-3 bg-green-500">
-              <h1 className="text-2xl text-center">প্রতিষ্ঠান পরিচিতি</h1>
+              <h1 className="text-lg lg:text-2xl text-center text-white">প্রতিষ্ঠান পরিচিতি</h1>
             </div>
             <div>
               <img src={image} className="w-full h-72 bg-cover bg-center" alt="" />
@@ -35,7 +35,7 @@ const AboutMadrasah = () => {
         <div className="md:col-span-4">
           <div>
             <div className="w-full py-3 bg-green-500">
-              <h1 className="text-2xl text-center">সুপার</h1>
+              <h1 className="text-lg lg:text-2xl text-center text-white">সুপার</h1>
             </div>
             <div className="py-3 border-2">
               <img

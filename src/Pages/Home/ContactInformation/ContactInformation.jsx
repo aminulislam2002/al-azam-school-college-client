@@ -20,7 +20,7 @@ const ContactInformation = () => {
         </div>
         <div className="w-full" id="Contact">
           <div className="bg-green-500 lg:px-5 py-4 mb-1">
-            <h1 className="lg:text-lg text-center">CONTACT US</h1>
+            <h1 className="text-lg lg:text-2xl text-center uppercase text-white">CONTACT US</h1>
           </div>
           <div className="bg-gray-200 p-4 rounded-lg shadow-md">
             <form onSubmit={handleSubmit(onSubmit)}>
