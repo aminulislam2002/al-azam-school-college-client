@@ -1,5 +1,6 @@
 import AboutMadrasah from "../AboutMadrasah/AboutMadrasah";
 import ContactInformation from "../ContactInformation/ContactInformation";
+import ImportanceLinksSection from "../ImportanceLinksSection/ImportanceLinksSection";
 import LocationAndAddress from "../LocationAndAddress/LocationAndAddress";
 import MadrasahInfoAndNotice from "../MadrasahInfoAndNotice/MadrasahInfoAndNotice";
 import MadrasahInformation from "../MadrasahInformation/MadrasahInformation";
@@ -18,6 +19,7 @@ const Home = () => {
       <Statistics></Statistics>
       <MadrasahPhotoGallery></MadrasahPhotoGallery>
       <VideoWithMadrasah></VideoWithMadrasah>
+      <ImportanceLinksSection></ImportanceLinksSection>
       <ContactInformation></ContactInformation>
       <LocationAndAddress></LocationAndAddress>
       <h1>Home</h1>
