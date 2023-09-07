@@ -9,38 +9,51 @@ const LocationAndAddress = () => {
           <div className="w-full py-3 bg-green-500">
             <h1 className="text-lg lg:text-2xl text-center text-white">প্রতিষ্ঠানের মেইলিং ঠিকানা</h1>
           </div>
-          <div className="bg-white p-4 rounded shadow-lg mt-4">
-            <div className="py-1 px-3 hover:bg-green-500">
-              <span className="font-semibold">প্রতিষ্ঠানের নাম:</span>
-              <span className="ml-2">গোলবুনিয়া নেছারিয়া দাখিল মাদ্রাসা</span>
+          <div className="bg-white p-2 rounded shadow-lg">
+            <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
+              <div className="w-3/12 font-semibold text-base">প্রতিষ্ঠানের নাম</div>
+              <div className="w-1/12">:</div>
+              <div className="w-8/12 ml-2">আল-আজম হাইস্কুল এন্ড কলেজ</div>
             </div>
-            <div className="py-1 px-3 hover:bg-green-500">
-              <span className="font-semibold">ই. আই. আই. এন:</span>
-              <span className="ml-2">102671</span>
+            <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
+              <div className="w-3/12 font-semibold text-base">ই. আই. আই. এন</div>
+              <div className="w-1/12">:</div>
+              <div className="w-8/12 ml-2">১৩০১৯৯</div>
             </div>
-            <div className="py-1 px-3 hover:bg-green-500">
-              <span className="font-semibold">মোবাইল নম্বর:</span>
-              <span className="ml-2">+880 173-086705</span>
+            <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
+              <div className="w-3/12 font-semibold text-base">মোবাইল নম্বর</div>
+              <div className="w-1/12">:</div>
+              <div className="w-8/12 ml-2">+৮৮০ ১৭১৫-৩৫৬৩৩৮ </div>
             </div>
-            <div className="py-1 px-3 hover:bg-green-500">
-              <span className="font-semibold">ই-মেইল:</span>
-              <span className="ml-2">golbunianesariadakhilmadrasah@gmail.com</span>
+            <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
+              <div className="w-3/12 font-semibold text-base">ই-মেইল</div>
+              <div className="w-1/12">:</div>
+              <div className="w-8/12 ml-2">alazamhighschoolandcollege@gmail.com</div>
             </div>
-            <div className="py-1 px-3 hover:bg-green-500">
-              <span className="font-semibold">ডাকঘরঃ</span>
-              <span className="ml-2">গোলবুনিয়া</span>
+            <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
+              <div className="w-3/12 font-semibold text-base">ডাকঘর</div>
+              <div className="w-1/12">:</div>
+              <div className="w-8/12 ml-2">আমতলী</div>
             </div>
-            <div className="py-1 px-3 hover:bg-green-500">
-              <span className="font-semibold">উপজেলাঃ</span>
-              <span className="ml-2">ভান্ডারিয়া</span>
+            <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
+              <div className="w-3/12 font-semibold text-base">পোস্ট কোড</div>
+              <div className="w-1/12">:</div>
+              <div className="w-8/12 ml-2">৩১৩০</div>
             </div>
-            <div className="py-1 px-3 hover:bg-green-500">
-              <span className="font-semibold">জেলঃ</span>
-              <span className="ml-2">পিরোজপুর</span>
+            <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
+              <div className="w-3/12 font-semibold text-base">উপজেলা</div>
+              <div className="w-1/12">:</div>
+              <div className="w-8/12 ml-2">বিশ্বনাথ</div>
             </div>
-            <div className="py-1 px-3 hover:bg-green-500">
-              <span className="font-semibold">স্থাপিতঃ</span>
-              <span className="ml-2">১৯৮৪ খ্রিঃ</span>
+            <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
+              <div className="w-3/12 font-semibold text-base">জেল</div>
+              <div className="w-1/12">:</div>
+              <div className="w-8/12 ml-2">সিলেট</div>
+            </div>
+            <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
+              <div className="w-3/12 font-semibold text-base">স্থাপিত</div>
+              <div className="w-1/12">:</div>
+              <div className="w-8/12 ml-2">১৯৯৪ খ্রিঃ</div>
             </div>
           </div>
         </div>
