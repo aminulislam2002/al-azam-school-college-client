@@ -84,10 +84,10 @@ const TopNavBar = () => {
               <BsPersonFillLock></BsPersonFillLock> <span>Log In</span>
             </div>
             <div className="">
-              <div>
+              <Link to="/dashboard/profile">
                 {/* <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" /> */}
                 <FaUserCircle></FaUserCircle>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
