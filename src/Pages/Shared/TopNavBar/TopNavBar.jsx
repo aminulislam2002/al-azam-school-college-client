@@ -60,7 +60,7 @@ const TopNavBar = () => {
               >
                 {/* Dropdown content */}
                 <ul>
-                  <Link to="/student-register">
+                  <Link to="authentication/student-register">
                     <li className="text-white bg-gray-900 mt-1 hover:bg-white hover:text-black ps-2 rounded flex justify-start items-center">
                       <div className="me-1">
                         <AiOutlinePlus></AiOutlinePlus>
@@ -68,7 +68,7 @@ const TopNavBar = () => {
                       <div>Student Register</div>
                     </li>
                   </Link>
-                  <Link to="/teacher-register">
+                  <Link to="authentication/teacher-register">
                     <li className="text-white bg-gray-900 mt-1 hover:bg-white hover:text-black ps-2 rounded flex justify-start items-center">
                       <div className="me-1">
                         <AiOutlinePlus></AiOutlinePlus>
@@ -80,9 +80,11 @@ const TopNavBar = () => {
               </div>
             </div>
 
-            <div className="flex justify-center items-center gap-1">
-              <BsPersonFillLock></BsPersonFillLock> <span>Log In</span>
-            </div>
+            <Link to="/authentication/login">
+              <div className="flex justify-center items-center gap-1">
+                <BsPersonFillLock></BsPersonFillLock> <span>Log In</span>
+              </div>
+            </Link>
             <div className="">
               <Link to="/dashboard/profile">
                 {/* <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" /> */}
