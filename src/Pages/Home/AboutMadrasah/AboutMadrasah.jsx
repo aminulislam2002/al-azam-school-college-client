@@ -43,13 +43,13 @@ const AboutMadrasah = () => {
                 className="w-44 h-40 mx-auto border-4 bg-center bg-cover border-green-500"
                 alt="Principal's Photo"
               />
-              <h1 className="text-center pt-1">এ.কে.এম আব্দুল আহাদ</h1>
-              <p className="text-center py-1">
-                <span className="">Contact Number:</span> +880 1715-356338
-              </p>
-              <p className="text-center py-1">
-                <span className="">Email:</span> examplemail@gmail.com
-              </p>
+              <h1 className="text-center pt-1 text-lg font-semibold">এ.কে.এম আব্দুল আহাদ</h1>
+              <div className="text-center py-1">
+                <span className="text-base font-medium">Contact Number:</span> +880 1715-356338
+              </div>
+              <div className="text-center py-1">
+                <span className="text-base font-medium">Email:</span> examplemail@gmail.com
+              </div>
             </div>
           </div>
           <div>
@@ -57,12 +57,10 @@ const AboutMadrasah = () => {
               <h3 className="text-center mb-2">
                 <span>অধ‍্যক্ষের বাণী:</span>
               </h3>
-              <p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum fugiat placeat, aliquid temporibus eveniet
-                  pariatur magnam quod ad sequi nam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero
-                  laudantium cumque rem fuga reprehenderit eius porro fugit numquam doloremque?
-                </p>
+              <p className="text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum fugiat placeat, aliquid temporibus eveniet
+                pariatur magnam quod ad sequi nam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero
+                laudantium cumque rem fuga reprehenderit eius porro fugit numquam doloremque?
               </p>
             </div>
           </div>

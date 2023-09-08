@@ -5,6 +5,8 @@ import "./NavBar.css";
 
 import { useEffect, useState } from "react";
 
+import logo from "../../../assets/image/madrasah-logo.png"
+
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -514,7 +516,7 @@ const NavBar = () => {
               {navOptions}
             </ul>
           </div>
-          <div>{/* <img className="w-16 h-16" src={logo} alt="" /> */}</div>
+          <div><img className="w-10 h-10" src={logo} alt="" /></div>
         </div>
         <div className="navbar-center hidden lg:flex justify-center items-center lg:w-8/12">
           {/* Use a mobile-friendly menu icon here for small screens */}
