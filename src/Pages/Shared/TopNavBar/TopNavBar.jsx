@@ -2,11 +2,23 @@ import { BsFillPersonPlusFill, BsPersonFillLock, BsYoutube } from "react-icons/b
 import { FaFacebook, FaUserCircle } from "react-icons/fa";
 import { IoLogoWhatsapp, IoMdCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
-import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
+import { AiFillInstagram, AiFillTwitterCircle, AiOutlinePlus } from "react-icons/ai";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const TopNavBar = () => {
+  const [isRegisterDropdownOpen, setIsRegisterDropdownOpen] = useState(false);
+
+  const toggleRegisterDropdown = () => {
+    setIsRegisterDropdownOpen(!isRegisterDropdownOpen);
+  };
+
+  const closeRegisterDropdown = () => {
+    setIsRegisterDropdownOpen(false);
+  };
+
   return (
-    <div>
+    <div className="relative z-[20]">
       <div className="bg-blue-500 text-white grid grid-cols-1 lg:grid-cols-2 py-1 px-2">
         <div className="flex justify-start items-center gap-5">
           <div className="flex justify-between lg:justify-center items-center gap-1">
@@ -24,20 +36,50 @@ const TopNavBar = () => {
             <AiFillTwitterCircle></AiFillTwitterCircle>
             <BsYoutube></BsYoutube>
           </div>
+
           <div className="flex justify-end items-center gap-10">
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="">
-                <div className="flex justify-center items-center gap-1">
-                  <BsFillPersonPlusFill></BsFillPersonPlusFill> <span>Register</span>
-                </div>
-              </label>
-              <div tabIndex={0} className="dropdown-content z-[1] p-2 shadow rounded-box w-48  mt-1 bg-blue-950 text-white">
-                <div className="">
-                  <button className="w-full btn btn-sm mb-1">Student Login</button>
-                  <button className="w-full btn btn-sm">Teacher Login</button>
-                </div>
+            <div
+              className={`relative group text-white ${isRegisterDropdownOpen ? "dropdown-open" : ""}`}
+              onMouseEnter={toggleRegisterDropdown}
+              onMouseLeave={closeRegisterDropdown}
+              onClick={() => {
+                if (isRegisterDropdownOpen) {
+                  closeRegisterDropdown(); // Close the dropdown
+                } else {
+                  toggleRegisterDropdown(); // Toggle open the dropdown
+                }
+              }}
+            >
+              <div className="flex justify-start items-center">
+                <BsFillPersonPlusFill></BsFillPersonPlusFill> <span>Register</span>
+              </div>
+              <div
+                className={`absolute z-50 ${
+                  isRegisterDropdownOpen ? "block" : "hidden"
+                } top-full w-52 bg-blue-500 p-3 left-1/2 transform -translate-x-1/2`}
+              >
+                {/* Dropdown content */}
+                <ul>
+                  <Link to="/student-register">
+                    <li className="text-white bg-gray-900 mt-1 hover:bg-white hover:text-black ps-2 rounded flex justify-start items-center">
+                      <div className="me-1">
+                        <AiOutlinePlus></AiOutlinePlus>
+                      </div>
+                      <div>Student Register</div>
+                    </li>
+                  </Link>
+                  <Link to="/teacher-register">
+                    <li className="text-white bg-gray-900 mt-1 hover:bg-white hover:text-black ps-2 rounded flex justify-start items-center">
+                      <div className="me-1">
+                        <AiOutlinePlus></AiOutlinePlus>
+                      </div>
+                      <div>Teacher Register</div>
+                    </li>
+                  </Link>
+                </ul>
               </div>
             </div>
+
             <div className="flex justify-center items-center gap-1">
               <BsPersonFillLock></BsPersonFillLock> <span>Log In</span>
             </div>

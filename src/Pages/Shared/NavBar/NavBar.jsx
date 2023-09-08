@@ -3,9 +3,11 @@ import { AiOutlineDown, AiOutlineMenu } from "react-icons/ai";
 
 import "./NavBar.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isAcademicsDropdownOpen, setIsAcademicsDropdownOpen] = useState(false);
   const [isAdmissionDropdownOpen, setIsAdmissionDropdownOpen] = useState(false);
@@ -13,6 +15,31 @@ const NavBar = () => {
   const [isFacilitiesDropdownOpen, setIsFacilitiesDropdownOpen] = useState(false);
   const [isResultsDropdownOpen, setIsResultsDropdownOpen] = useState(false);
   const [isOthersDropdownOpen, setIsOthersDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the user has scrolled beyond a certain point (e.g., 100 pixels)
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Add the "fixed-navbar" class to the navbar when isScrolled is true
+  const navbarClass = isScrolled ? "navbar fixed-navbar bg-blue-950" : "navbar relative z-[19] bg-blue-950";
+
+  // Rest of your code remains unchanged
+  // ...
 
   const toggleAboutDropdown = () => {
     setIsAboutDropdownOpen(!isAboutDropdownOpen);
@@ -476,29 +503,31 @@ const NavBar = () => {
   );
 
   return (
-    <div className="navbar bg-blue-950">
-      <div className="navbar-start flex lg:w-2/12">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <AiOutlineMenu className="text-white h-6 w-6"></AiOutlineMenu>
-          </label>
-          <ul tabIndex={0} className="menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-blue-950 rounded-box w-52">
-            {navOptions}
-          </ul>
+    <>
+      <div className={navbarClass}>
+        <div className="navbar-start flex lg:w-2/12">
+          <div className="dropdown">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+              <AiOutlineMenu className="text-white h-6 w-6"></AiOutlineMenu>
+            </label>
+            <ul tabIndex={0} className="menu-sm dropdown-content mt-0 z-[1] p-2 shadow bg-blue-950 rounded-box w-52">
+              {navOptions}
+            </ul>
+          </div>
+          <div>{/* <img className="w-16 h-16" src={logo} alt="" /> */}</div>
         </div>
-        <div>{/* <img className="w-16 h-16" src={logo} alt="" /> */}</div>
-      </div>
-      <div className="navbar-center hidden lg:flex justify-center items-center lg:w-8/12">
-        {/* Use a mobile-friendly menu icon here for small screens */}
-        <div className="lg:hidden">
-          <AiOutlineMenu className="text-2xl cursor-pointer" />
+        <div className="navbar-center hidden lg:flex justify-center items-center lg:w-8/12">
+          {/* Use a mobile-friendly menu icon here for small screens */}
+          <div className="lg:hidden">
+            <AiOutlineMenu className="text-2xl cursor-pointer" />
+          </div>
+          <ul className="flex justify-center items-center gap-8 menu-horizontal px-1">{navOptions}</ul>
         </div>
-        <ul className="flex justify-center items-center gap-8 menu-horizontal px-1">{navOptions}</ul>
+        <div className="navbar-end flex justify-end lg:justify-center items-center lg:w-2/12">
+          <button className="animated-button">Online Apply</button>
+        </div>
       </div>
-      <div className="navbar-end flex justify-end lg:justify-center items-center lg:w-2/12">
-        <button className="animated-button">Online Apply</button>
-      </div>
-    </div>
+    </>
   );
 };
 

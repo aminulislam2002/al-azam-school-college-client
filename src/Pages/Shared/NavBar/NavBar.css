@@ -19,3 +19,13 @@
     background-position: -200% 0;
   }
 }
+
+/* NavBar.css */
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; /* Adjust z-index as needed */
+  /* Add other styles like background color, box-shadow, etc. */
+}
