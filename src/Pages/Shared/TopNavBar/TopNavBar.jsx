@@ -3,11 +3,39 @@ import { FaFacebook, FaUserCircle } from "react-icons/fa";
 import { IoLogoWhatsapp, IoMdCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { AiFillInstagram, AiFillTwitterCircle, AiOutlinePlus } from "react-icons/ai";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
+import { BiSolidLogOut } from "react-icons/bi";
 
 const TopNavBar = () => {
   const [isRegisterDropdownOpen, setIsRegisterDropdownOpen] = useState(false);
+
+  const { user, logOut } = useContext(AuthContext);
+
+  console.log(user);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: `${user.displayName} Logout Successful`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "warning",
+          title: `${user.displayName} Logout Failed`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
+  };
 
   const toggleRegisterDropdown = () => {
     setIsRegisterDropdownOpen(!isRegisterDropdownOpen);
@@ -50,7 +78,7 @@ const TopNavBar = () => {
                 }
               }}
             >
-              <div className="flex justify-start items-center">
+              <div className="flex justify-start items-center gap-1">
                 <BsFillPersonPlusFill></BsFillPersonPlusFill> <span>Register</span>
               </div>
               <div
@@ -80,15 +108,33 @@ const TopNavBar = () => {
               </div>
             </div>
 
-            <Link to="/authentication/login">
-              <div className="flex justify-center items-center gap-1">
-                <BsPersonFillLock></BsPersonFillLock> <span>Log In</span>
-              </div>
-            </Link>
+            {user ? (
+              <>
+                <button onClick={() => handleLogOut()} className="flex justify-center items-center gap-1">
+                  <BiSolidLogOut></BiSolidLogOut> <span>Logout</span>
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/authentication/login">
+                  <div className="flex justify-center items-center gap-1">
+                    <BsPersonFillLock></BsPersonFillLock> <span>Log In</span>
+                  </div>
+                </Link>
+              </>
+            )}
+
             <div className="">
               <Link to="/dashboard/profile">
-                {/* <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" /> */}
-                <FaUserCircle></FaUserCircle>
+                {user ? (
+                  <>
+                    <img src={user?.photoURL} className="h-5 w-5 rounded-full" alt={user?.displayName} />
+                  </>
+                ) : (
+                  <>
+                    <FaUserCircle></FaUserCircle>
+                  </>
+                )}
               </Link>
             </div>
           </div>
