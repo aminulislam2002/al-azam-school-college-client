@@ -22,7 +22,7 @@ const Home = () => {
       <MadrasahPhotoGallery></MadrasahPhotoGallery>
       <VideoWithMadrasah></VideoWithMadrasah>
       <ImportanceLinksSection></ImportanceLinksSection>
-      <ContactInformation></ContactInformation>
+      {/* <ContactInformation></ContactInformation> */}
       <LocationAndAddress></LocationAndAddress>
       <h1>Home</h1>
     </div>

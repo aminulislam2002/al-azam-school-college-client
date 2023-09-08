@@ -35,7 +35,7 @@ const ImportanceLinksSection = () => {
               <h1 className="text-lg lg:text-2xl text-center text-white">Opening Hours</h1>
             </div>
             <div className="shadow-emerald-300 shadow-lg py-3 px-5">
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-2 pb-2">
                 <div className="text-gray-600">Sunday:</div>
                 <div className={currentDay === 0 ? dayClasses[currentDay] : ""}>{openingHours[0]}</div>
 
