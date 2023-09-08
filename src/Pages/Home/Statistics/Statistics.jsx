@@ -9,13 +9,16 @@ const Statistics = () => {
     "flex justify-center items-center p-5 bg-green-500 hover:bg-green-700 transition duration-300 ease-in-out";
 
   return (
-    <div className="my-20 bg-green-500">
+    <div className="my-20 bg-green-400">
       <div className="header-bg">
         <div className="text-center mb-5">
           <h1 className="text-lg lg:text-2xl font-semibold text-black uppercase py-2">
             Some facts of Al-Azam High School and College
           </h1>
-          <p className="text-base text-white">Amtoli-3130, Bishwanath Upazil. Sylhet, Bangladesh</p>
+          <p className="text-base text-white">
+            <span className="text-black">Address: </span>{" "}
+            <span className="text-gray-200"> Amtoil-3130, Bishwanath Upazil. Sylhet, Bangladesh</span>
+          </p>
         </div>
       </div>
 
@@ -24,7 +27,7 @@ const Statistics = () => {
           <div className="text-center">
             <IoIosPeople className="w-16 h-16 md:w-32 md:h-32 p-2 md:p-4 bg-blue-500 text-white rounded-full border"></IoIosPeople>
             <div className="text-lg md:text-2xl font-bold text-white mt-4">Students</div>
-            <div className="text-lg md:text-2xl font-bold">500+</div>
+            <div className="text-lg md:text-2xl font-bold">769+</div>
           </div>
         </div>
 
@@ -48,7 +51,7 @@ const Statistics = () => {
           <div className="text-center">
             <SiGoogleclassroom className="w-16 h-16 md:w-32 md:h-32 p-2 md:p-4 bg-yellow-500 text-white rounded-full border"></SiGoogleclassroom>
             <div className="text-lg md:text-2xl font-bold text-white mt-4">Classes</div>
-            <div className="text-lg md:text-2xl font-bold">01-10</div>
+            <div className="text-lg md:text-2xl font-bold">6-12</div>
           </div>
         </div>
 
@@ -56,7 +59,7 @@ const Statistics = () => {
           <div className="text-center">
             <FaRegBuilding className="w-16 h-16 md:w-32 md:h-32 p-2 md:p-4 bg-purple-500 text-white rounded-full border"></FaRegBuilding>
             <div className="text-lg md:text-2xl font-bold text-white mt-4">Rooms</div>
-            <div className="text-lg md:text-2xl font-bold">10</div>
+            <div className="text-lg md:text-2xl font-bold">21</div>
           </div>
         </div>
 

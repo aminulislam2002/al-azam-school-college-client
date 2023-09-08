@@ -1,6 +1,6 @@
 const LocationAndAddress = () => {
   const googleMapsEmbedUrl =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11234.248758184116!2d89.942892!3d22.3934796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.75!3m3!1m2!1s0x0%3A0xe9b6815403ecff7f!2sGolbunia%20Nesaria%20Dakhil%20Madrasah!5e0!3m2!1sen!2sbd!4v1630849458080!5m2!1sen!2sbd";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50697.19169527949!2d91.7160431!3d24.8669624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.75!3m3!1m2!1s0x375103e4b2361f27%3A0x31d32aa3a713c38e!2sAl-Azam%20High%20School%20and%20College!5e0!3m2!1sen!2sus!4v1630849458080!5m2!1sen!2sbd";
 
   return (
     <div className="container mx-auto lg:py-20 py-10">
@@ -16,12 +16,12 @@ const LocationAndAddress = () => {
               <div className="w-8/12 ml-2">আল-আজম হাইস্কুল এন্ড কলেজ</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">ই. আই. আই. এন</div>
+              <div className="w-3/12 font-semibold text-base">ই.আই.আই.এন</div>
               <div className="w-1/12">:</div>
               <div className="w-8/12 ml-2">১৩০১৯৯</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">মোবাইল নম্বর</div>
+              <div className="w-3/12 font-semibold text-base">মোবাইল</div>
               <div className="w-1/12">:</div>
               <div className="w-8/12 ml-2">+৮৮০ ১৭১৫-৩৫৬৩৩৮ </div>
             </div>
@@ -31,9 +31,9 @@ const LocationAndAddress = () => {
               <div className="w-8/12 ml-2 text-xs md:text-base">alazamhighschoolandcollege@gmail.com</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">ডাকঘর</div>
+              <div className="w-3/12 font-semibold text-base">পোস্ট অফিস</div>
               <div className="w-1/12">:</div>
-              <div className="w-8/12 ml-2">আমতলী</div>
+              <div className="w-8/12 ml-2">আমতৈল</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
               <div className="w-3/12 font-semibold text-base">পোস্ট কোড</div>

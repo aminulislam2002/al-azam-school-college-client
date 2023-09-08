@@ -35,7 +35,7 @@ const AboutMadrasah = () => {
         <div className="md:col-span-4">
           <div>
             <div className="w-full py-3 bg-green-500">
-              <h1 className="text-lg lg:text-2xl text-center text-white">সুপার</h1>
+              <h1 className="text-lg lg:text-2xl text-center text-white">অধ্যক্ষ</h1>
             </div>
             <div className="py-3 border-2">
               <img
@@ -43,9 +43,9 @@ const AboutMadrasah = () => {
                 className="w-44 h-40 mx-auto border-4 bg-center bg-cover border-green-500"
                 alt="Principal's Photo"
               />
-              <h1 className="text-center pt-1">মো: মোশারেফ হোসেন</h1>
+              <h1 className="text-center pt-1">এ.কে.এম আব্দুল আহাদ</h1>
               <p className="text-center py-1">
-                <span className="">Contact Number:</span> +880 1732-086705
+                <span className="">Contact Number:</span> +880 1715-356338
               </p>
               <p className="text-center py-1">
                 <span className="">Email:</span> examplemail@gmail.com
@@ -55,7 +55,7 @@ const AboutMadrasah = () => {
           <div>
             <div className="border-2 p-4 mt-4">
               <h3 className="text-center mb-2">
-                <span>সুপারের বাণী:</span>
+                <span>অধ‍্যক্ষের বাণী:</span>
               </h3>
               <p>
                 <p>

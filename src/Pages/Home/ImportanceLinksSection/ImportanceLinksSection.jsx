@@ -17,11 +17,11 @@ const ImportanceLinksSection = () => {
 
   // Define the opening hours for each day
   const openingHours = [
-    "10:00 AM - 4:00 PM", // Sunday
-    "10:00 AM - 4:00 PM", // Monday
-    "10:00 AM - 4:00 PM", // Tuesday
-    "10:00 AM - 4:00 PM", // Wednesday
-    "10:00 AM - 2:00 PM", // Thursday
+    "09:00 AM - 05:00 PM", // Sunday
+    "09:00 AM - 05:00 PM", // Monday
+    "09:00 AM - 05:00 PM", // Tuesday
+    "09:00 AM - 05:00 PM", // Wednesday
+    "09:00 AM - 05:00 PM", // Thursday
     "Closed", // Friday
     "Closed", // Saturday
   ];

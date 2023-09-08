@@ -28,7 +28,7 @@ const MadrasahInfoAndNotice = () => {
             {/* About Madrasah */}
             <div>
               <div className="bg-green-500 lg:px-5 py-4 mb-1">
-                <h1 className="lg:text-lg text-center text-white">মাদ্রাসা সম্পর্কে</h1>
+                <h1 className="lg:text-lg text-center text-white">প্রতিষ্ঠান সম্পর্কে</h1>
               </div>
               <div className="lg:flex gap-3">
                 <div className="flex justify-center items-start">
@@ -37,11 +37,11 @@ const MadrasahInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">মাদরাসার ল্যাব সম্পর্কিত তথ্য</Link>
+                    <Link className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের ল্যাব সম্পর্কিত তথ্য</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">মাদ্ররাসার শিক্ষার্থী সম্পর্কে তথ্য</Link>
+                    <Link className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের শিক্ষার্থী সম্পর্কে তথ্য</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
@@ -49,11 +49,11 @@ const MadrasahInfoAndNotice = () => {
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">মাদ্রাসার পরিচিতি এবং ইতিহাস</Link>
+                    <Link className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের পরিচিতি এবং ইতিহাস</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">মাদরাসার জমি সংক্রান্ত তথ্য</Link>
+                    <Link className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের জমি সংক্রান্ত তথ্য</Link>
                   </div>
                 </div>
               </div>
@@ -70,11 +70,11 @@ const MadrasahInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">দাখিল/এসএসসি ভর্তি</Link>
+                    <Link className="hover:underline text-sm hover:text-red-500">এসএসসি ভর্তি</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">আলিম/এইচএসসি ভর্তি</Link>
+                    <Link className="hover:underline text-sm hover:text-red-500">এইচএসসি ভর্তি</Link>
                   </div>
                 </div>
               </div>
@@ -124,11 +124,11 @@ const MadrasahInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">মাধ্যমিক (দাখিল) স্তরের শিক্ষক</Link>
+                    <Link className="hover:underline text-sm hover:text-red-500">উচ্চ মাধ্যমিক স্তরের শিক্ষক</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">প্রাথমিক (ইবতেদায়ী) স্তরের শিক্ষক</Link>
+                    <Link className="hover:underline text-sm hover:text-red-500">মাধ্যমিক স্তরের শিক্ষক</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
@@ -153,11 +153,11 @@ const MadrasahInfoAndNotice = () => {
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">আলিম বোর্ড পরীক্ষার ফলাফল</Link>
+                    <Link className="hover:underline text-sm hover:text-red-500">এইচএসসি বোর্ড পরীক্ষার ফলাফল</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">দাখিল বোর্ড পরীক্ষার ফলাফল</Link>
+                    <Link className="hover:underline text-sm hover:text-red-500">এসএসসি বোর্ড পরীক্ষার ফলাফল</Link>
                   </div>
                 </div>
               </div>

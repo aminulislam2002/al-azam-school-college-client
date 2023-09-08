@@ -24,7 +24,7 @@ const MainFooter = () => {
             </div>
             <div className="mt-2">
               <MdLocationOn className="w-4 h-4 text-green-500 inline-block"></MdLocationOn>
-              <span className="lg:text-sm text-base">Amtoli, Bishwanath. Sylhet, Bangladesh</span>
+              <span className="lg:text-sm text-base">Amtoil, Bishwanath. Sylhet, Bangladesh</span>
             </div>
           </div>
 
@@ -101,7 +101,7 @@ const MainFooter = () => {
           </div>
           <div className="mt-2">
             <MdLocationOn className="w-4 h-4 text-green-500 inline-block"></MdLocationOn>
-            <span className="lg:text-sm text-base">Amtoli, Bishwanath Upazil. Sylhet, Bangladesh</span>
+            <span className="lg:text-sm text-base">Amtoil, Bishwanath Upazil. Sylhet, Bangladesh</span>
           </div>
         </div>
 
@@ -139,9 +139,14 @@ const MainFooter = () => {
           <span className="footer-title text-xl block mb-4">Follow us</span>
           <div className="mt-2 flex justify-center items-start gap-4">
             <div>
-              <Link to="#" className="text-blue-500 hover:text-blue-700 transition-colors duration-300">
+              <a
+                href="https://www.facebook.com/profile.php?id=100085129436280&mibextid=ZbWKwL"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:text-blue-700 transition-colors duration-300"
+              >
                 <MdOutlineFacebook className="w-6 h-6 lg:w-8 lg:h-8" />
-              </Link>
+              </a>
             </div>
             <div>
               <Link to="#" className="text-blue-400 hover:text-blue-600 transition-colors duration-300">
