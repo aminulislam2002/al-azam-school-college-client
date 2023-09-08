@@ -13,11 +13,11 @@ const Statistics = () => {
       <div className="header-bg">
         <div className="text-center mb-5">
           <h1 className="text-lg lg:text-2xl font-semibold text-black uppercase py-2">
-            Some facts of Al-Azam High School and College
+            আল-আজম উচ্চ বিদ্যালয় ও কলেজের কিছু তথ্য
           </h1>
           <p className="text-base text-white">
-            <span className="text-black">Address: </span>{" "}
-            <span className="text-gray-200"> Amtoil-3130, Bishwanath Upazil. Sylhet, Bangladesh</span>
+            <span className="text-black">ঠিকানা: </span>
+            <span className="text-gray-200">আমতৈল-৩১৩০, বিশ্বনাথ উপজেলা। সিলেট, বাংলাদেশ</span>
           </p>
         </div>
       </div>

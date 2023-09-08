@@ -27,7 +27,7 @@ const ImportanceLinksSection = () => {
   ];
 
   return (
-    <div className="container mx-auto lg:py-20 py-10 bg-gray-100">
+    <div className="container mx-auto lg:py-20 py-10">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
         <div className="md:col-span-4 w-full">
           <div>

@@ -3,7 +3,7 @@ import principal from "../../../assets/image/principal.jpg";
 
 const AboutMadrasah = () => {
   return (
-    <div className="container mx-auto py-10 lg:py-20 bg-gray-300">
+    <div className="container mx-auto py-10 lg:py-20">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
         <div className="md:col-span-8">
           <div>
