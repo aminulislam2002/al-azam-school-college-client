@@ -23,9 +23,15 @@ const ManageTeachers = () => {
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: `${user.name} is an Admin Now!`,
+            title: `${user.name} is an admin now!`,
             showConfirmButton: false,
             timer: 1500,
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Failed to make an teacher!",
           });
         }
       });
@@ -67,7 +73,7 @@ const ManageTeachers = () => {
             {/* head */}
             <thead>
               <tr>
-                <th></th>
+                <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Set Role</th>

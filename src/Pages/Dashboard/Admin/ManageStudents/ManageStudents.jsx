@@ -19,13 +19,13 @@ const ManageStudents = () => {
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
+          refetch();
           Swal.fire({
             icon: "success",
             title: "Delete Successfully!",
             showConfirmButton: false,
             timer: 1500,
           });
-          refetch();
         } else {
           Swal.fire({
             icon: "error",
@@ -46,7 +46,7 @@ const ManageStudents = () => {
         <table className="table table-xs table-pin-rows table-pin-cols">
           <thead>
             <tr>
-              <th></th>
+              <th>#</th>
               <th>Name</th>
               <th>email</th>
               <th>Father Name</th>
