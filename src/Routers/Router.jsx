@@ -7,6 +7,10 @@ import AuthenticationLayout from "../Layouts/AuthenticationLayout";
 import Login from "../Pages/Authentications/Login";
 import StudentRegister from "../Pages/Authentications/StudentRegister";
 import TeacherRegister from "../Pages/Authentications/TeacherRegister";
+import ManageAdmins from "../Pages/Dashboard/Admin/ManageAdmins/ManageAdmins";
+import ManageTeachers from "../Pages/Dashboard/Admin/ManageTeachers/ManageTeachers";
+import ManageStudents from "../Pages/Dashboard/Admin/ManageStudents/ManageStudents";
+import ManageAllUsers from "../Pages/Dashboard/Admin/ManageAllUsers/ManageAllUsers";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +30,22 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profiles></Profiles>,
+      },
+      {
+        path: "manageAdmins",
+        element: <ManageAdmins></ManageAdmins>,
+      },
+      {
+        path: "manageTeachers",
+        element: <ManageTeachers></ManageTeachers>,
+      },
+      {
+        path: "manageStudents",
+        element: <ManageStudents></ManageStudents>,
+      },
+      {
+        path: "manageAllUsers",
+        element: <ManageAllUsers></ManageAllUsers>,
       },
     ],
   },

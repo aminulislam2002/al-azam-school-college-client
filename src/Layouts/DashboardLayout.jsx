@@ -39,6 +39,11 @@ const DashboardLayout = () => {
           Manage Students
         </li>
       </Link>
+      <Link to="/dashboard/manageAllUsers">
+        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Manage All Users
+        </li>
+      </Link>
     </>
   );
 
