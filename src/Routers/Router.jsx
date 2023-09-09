@@ -42,17 +42,17 @@ const router = createBrowserRouter([
       {
         path: "profile/update-student-profile/:id",
         element: <UpdateStudentProfile></UpdateStudentProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/users/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
       },
       {
         path: "profile/update-teacher-profile/:id",
         element: <UpdateTeacherProfile></UpdateTeacherProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/users/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
       },
       {
         path: "profile/update-admin-profile/:id",
         element: <UpdateAdminProfile></UpdateAdminProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/users/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
       },
       {
         path: "manageAdmins",

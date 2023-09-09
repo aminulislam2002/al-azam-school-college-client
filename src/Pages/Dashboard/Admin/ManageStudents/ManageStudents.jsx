@@ -1,25 +1,30 @@
+import { useEffect, useState } from "react";
 import { FcViewDetails } from "react-icons/fc";
 import { MdDelete } from "react-icons/md";
-import { useQuery } from "react-query";
 import Swal from "sweetalert2";
 
 const ManageStudents = () => {
-  const { data: students = [], refetch } = useQuery(["students"], async () => {
-    const res = await fetch("http://localhost:5000/users/students?role=student");
-    return res.json();
-  });
+  const [allStudentsData, setAllStudentsData] = useState([]);
 
-  console.log(students);
+  useEffect(() => {
+    const students = async () => {
+      const res = await fetch("http://localhost:5000/getAllStudents");
+      const data = await res.json();
+      setAllStudentsData(data);
+    };
+    students();
+  }, []);
 
-  const handleDeleteStudent = (_id) => {
-    fetch(`http://localhost:5000/users/${_id}`, {
+  const handleDeleteStudent = (id) => {
+    fetch(`http://localhost:5000/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
-          refetch();
+          const remainingData = allStudentsData.filter((s) => s._id != id);
+          setAllStudentsData(remainingData);
           Swal.fire({
             icon: "success",
             title: "Delete Successfully!",
@@ -57,7 +62,7 @@ const ManageStudents = () => {
             </tr>
           </thead>
           <tbody>
-            {students.map((student, index) => (
+            {allStudentsData.map((student, index) => (
               <tr key={student._id}>
                 <th>{index}</th>
                 <td>{student?.name}</td>

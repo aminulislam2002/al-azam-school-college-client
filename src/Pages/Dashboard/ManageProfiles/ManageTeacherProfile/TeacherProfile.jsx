@@ -7,7 +7,7 @@ const TeacherProfile = () => {
   const { user } = useContext(AuthContext);
 
   const { data: currentUser = {} } = useQuery(["currentUser"], async () => {
-    const res = await fetch(`http://localhost:5000/user/${user.email}`);
+    const res = await fetch(`http://localhost:5000/getUserByEmail/${user.email}`);
     return res.json();
   });
 
@@ -69,7 +69,7 @@ const TeacherProfile = () => {
           <span className="text-red-600"> {currentUser.bloodGroup}</span>
         </p>
         <p className="mb-2">
-          <span className="text-gray-800 font-bold">Address:</span>{" "}
+          <span className="text-gray-800 font-bold">Address:</span>
           <span className="text-black ms-1">{currentUser.address}</span>
         </p>
       </div>

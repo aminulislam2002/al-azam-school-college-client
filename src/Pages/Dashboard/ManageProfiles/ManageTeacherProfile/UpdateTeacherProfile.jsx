@@ -10,7 +10,7 @@ const UpdateTeacherProfile = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/user/student/${user._id}`, {
+    fetch(`http://localhost:5000/userUpdate/${user._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

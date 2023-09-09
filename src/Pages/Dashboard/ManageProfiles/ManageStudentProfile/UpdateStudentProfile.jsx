@@ -4,13 +4,14 @@ import Swal from "sweetalert2";
 
 const UpdateStudentProfile = () => {
   const user = useLoaderData();
+  console.log(user);
 
   const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/user/student/${user._id}`, {
+    fetch(`http://localhost:5000/userUpdate/${user._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

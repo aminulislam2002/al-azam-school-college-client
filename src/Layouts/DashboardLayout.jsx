@@ -123,7 +123,7 @@ const DashboardLayout = () => {
             </div>
           </div>
           <div className="lg:w-9/12 p-4">
-            <div className="">
+            <div className="overflow-y-auto max-h-[95vh]">
               <Outlet />
             </div>
           </div>

@@ -1,6 +1,5 @@
-import { BsFillSendFill } from "react-icons/bs";
 import { FcViewDetails } from "react-icons/fc";
-import { MdDelete, MdEmail } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 import { useQuery } from "react-query";
 import Swal from "sweetalert2";
 
@@ -12,8 +11,8 @@ const ManageAllUsers = () => {
 
   console.log(allUsers);
 
-  const handleDeleteUser = (_id) => {
-    fetch(`http://localhost:5000/users/${_id}`, {
+  const handleDeleteUser = (id) => {
+    fetch(`http://localhost:5000/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -59,36 +58,28 @@ const ManageAllUsers = () => {
           </thead>
           <tbody>
             {allUsers.map((user, index) => (
-              <>
-                <tr key={user._id}>
-                  <th>{index}</th>
-                  <td>{user?.name}</td>
-                  <td>{user?.email}</td>
-                  <td>Littel, Schaden and Vandervort</td>
-                  <td>Canada</td>
-                  <td>{user?.role}</td>
-                  <td>
-                    <div>
-                      <button>
-                        <FcViewDetails className="w-5 h-5"></FcViewDetails>
-                      </button>
-                    </div>
-                  </td>
-                  <th>
-                    <div>
-                      <button onClick={() => handleDeleteUser(user._id)}>
-                        <MdDelete className="w-5 h-5 text-red-500"></MdDelete>
-                      </button>
-                      {/* <button>
-                              <BsFillSendFill className="w-5 h-5 text-blue-500"></BsFillSendFill>
-                            </button>
-                            <button>
-                              <MdEmail className="w-5 h-5 text-yellow-500"></MdEmail>
-                            </button> */}
-                    </div>
-                  </th>
-                </tr>
-              </>
+              <tr key={user._id}>
+                <th>{index + 1}</th>
+                <td>{user?.name}</td>
+                <td>{user?.email}</td>
+                <td>Littel, Schaden and Vandervort</td>
+                <td>Canada</td>
+                <td>{user?.role}</td>
+                <td>
+                  <div>
+                    <button>
+                      <FcViewDetails className="w-5 h-5"></FcViewDetails>
+                    </button>
+                  </div>
+                </td>
+                <th>
+                  <div>
+                    <button onClick={() => handleDeleteUser(user._id)}>
+                      <MdDelete className="w-5 h-5 text-red-500"></MdDelete>
+                    </button>
+                  </div>
+                </th>
+              </tr>
             ))}
           </tbody>
         </table>

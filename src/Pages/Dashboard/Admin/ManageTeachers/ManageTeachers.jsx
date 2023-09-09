@@ -1,29 +1,34 @@
+import { useEffect, useState } from "react";
 import { FcViewDetails } from "react-icons/fc";
 import { MdDelete } from "react-icons/md";
-import { useQuery } from "react-query";
 import Swal from "sweetalert2";
 
 const ManageTeachers = () => {
-  const { data: teachers = [], refetch } = useQuery(["teachers"], async () => {
-    const res = await fetch("http://localhost:5000/users/teachers?role=teacher");
-    return res.json();
-  });
+  const [allTeachersData, setAllTeachersData] = useState([]);
 
-  console.log(teachers);
+  useEffect(() => {
+    const teachers = async () => {
+      const res = await fetch("http://localhost:5000/getAllTeachers");
+      const data = await res.json();
+      setAllTeachersData(data);
+    };
+    teachers();
+  }, []);
 
-  const handleMakeAdmin = (user) => {
-    fetch(`http://localhost:5000/users/makeAdmin/${user._id}`, {
+  const handleMakeAdmin = (id) => {
+    fetch(`http://localhost:5000/makeAdmin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        const remainingData = allTeachersData.filter((s) => s._id != id);
+        setAllTeachersData(remainingData);
         if (data.modifiedCount) {
-          refetch();
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: `${user.name} is an admin now!`,
+            title: " Successfully make an admin!",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -31,19 +36,21 @@ const ManageTeachers = () => {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Failed to make an teacher!",
+            text: "Failed to make an admin!",
           });
         }
       });
   };
 
-  const handleDeleteTeacher = (_id) => {
-    fetch(`http://localhost:5000/users/${_id}`, {
+  const handleDeleteTeacher = (id) => {
+    fetch(`http://localhost:5000/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        const remainingData = allTeachersData.filter((s) => s._id != id);
+        setAllTeachersData(remainingData);
         if (data.deletedCount > 0) {
           Swal.fire({
             icon: "success",
@@ -51,7 +58,6 @@ const ManageTeachers = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          refetch();
         } else {
           Swal.fire({
             icon: "error",
@@ -82,14 +88,14 @@ const ManageTeachers = () => {
             </thead>
             <tbody>
               {/* Row */}
-              {teachers.map((teacher, index) => (
+              {allTeachersData.map((teacher, index) => (
                 <tr key={teacher._id}>
                   <td>{index}</td>
                   <td>{teacher.name}</td>
                   <td>{teacher.email}</td>
                   <td>
                     {teacher.role === "teacher" && (
-                      <button onClick={() => handleMakeAdmin(teacher)} className="btn btn-xs btn-outline btn-primary">
+                      <button onClick={() => handleMakeAdmin(teacher._id)} className="btn btn-xs btn-outline btn-primary">
                         Make Admin
                       </button>
                     )}

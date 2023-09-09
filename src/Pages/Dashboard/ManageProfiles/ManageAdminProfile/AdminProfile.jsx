@@ -7,7 +7,7 @@ const AdminProfile = () => {
   const { user } = useContext(AuthContext);
 
   const { data: currentUser = {} } = useQuery(["currentUser"], async () => {
-    const res = await fetch(`http://localhost:5000/user/${user.email}`);
+    const res = await fetch(`http://localhost:5000/getUserByEmail/${user.email}`);
     return res.json();
   });
 
