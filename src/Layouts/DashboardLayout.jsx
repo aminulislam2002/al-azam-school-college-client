@@ -18,11 +18,6 @@ const DashboardLayout = () => {
 
   const adminOptions = (
     <>
-      <ActiveLink to="/dashboard/manageEvents">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          Manage Events
-        </li>
-      </ActiveLink>
       <ActiveLink to="/dashboard/manageNotices">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Notices

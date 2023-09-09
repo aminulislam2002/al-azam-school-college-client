@@ -15,6 +15,9 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateStudentProfile from "../Pages/Dashboard/ManageProfiles/ManageStudentProfile/UpdateStudentProfile";
 import UpdateTeacherProfile from "../Pages/Dashboard/ManageProfiles/ManageTeacherProfile/UpdateTeacherProfile";
 import UpdateAdminProfile from "../Pages/Dashboard/ManageProfiles/ManageAdminProfile/UpdateAdminProfile";
+import AllNotices from "../Pages/Dashboard/Admin/ManageNotices/AllNotices";
+import AddNotice from "../Pages/Dashboard/Admin/ManageNotices/AddNotice";
+import UpdateNotice from "../Pages/Dashboard/Admin/ManageNotices/UpdateNotice";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +56,19 @@ const router = createBrowserRouter([
         path: "profile/update-admin-profile/:id",
         element: <UpdateAdminProfile></UpdateAdminProfile>,
         loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
+      },
+      {
+        path: "manageNotices",
+        element: <AllNotices></AllNotices>,
+      },
+      {
+        path: "addNotice",
+        element: <AddNotice></AddNotice>,
+      },
+      {
+        path: "manageNotices/update-notice/:id",
+        element: <UpdateNotice></UpdateNotice>,
+        loader: ({ params }) => fetch(`http://localhost:5000/getNoticeById/${params.id}`),
       },
       {
         path: "manageAdmins",

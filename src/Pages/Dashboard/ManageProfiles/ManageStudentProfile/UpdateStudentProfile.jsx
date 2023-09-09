@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const UpdateStudentProfile = () => {
   const user = useLoaderData();
-  console.log(user);
+  // console.log(user);
 
   const navigate = useNavigate();
 
