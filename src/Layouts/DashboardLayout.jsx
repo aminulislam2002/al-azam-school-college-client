@@ -1,6 +1,7 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { GrMenu } from "react-icons/gr";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
+import ActiveLink from "../Components/ActiveLink";
 
 const DashboardLayout = () => {
   // const [isAdmin] = useAdmin();
@@ -14,56 +15,56 @@ const DashboardLayout = () => {
 
   const adminOptions = (
     <>
-      <Link to="/dashboard/manageEvents">
+      <ActiveLink to="/dashboard/manageEvents">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Events
         </li>
-      </Link>
-      <Link to="/dashboard/manageNotices">
+      </ActiveLink>
+      <ActiveLink to="/dashboard/manageNotices">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Notices
         </li>
-      </Link>
-      <Link to="/dashboard/manageAdmins">
+      </ActiveLink>
+      <ActiveLink to="/dashboard/manageAdmins">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Admins
         </li>
-      </Link>
-      <Link to="/dashboard/manageTeachers">
+      </ActiveLink>
+      <ActiveLink to="/dashboard/manageTeachers">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Teachers
         </li>
-      </Link>
-      <Link to="/dashboard/manageStudents">
+      </ActiveLink>
+      <ActiveLink to="/dashboard/manageStudents">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Students
         </li>
-      </Link>
-      <Link to="/dashboard/manageAllUsers">
+      </ActiveLink>
+      <ActiveLink to="/dashboard/manageAllUsers">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage All Users
         </li>
-      </Link>
+      </ActiveLink>
     </>
   );
 
   const teacherOptions = (
     <>
-      <Link to="/dashboard">
+      <ActiveLink to="/dashboard">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           {/* This is Teacher */}
         </li>
-      </Link>
+      </ActiveLink>
     </>
   );
 
   const studentOptions = (
     <>
-      <Link to="/dashboard">
+      <ActiveLink to="/dashboard">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           {/* This is Student */}
         </li>
-      </Link>
+      </ActiveLink>
     </>
   );
 
@@ -107,11 +108,11 @@ const DashboardLayout = () => {
             </div>
             <div className="flex-none hidden lg:block mt-4">
               <ul className="menu-vertical">
-                <Link to="/dashboard/profile">
+                <ActiveLink to="/dashboard/profile">
                   <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
                     Profile
                   </li>
-                </Link>
+                </ActiveLink>
                 {isAdmin && <> {adminOptions} </>}
                 {isTeacher && <> {teacherOptions} </>}
                 {isStudent && <> {studentOptions} </>}
@@ -127,11 +128,11 @@ const DashboardLayout = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" className="drawer-overlay overflow-x-auto max-h-[100vh]"></label>
           <ul className="p-4 w-52 bg-blue-900 overflow-y-auto">
-            <Link to="/dashboard/profile">
+            <ActiveLink to="/dashboard/profile">
               <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
                 Profile
               </li>
-            </Link>
+            </ActiveLink>
             {isAdmin && <> {adminOptions} </>}
             {isTeacher && <> {teacherOptions} </>}
             {isStudent && <> {studentOptions} </>}
