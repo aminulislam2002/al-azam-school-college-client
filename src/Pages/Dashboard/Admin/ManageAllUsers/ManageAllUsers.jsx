@@ -44,58 +44,54 @@ const ManageAllUsers = () => {
       </div>
 
       <div>
-        <div>
-          <div className=" ">
-            <table className="table table-xs">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <td>Name</td>
-                  <td>Email</td>
-                  <td>company</td>
-                  <td>location</td>
-                  <td>Role</td>
-                  <td>Details</td>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                {allUsers.map((user, index) => (
-                  <>
-                    <tr key={user._id}>
-                      <th>{index}</th>
-                      <td>{user?.name}</td>
-                      <td>{user?.email}</td>
-                      <td>Littel, Schaden and Vandervort</td>
-                      <td>Canada</td>
-                      <td>{user?.role}</td>
-                      <td>
-                        <div>
-                          <button>
-                            <FcViewDetails className="w-5 h-5"></FcViewDetails>
-                          </button>
-                        </div>
-                      </td>
-                      <th>
-                        <div>
-                          <button onClick={() => handleDeleteUser(user._id)}>
-                            <MdDelete className="w-5 h-5 text-red-500"></MdDelete>
-                          </button>
-                          {/* <button>
+        <table className="table table-xs table-pin-rows table-pin-cols">
+          <thead>
+            <tr>
+              <th>#</th>
+              <td>Name</td>
+              <td>Email</td>
+              <td>company</td>
+              <td>location</td>
+              <td>Role</td>
+              <td>Details</td>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allUsers.map((user, index) => (
+              <>
+                <tr key={user._id}>
+                  <th>{index}</th>
+                  <td>{user?.name}</td>
+                  <td>{user?.email}</td>
+                  <td>Littel, Schaden and Vandervort</td>
+                  <td>Canada</td>
+                  <td>{user?.role}</td>
+                  <td>
+                    <div>
+                      <button>
+                        <FcViewDetails className="w-5 h-5"></FcViewDetails>
+                      </button>
+                    </div>
+                  </td>
+                  <th>
+                    <div>
+                      <button onClick={() => handleDeleteUser(user._id)}>
+                        <MdDelete className="w-5 h-5 text-red-500"></MdDelete>
+                      </button>
+                      {/* <button>
                               <BsFillSendFill className="w-5 h-5 text-blue-500"></BsFillSendFill>
                             </button>
                             <button>
                               <MdEmail className="w-5 h-5 text-yellow-500"></MdEmail>
                             </button> */}
-                        </div>
-                      </th>
-                    </tr>
-                  </>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+                    </div>
+                  </th>
+                </tr>
+              </>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
