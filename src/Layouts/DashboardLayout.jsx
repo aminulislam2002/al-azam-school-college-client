@@ -2,15 +2,18 @@ import { Outlet } from "react-router-dom";
 import { GrMenu } from "react-icons/gr";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
 import ActiveLink from "../Components/ActiveLink";
+import useAdmin from "../Hooks/useAdmin";
+import useTeacher from "../Hooks/useTeacher";
+import useStudent from "../Hooks/useStudent";
 
 const DashboardLayout = () => {
-  // const [isAdmin] = useAdmin();
-  // const [isTeacher] = useTeacher();
-  // const [isStudent] = useStudent();
+  const [isAdmin] = useAdmin();
+  const [isTeacher] = useTeacher();
+  const [isStudent] = useStudent();
 
-  const isAdmin = true;
-  const isTeacher = false;
-  const isStudent = false;
+  // const isAdmin = true;
+  // const isTeacher = false;
+  // const isStudent = false;
   const user = true;
 
   const adminOptions = (
@@ -50,9 +53,9 @@ const DashboardLayout = () => {
 
   const teacherOptions = (
     <>
-      <ActiveLink to="/dashboard">
+      <ActiveLink to="/dashboard/">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          {/* This is Teacher */}
+          This is Teacher
         </li>
       </ActiveLink>
     </>
@@ -60,9 +63,9 @@ const DashboardLayout = () => {
 
   const studentOptions = (
     <>
-      <ActiveLink to="/dashboard">
+      <ActiveLink to="/dashboard/">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          {/* This is Student */}
+          This is Student
         </li>
       </ActiveLink>
     </>

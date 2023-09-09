@@ -6,7 +6,7 @@ const useStudent = () => {
   const { user, loading } = useContext(AuthContext);
 
   const { data: isStudent, isLoading: isStudentLoading } = useQuery({
-    queryKey: ["isStudent", user.email],
+    queryKey: ["isStudent", user?.email],
     enabled: !loading,
     queryFn: async () => {
       const res = await fetch(`http://localhost:5000/users/student/${user.email}`);
