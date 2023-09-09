@@ -10,7 +10,6 @@ import TeacherRegister from "../Pages/Authentications/TeacherRegister";
 import ManageAdmins from "../Pages/Dashboard/Admin/ManageAdmins/ManageAdmins";
 import ManageTeachers from "../Pages/Dashboard/Admin/ManageTeachers/ManageTeachers";
 import ManageStudents from "../Pages/Dashboard/Admin/ManageStudents/ManageStudents";
-import ManageAllUsers from "../Pages/Dashboard/Admin/ManageAllUsers/ManageAllUsers";
 import PrivateRoute from "./PrivateRoute";
 import UpdateStudentProfile from "../Pages/Dashboard/ManageProfiles/ManageStudentProfile/UpdateStudentProfile";
 import UpdateTeacherProfile from "../Pages/Dashboard/ManageProfiles/ManageTeacherProfile/UpdateTeacherProfile";
@@ -82,10 +81,7 @@ const router = createBrowserRouter([
         path: "manageStudents",
         element: <ManageStudents></ManageStudents>,
       },
-      {
-        path: "manageAllUsers",
-        element: <ManageAllUsers></ManageAllUsers>,
-      },
+      
     ],
   },
   {

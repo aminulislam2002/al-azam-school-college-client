@@ -3,8 +3,22 @@ import { FaBookOpenReader, FaGraduationCap, FaUserGraduate } from "react-icons/f
 import { Link } from "react-router-dom";
 import { AiFillCaretRight } from "react-icons/ai";
 import { HiMiniBuildingLibrary } from "react-icons/hi2";
+import { useEffect, useState } from "react";
 
 const MadrasahInfoAndNotice = () => {
+  const [allNotices, setAllNotices] = useState([]);
+
+  useEffect(() => {
+    const notices = async () => {
+      const res = await fetch("http://localhost:5000/getAllNotices");
+      const data = await res.json();
+      setAllNotices(data);
+    };
+    notices();
+  }, []);
+
+  console.log(allNotices);
+
   const iconStyles = {
     fontSize: "2rem", // Adjust the size as needed
     marginRight: "0.5rem", // Adjust spacing
@@ -187,34 +201,19 @@ const MadrasahInfoAndNotice = () => {
               <h1 className="text-lg lg:text-2xl text-center text-white">নোটিশ বোর্ড</h1>
             </div>
             <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
-              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
-                <Link className="hover:underline hover:text-red-500">পরীক্ষা ফলাফল প্রকাশের নোটিশ ২০২৩ ইং</Link>
-                <p className="text-sm mt-2">20 July, 2023</p>
-              </div>
-              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
-                <Link className="hover:underline hover:text-red-500">পরীক্ষা স্থগিতের নোটিশ ২০২৩ ইং</Link>
-                <p className="text-sm mt-2">05 May, 2023 </p>
-              </div>
-              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
-                <Link className="hover:underline hover:text-red-500">মাদরাসা খোলার নোটিশ ২০২৩ ইং</Link>
-                <p className="text-sm mt-2">10 June, 2023</p>
-              </div>
-              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
-                <Link className="hover:underline hover:text-red-500">পরীক্ষা ফলাফল প্রকাশের নোটিশ ২০২৩ ইং</Link>
-                <p className="text-sm mt-2">20 July, 2023</p>
-              </div>
-              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
-                <Link className="hover:underline hover:text-red-500">বার্ষিক পরীক্ষার রুটিন প্রকাশের নোটিশ ২০২৩ ইং</Link>
-                <p className="text-sm mt-2">30 August, 2023</p>
-              </div>
-              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
-                <Link className="hover:underline hover:text-red-500">মাদরাসা খোলার নোটিশ ২০২৩ ইং</Link>
-                <p className="text-sm mt-2">10 June, 2023</p>
-              </div>
-              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
-                <Link className="hover:underline hover:text-red-500">মাদরাসা খোলার নোটিশ ২০২৩ ইং</Link>
-                <p className="text-sm mt-2">10 June, 2023</p>
-              </div>
+              {allNotices.map((notice) => (
+                <div key={notice?._id}>
+                  <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
+                    <Link to={notice?.link} className="hover:underline hover:text-red-500">
+                      {notice?.noticeHeadline}
+                    </Link>
+                    <p className="text-sm mt-2">
+                      {notice.publishedDateTime.slice(8, 10)}-{notice.publishedDateTime.slice(5, 7)}-
+                      {notice.publishedDateTime.slice(0, 4)} {notice.publishedDateTime.slice(11, 16)}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
