@@ -12,6 +12,7 @@ import ManageTeachers from "../Pages/Dashboard/Admin/ManageTeachers/ManageTeache
 import ManageStudents from "../Pages/Dashboard/Admin/ManageStudents/ManageStudents";
 import ManageAllUsers from "../Pages/Dashboard/Admin/ManageAllUsers/ManageAllUsers";
 import PrivateRoute from "./PrivateRoute";
+import UpdateStudentProfile from "../Pages/Dashboard/ManageProfiles/ManageStudentProfile/UpdateStudentProfile";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profiles></Profiles>,
+      },
+      {
+        path: "profile/update-student-profile/:id",
+        element: <UpdateStudentProfile></UpdateStudentProfile>,
+        loader: ({ params }) => fetch(`http://localhost:5000/users/${params.id}`),
       },
       {
         path: "manageAdmins",
