@@ -1,16 +1,77 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
+  const { signIn, user, createUserWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    signIn(data.email, data.password)
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: `${user.displayName} Login Successful`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "warning",
+          title: `${user.displayName} Login Failed`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    createUserWithGoogle()
+      .then((result) => {
+        const loggedInUser = result.user;
+        const saveUser = {
+          name: loggedInUser.displayName,
+          email: loggedInUser.email,
+          photo: loggedInUser.photoURL,
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate(from, { replace: true });
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "warning",
+          title: `${user.displayName} Login Failed`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
   };
 
   return (
@@ -69,7 +130,7 @@ const Login = () => {
         </div>
         <div className="flex justify-center items-center gap-5">
           <button>
-            <FcGoogle className="w-8 h-8"></FcGoogle>
+            <FcGoogle onClick={() => handleGoogleSignIn()} className="w-8 h-8"></FcGoogle>
           </button>
         </div>
       </div>
