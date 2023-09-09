@@ -11,6 +11,7 @@ import ManageAdmins from "../Pages/Dashboard/Admin/ManageAdmins/ManageAdmins";
 import ManageTeachers from "../Pages/Dashboard/Admin/ManageTeachers/ManageTeachers";
 import ManageStudents from "../Pages/Dashboard/Admin/ManageStudents/ManageStudents";
 import ManageAllUsers from "../Pages/Dashboard/Admin/ManageAllUsers/ManageAllUsers";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "profile",
