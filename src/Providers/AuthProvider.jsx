@@ -44,9 +44,9 @@ const AuthProvider = ({children}) => {
     }
 
     // Delete na user from firebase
-    const deleteAnUser = (deletingUser) =>{
+    const deleteAnUser = () =>{
         setLoading(true)
-        return deleteUser(deletingUser)
+        return deleteUser(user)
     }
 
 

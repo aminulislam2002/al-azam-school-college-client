@@ -1,12 +1,105 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { GrMenu } from "react-icons/gr";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
 import ActiveLink from "../Components/ActiveLink";
 import useAdmin from "../Hooks/useAdmin";
 import useTeacher from "../Hooks/useTeacher";
 import useStudent from "../Hooks/useStudent";
+import Swal from "sweetalert2";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const DashboardLayout = () => {
+  const [currentUser, setCurrentUser] = useState({});
+  const { user, logOut, deleteAnUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  console.log(currentUser);
+
+  useEffect(() => {
+    const cu = async () => {
+      const res = await fetch(`http://localhost:5000/getUserByEmail/${user.email}`);
+      const data = await res.json();
+      setCurrentUser(data);
+    };
+    cu();
+  }, [user]);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: `${user.displayName} Logout Successful`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "warning",
+          title: `${user.displayName} Logout Failed`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
+  };
+
+  const handleDeleteUserFromFirebaseAndDatabase = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Delete the user from the database first
+        fetch(`http://localhost:5000/deleteUser/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+
+            // Assuming you have a function to delete the user from Firebase called deleteFromFirebase
+            deleteAnUser()
+              .then(() => {
+                // Once the user is deleted from Firebase, you can display a success message and navigate
+                Swal.fire({
+                  icon: "success",
+                  title: `${user.displayName} delete your account Successfully`,
+                  showConfirmButton: false,
+                  timer: 5000,
+                });
+                navigate("/");
+              })
+              .catch((error) => {
+                console.log(error);
+                Swal.fire({
+                  icon: "warning",
+                  title: `${user.displayName} delete from Firebase Failed`,
+                  showConfirmButton: false,
+                  timer: 3000,
+                });
+              });
+          })
+          .catch((error) => {
+            console.log(error);
+            Swal.fire({
+              icon: "warning",
+              title: `${user.displayName} delete from Database Failed`,
+              showConfirmButton: false,
+              timer: 3000,
+            });
+          });
+      }
+    });
+  };
+
   const [isAdmin] = useAdmin();
   const [isTeacher] = useTeacher();
   const [isStudent] = useStudent();
@@ -14,7 +107,6 @@ const DashboardLayout = () => {
   // const isAdmin = true;
   // const isTeacher = false;
   // const isStudent = false;
-  const user = true;
 
   const adminOptions = (
     <>
@@ -45,7 +137,7 @@ const DashboardLayout = () => {
     <>
       <ActiveLink to="/dashboard/">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          This is Teacher
+          {/* This is Teacher */}
         </li>
       </ActiveLink>
     </>
@@ -55,7 +147,7 @@ const DashboardLayout = () => {
     <>
       <ActiveLink to="/dashboard/">
         <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
-          This is Student
+          {/* This is Student */}
         </li>
       </ActiveLink>
     </>
@@ -76,9 +168,8 @@ const DashboardLayout = () => {
                   <GrMenu className="w-6 h-6" />
                 </label>
               </div>
-              <div className="px-2 w-auto lg:w-full">
-                <div className="ms-2 text-lg font-semibold text-yellow-500">
-                  {user.displayName}
+              <div className="px-2 w-full grid grid-cols-2">
+                {/* <div className="text-lg font-semibold text-yellow-500">
                   <span>
                     {isAdmin && (
                       <>
@@ -96,6 +187,22 @@ const DashboardLayout = () => {
                       </>
                     )}
                   </span>
+                </div> */}
+                <div className="flex justify-center items-center">
+                  <button
+                    onClick={() => handleLogOut()}
+                    className="text-white hover:text-black hover:bg-white py-1 rounded-lg"
+                  >
+                    Logout Account!
+                  </button>
+                </div>
+                <div className="flex justify-center items-center">
+                  <button
+                    onClick={() => handleDeleteUserFromFirebaseAndDatabase(currentUser._id)}
+                    className="text-white hover:text-black hover:bg-white py-1 rounded-lg"
+                  >
+                    Delete Account!
+                  </button>
                 </div>
               </div>
             </div>
