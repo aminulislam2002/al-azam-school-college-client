@@ -5,7 +5,7 @@ import "./NavBar.css";
 
 import { useEffect, useState } from "react";
 
-import logo from "../../../assets/image/madrasah-logo.png"
+import logo from "../../../assets/image/madrasah-logo.png";
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,33 +40,26 @@ const NavBar = () => {
   // Add the "fixed-navbar" class to the navbar when isScrolled is true
   const navbarClass = isScrolled ? "navbar fixed-navbar bg-blue-950" : "navbar relative z-[19] bg-blue-950";
 
-  // Rest of your code remains unchanged
-  // ...
-
   const toggleAboutDropdown = () => {
     setIsAboutDropdownOpen(!isAboutDropdownOpen);
     // Close other dropdowns
-    // setIsAboutDropdownOpen(false);
     setIsAcademicsDropdownOpen(false);
     setIsAdmissionDropdownOpen(false);
     setIsStudentsDropdownOpen(false);
     setIsFacilitiesDropdownOpen(false);
     setIsResultsDropdownOpen(false);
     setIsOthersDropdownOpen(false);
-    // Close other dropdowns here as needed
   };
 
   const toggleAcademicsDropdown = () => {
     setIsAcademicsDropdownOpen(!isAcademicsDropdownOpen);
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
-    // setIsAcademicsDropdownOpen(false);
     setIsAdmissionDropdownOpen(false);
     setIsStudentsDropdownOpen(false);
     setIsFacilitiesDropdownOpen(false);
     setIsResultsDropdownOpen(false);
     setIsOthersDropdownOpen(false);
-    // Close other dropdowns here as needed
   };
 
   const toggleAdmissionDropdown = () => {
@@ -74,12 +67,10 @@ const NavBar = () => {
     // Close other dropdowns
     setIsAboutDropdownOpen(false);
     setIsAcademicsDropdownOpen(false);
-    // setIsAdmissionDropdownOpen(false);
     setIsStudentsDropdownOpen(false);
     setIsFacilitiesDropdownOpen(false);
     setIsResultsDropdownOpen(false);
     setIsOthersDropdownOpen(false);
-    // Close other dropdowns here as needed
   };
 
   const toggleStudentsDropdown = () => {
@@ -88,11 +79,9 @@ const NavBar = () => {
     setIsAboutDropdownOpen(false);
     setIsAcademicsDropdownOpen(false);
     setIsAdmissionDropdownOpen(false);
-    // setIsStudentsDropdownOpen(false);
     setIsFacilitiesDropdownOpen(false);
     setIsResultsDropdownOpen(false);
     setIsOthersDropdownOpen(false);
-    // Close other dropdowns here as needed
   };
 
   const toggleFacilitiesDropdown = () => {
@@ -102,10 +91,8 @@ const NavBar = () => {
     setIsAcademicsDropdownOpen(false);
     setIsAdmissionDropdownOpen(false);
     setIsStudentsDropdownOpen(false);
-    // setIsFacilitiesDropdownOpen(false);
     setIsResultsDropdownOpen(false);
     setIsOthersDropdownOpen(false);
-    // Close other dropdowns here as needed
   };
 
   const toggleResultsDropdown = () => {
@@ -116,9 +103,7 @@ const NavBar = () => {
     setIsAdmissionDropdownOpen(false);
     setIsStudentsDropdownOpen(false);
     setIsFacilitiesDropdownOpen(false);
-    // setIsResultsDropdownOpen(false);
     setIsOthersDropdownOpen(false);
-    // Close other dropdowns here as needed
   };
 
   const toggleOthersDropdown = () => {
@@ -130,8 +115,6 @@ const NavBar = () => {
     setIsStudentsDropdownOpen(false);
     setIsFacilitiesDropdownOpen(false);
     setIsResultsDropdownOpen(false);
-    // setIsOthersDropdownOpen(false);
-    // Close other dropdowns here as needed
   };
 
   const closeDropdowns = () => {
@@ -142,7 +125,6 @@ const NavBar = () => {
     setIsFacilitiesDropdownOpen(false);
     setIsResultsDropdownOpen(false);
     setIsOthersDropdownOpen(false);
-    // Close other dropdowns here as needed
   };
 
   const navOptions = (
@@ -177,8 +159,8 @@ const NavBar = () => {
         >
           {/* Dropdown content */}
           <ul>
-            <Link to="/history-of-madrasah">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">History of Madrasah</li>
+            <Link to="/history-of-institute">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">History of Institute</li>
             </Link>
             <Link to="/mission-and-vision">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Mission And Vision</li>
@@ -222,26 +204,14 @@ const NavBar = () => {
         >
           {/* Dropdown content */}
           <ul>
-            <Link to="/notice-board">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Student Protal</li>
-            </Link>
-            <Link to="/students-results">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Result</li>
-            </Link>
-            <Link>
+            <Link to="events">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Events</li>
             </Link>
-            <Link>
+            <Link to="news">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">News</li>
             </Link>
-            <Link to="/students-routines">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
-            </Link>
-            <Link to="/classes-syllabus">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Class Syllabus</li>
+            <Link to="/student-protocol">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Student Protocol</li>
             </Link>
           </ul>
         </div>
@@ -273,12 +243,6 @@ const NavBar = () => {
         >
           {/* Dropdown content */}
           <ul>
-            <Link to="/notice-board">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Student Protal</li>
-            </Link>
             <Link to="/students-results">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Result</li>
             </Link>
@@ -291,8 +255,8 @@ const NavBar = () => {
             <Link to="/students-routines">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
             </Link>
-            <Link to="/classes-syllabus">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Class Syllabus</li>
+            <Link to="/help-for-admission">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Help</li>
             </Link>
           </ul>
         </div>
@@ -326,18 +290,6 @@ const NavBar = () => {
           <ul>
             <Link to="/notice-board">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Student Protal</li>
-            </Link>
-            <Link to="/students-results">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Result</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Events</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">News</li>
             </Link>
             <Link to="/students-routines">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
@@ -375,26 +327,11 @@ const NavBar = () => {
         >
           {/* Dropdown content */}
           <ul>
-            <Link to="/notice-board">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
+            <Link to="/science-lab">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Science Lab</li>
             </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Student Protal</li>
-            </Link>
-            <Link to="/students-results">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Result</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Events</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">News</li>
-            </Link>
-            <Link to="/students-routines">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
-            </Link>
-            <Link to="/classes-syllabus">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Class Syllabus</li>
+            <Link to="/computer-lab">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Computer Lab</li>
             </Link>
           </ul>
         </div>
@@ -426,26 +363,17 @@ const NavBar = () => {
         >
           {/* Dropdown content */}
           <ul>
-            <Link to="/notice-board">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
+            <Link to="/class-nine-result">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Nine-09</li>
             </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Student Protal</li>
+            <Link to="/class-ten-result">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Ten-10</li>
             </Link>
-            <Link to="/students-results">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Result</li>
+            <Link to="/class-eleven-result">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Eleven-11</li>
             </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Events</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">News</li>
-            </Link>
-            <Link to="/students-routines">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
-            </Link>
-            <Link to="/classes-syllabus">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Class Syllabus</li>
+            <Link to="/class-twelve-result">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Twelve-12</li>
             </Link>
           </ul>
         </div>
@@ -516,7 +444,9 @@ const NavBar = () => {
               {navOptions}
             </ul>
           </div>
-          <div><img className="w-10 h-10" src={logo} alt="" /></div>
+          <div>
+            <img className="w-10 h-10" src={logo} alt="" />
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex justify-center items-center lg:w-8/12">
           {/* Use a mobile-friendly menu icon here for small screens */}
