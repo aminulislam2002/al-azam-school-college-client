@@ -1,3 +1,4 @@
+import NoticeHeadline from "../../Shared/NoticeHeadline/NoticeHeadline";
 import AboutMadrasah from "../AboutMadrasah/AboutMadrasah";
 import ContactInformation from "../ContactInformation/ContactInformation";
 import ImportanceLinksSection from "../ImportanceLinksSection/ImportanceLinksSection";
@@ -13,6 +14,7 @@ import VideoWithMadrasah from "../VideoWithMadrasah/VideoWithMadrasah";
 const Home = () => {
   return (
     <div className="bg-gray-100">
+      <NoticeHeadline></NoticeHeadline>
       <TopSlider></TopSlider>
       <MadrasahInformation></MadrasahInformation>
       <AboutMadrasah></AboutMadrasah>
