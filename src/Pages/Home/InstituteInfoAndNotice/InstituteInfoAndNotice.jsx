@@ -5,7 +5,7 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { HiMiniBuildingLibrary } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 
-const MadrasahInfoAndNotice = () => {
+const InstituteInfoAndNotice = () => {
   const [allNotices, setAllNotices] = useState([]);
 
   useEffect(() => {
@@ -222,4 +222,4 @@ const MadrasahInfoAndNotice = () => {
   );
 };
 
-export default MadrasahInfoAndNotice;
+export default InstituteInfoAndNotice;

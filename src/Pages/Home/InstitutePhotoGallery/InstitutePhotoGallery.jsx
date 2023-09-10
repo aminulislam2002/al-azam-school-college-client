@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import "./MadrasahPhotoGallery.css";
+import "./InstitutePhotoGallery.css";
 
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";

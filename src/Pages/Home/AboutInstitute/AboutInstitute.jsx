@@ -1,7 +1,7 @@
 import image from "../../../assets/image/overview.jpg";
 import principal from "../../../assets/image/principal.jpg";
 
-const AboutMadrasah = () => {
+const AboutInstitute = () => {
   return (
     <div className="container mx-auto py-10 lg:py-20">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
@@ -11,7 +11,7 @@ const AboutMadrasah = () => {
               <h1 className="text-lg lg:text-2xl text-center text-white">প্রতিষ্ঠান পরিচিতি</h1>
             </div>
             <div>
-              <img src={image} className="w-full h-72 bg-cover bg-center" alt="" />
+              <img src={image} className="w-full h-60 lg:h-72 bg-cover bg-center" alt="" />
               <h5 className="text-center py-1">ছবি : আল-আজম হাইস্কুল এন্ড কলেজ</h5>
               <div>
                 <div className="p-4 overflow-y-auto max-h-[80vh] lg:max-h-[40vh] content">
@@ -76,4 +76,4 @@ const AboutMadrasah = () => {
   );
 };
 
-export default AboutMadrasah;
+export default AboutInstitute;

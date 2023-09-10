@@ -1,28 +1,27 @@
 import NoticeHeadline from "../../Shared/NoticeHeadline/NoticeHeadline";
-import AboutMadrasah from "../AboutMadrasah/AboutMadrasah";
+import AboutInstitute from "../AboutInstitute/AboutInstitute";
 import ContactInformation from "../ContactInformation/ContactInformation";
 import ImportanceLinksSection from "../ImportanceLinksSection/ImportanceLinksSection";
 import LocationAndAddress from "../LocationAndAddress/LocationAndAddress";
-import MadrasahInfoAndNotice from "../MadrasahInfoAndNotice/MadrasahInfoAndNotice";
-import MadrasahInformation from "../MadrasahInformation/MadrasahInformation";
-import MadrasahPhotoGallery from "../MadrasahPhotoGallery/MadrasahPhotoGallery";
+import InstitutePhotoGallery from "../InstitutePhotoGallery/InstitutePhotoGallery";
 import Statistics from "../Statistics/Statistics";
 import TeachersSection from "../TeachersSection/TeachersSection";
 import TopSlider from "../TopSlider/TopSlider";
-import VideoWithMadrasah from "../VideoWithMadrasah/VideoWithMadrasah";
+import VideoWithInstitute from "../VideoWithInstitute/VideoWithInstitute";
+import InstituteInfoAndNotice from "../InstituteInfoAndNotice/InstituteInfoAndNotice";
 
 const Home = () => {
   return (
     <div className="bg-gray-100">
       <NoticeHeadline></NoticeHeadline>
       <TopSlider></TopSlider>
-      <MadrasahInformation></MadrasahInformation>
-      <AboutMadrasah></AboutMadrasah>
+      <InstituteInfoAndNotice></InstituteInfoAndNotice>
+      <AboutInstitute></AboutInstitute>
       <TeachersSection></TeachersSection>
-      <MadrasahInfoAndNotice></MadrasahInfoAndNotice>
+      <InstituteInfoAndNotice></InstituteInfoAndNotice>
       <Statistics></Statistics>
-      <MadrasahPhotoGallery></MadrasahPhotoGallery>
-      <VideoWithMadrasah></VideoWithMadrasah>
+      <InstitutePhotoGallery></InstitutePhotoGallery>
+      <VideoWithInstitute></VideoWithInstitute>
       <ImportanceLinksSection></ImportanceLinksSection>
       {/* <ContactInformation></ContactInformation> */}
       <LocationAndAddress></LocationAndAddress>
