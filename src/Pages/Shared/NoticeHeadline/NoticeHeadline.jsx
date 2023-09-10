@@ -12,8 +12,6 @@ const NoticeHeadline = () => {
     notices();
   }, []);
 
-  console.log(noticesData);
-
   return (
     <div className="bg-gray-800 flex text-white h-10">
       <div className="bg-blue-800 w-3/12 md:w-2/12 lg:w-1/12 h-full flex justify-end items-center">

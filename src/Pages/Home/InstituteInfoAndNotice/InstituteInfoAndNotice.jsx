@@ -17,8 +17,6 @@ const InstituteInfoAndNotice = () => {
     notices();
   }, []);
 
-  console.log(allNotices);
-
   const iconStyles = {
     fontSize: "2rem", // Adjust the size as needed
     marginRight: "0.5rem", // Adjust spacing

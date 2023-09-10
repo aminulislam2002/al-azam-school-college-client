@@ -14,8 +14,6 @@ const TopNavBar = () => {
 
   const { user, logOut } = useContext(AuthContext);
 
-  console.log(user);
-
   const handleLogOut = () => {
     logOut()
       .then(() => {

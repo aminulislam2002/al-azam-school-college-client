@@ -24,7 +24,7 @@ const Login = () => {
       .then(() => {
         Swal.fire({
           icon: "success",
-          title: `${user.displayName} Login Successful`,
+          title: "Login Successful",
           showConfirmButton: false,
           timer: 3000,
         });
@@ -35,7 +35,8 @@ const Login = () => {
         console.log(error);
         Swal.fire({
           icon: "warning",
-          title: `${user.displayName} Login Failed`,
+          title: "Login Failed",
+          text: error.message, // Display the specific error message
           showConfirmButton: false,
           timer: 3000,
         });
@@ -85,6 +86,7 @@ const Login = () => {
             <label className="block text-gray-700 text-sm font-bold mb-2">Email</label>
             <input
               type="email"
+              // ref={emailRef}
               {...register("email", { required: true })}
               name="email"
               placeholder="Enter your email"
@@ -108,10 +110,11 @@ const Login = () => {
           {errors.password && <span className="text-xs text-red-600">Password is required</span>}
           {/* Forgot password button */}
           <div className="flex justify-end items-end mb-2 text-sm">
-            <Link to="" className="text-blue-500">
+            <Link to="/authentication/forgot-password" className="text-blue-500">
               Forgot password?
             </Link>
           </div>
+
           {/* Sign In button field */}
           <div className="flex items-center justify-between mb-2">
             <button

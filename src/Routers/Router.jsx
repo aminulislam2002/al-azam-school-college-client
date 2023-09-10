@@ -17,6 +17,7 @@ import UpdateAdminProfile from "../Pages/Dashboard/ManageProfiles/ManageAdminPro
 import AllNotices from "../Pages/Dashboard/Admin/ManageNotices/AllNotices";
 import AddNotice from "../Pages/Dashboard/Admin/ManageNotices/AddNotice";
 import UpdateNotice from "../Pages/Dashboard/Admin/ManageNotices/UpdateNotice";
+import ForgotPasswordField from "../Pages/Authentications/ForgotPasswordField";
 
 const router = createBrowserRouter([
   {
@@ -81,7 +82,6 @@ const router = createBrowserRouter([
         path: "manageStudents",
         element: <ManageStudents></ManageStudents>,
       },
-      
     ],
   },
   {
@@ -99,6 +99,10 @@ const router = createBrowserRouter([
       {
         path: "teacher-register",
         element: <TeacherRegister></TeacherRegister>,
+      },
+      {
+        path: "forgot-password",
+        element: <ForgotPasswordField></ForgotPasswordField>,
       },
     ],
   },
