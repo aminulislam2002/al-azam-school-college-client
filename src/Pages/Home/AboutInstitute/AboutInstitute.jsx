@@ -1,5 +1,5 @@
-import image from "../../../assets/photogallery/collage1.jpg";
-import principal from "../../../assets/image/principal.jpg";
+import instituteOverview from "../../../assets/image/overview/overview1.jpg";
+import principal from "../../../assets/image/teacher/principal.jpg";
 
 const AboutInstitute = () => {
   return (
@@ -11,7 +11,7 @@ const AboutInstitute = () => {
               <h1 className="text-lg lg:text-2xl text-center text-white">প্রতিষ্ঠান পরিচিতি</h1>
             </div>
             <div>
-              <img src={image} className="w-full h-60 lg:h-72 bg-cover bg-center" alt="" />
+              <img src={instituteOverview} className="w-full h-60 lg:h-72 bg-cover bg-center" alt="Institute Overview" />
               <h5 className="text-center py-1">ছবি : আল-আজম হাইস্কুল এন্ড কলেজ</h5>
               <div>
                 <div className="p-4 overflow-y-auto max-h-[80vh] lg:max-h-[40vh] content">

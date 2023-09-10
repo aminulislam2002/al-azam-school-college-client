@@ -1,11 +1,11 @@
 import { MdEmail, MdLocationOn, MdOutlineFacebook } from "react-icons/md";
 import { AiFillInstagram, AiFillTwitterCircle, AiFillYoutube } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/image/madrasah-logo.png";
 import { IoMdCall } from "react-icons/io";
 import { IoCallSharp } from "react-icons/io5";
 
-import futureGenMediaLogo from "../../../assets/photogallery/FutureGen_Media_Agency-removebg-preview.png";
+import instituteLogo from "../../../assets/image/logo/instituteLogo.png";
+import futureGenMediaLogo from "../../../assets/image/logo/futureGenAgencyLogo.png";
 
 const MainFooter = () => {
   return (
@@ -15,7 +15,7 @@ const MainFooter = () => {
         <div className="grid grid-cols-12">
           {/* Left Section */}
           <div className="col-span-3 p-6">
-            <img className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto" src={logo} alt="Madrasah Logo" />
+            <img className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto" src={instituteLogo} alt="Institute Logo" />
             <p className="text-lg font-semibold text-green-500 text-center mt-4">Al-Azam High School and College</p>
             <div className="mt-2">
               <IoMdCall className="w-4 h-4 text-green-500 inline-block"></IoMdCall>{" "}
@@ -97,7 +97,7 @@ const MainFooter = () => {
       {/* Footer for Mobile and Tablet */}
       <footer className="text-white bg-blue-950 lg:hidden">
         <div className="p-6">
-          <img className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto" src={logo} alt="Madrasah Logo" />
+          <img className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto" src={instituteLogo} alt="Institute Logo" />
           <p className="text-lg font-semibold text-green-500 text-center mt-4">Al-Azam High School and College</p>
           <div className="mt-2">
             <IoMdCall className="w-4 h-4 text-green-500 inline-block"></IoMdCall>{" "}
@@ -178,7 +178,11 @@ const MainFooter = () => {
       {/* Developed By Footer Section */}
       <footer className="bg-blue-950 text-black py-4 text-center">
         <div>
-          <img src={futureGenMediaLogo} alt="FutureGen Media Logo" className="w-16 h-16 lg:w-20 lg:h-20 mx-auto rounded-full" />
+          <img
+            src={futureGenMediaLogo}
+            alt="FutureGen Media Logo"
+            className="w-16 h-16 lg:w-20 lg:h-20 mx-auto rounded-full"
+          />
         </div>
         <div className="text-sm">
           <div className="font-semibold text-lg text-white">Developed By</div>

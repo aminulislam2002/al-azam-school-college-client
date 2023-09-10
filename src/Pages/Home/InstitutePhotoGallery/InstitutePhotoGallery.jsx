@@ -11,20 +11,23 @@ import "./InstitutePhotoGallery.css";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
 
-import photo1 from "../../../assets/photogallery/image1.jpg";
-import photo2 from "../../../assets/photogallery/image2.jpg";
-import photo3 from "../../../assets/photogallery/image3.jpg";
-import photo4 from "../../../assets/photogallery/image4.jpg";
-import photo5 from "../../../assets/photogallery/image5.jpg";
-import photo6 from "../../../assets/photogallery/image14.jpg";
-import photo7 from "../../../assets/photogallery/image6.jpg";
-import photo8 from "../../../assets/photogallery/image7.jpg";
-import photo9 from "../../../assets/photogallery/image8.jpg";
-import photo10 from "../../../assets/photogallery/image9.jpg";
-import photo11 from "../../../assets/photogallery/image10.jpg";
-import photo12 from "../../../assets/photogallery/image11.jpg";
-import photo13 from "../../../assets/photogallery/image12.jpg";
-import photo14 from "../../../assets/photogallery/image13.jpg";
+import photo1 from "../../../assets/image/gallery/image1.jpg";
+import photo2 from "../../../assets/image/gallery/image1.jpg";
+import photo3 from "../../../assets/image/gallery/image1.jpg";
+import photo4 from "../../../assets/image/gallery/image1.jpg";
+import photo5 from "../../../assets/image/gallery/image1.jpg";
+import photo6 from "../../../assets/image/gallery/image1.jpg";
+import photo7 from "../../../assets/image/gallery/image1.jpg";
+import photo8 from "../../../assets/image/gallery/image1.jpg";
+import photo9 from "../../../assets/image/gallery/image1.jpg";
+import photo10 from "../../../assets/image/gallery/image1.jpg";
+import photo11 from "../../../assets/image/gallery/image1.jpg";
+import photo12 from "../../../assets/image/gallery/image1.jpg";
+import photo13 from "../../../assets/image/gallery/image1.jpg";
+import photo14 from "../../../assets/image/gallery/image1.jpg";
+import photo15 from "../../../assets/image/gallery/image1.jpg";
+import photo16 from "../../../assets/image/gallery/image1.jpg";
+import photo17 from "../../../assets/image/gallery/image1.jpg";
 
 const MadrasahPhotoGallery = () => {
   return (
@@ -91,6 +94,15 @@ const MadrasahPhotoGallery = () => {
           </SwiperSlide>
           <SwiperSlide>
             <img src={photo14} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={photo15} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={photo16} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={photo17} />
           </SwiperSlide>
         </Swiper>
       </>

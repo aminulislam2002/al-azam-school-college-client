@@ -5,8 +5,8 @@ import "./NavBar.css";
 
 import { useEffect, useState } from "react";
 
-import logo from "../../../assets/image/madrasah-logo.png";
-import govtLogo from "../../../assets/photogallery/govmentlogo-removebg-preview.png"
+import instituteLogo from "../../../assets/image/logo/instituteLogo.png";
+import govtLogo from "../../../assets/image/logo/govtLogo.png";
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -446,7 +446,7 @@ const NavBar = () => {
             </ul>
           </div>
           <div className="flex">
-            <img className="w-10 h-10" src={logo} alt="Institute Logo" />
+            <img className="w-10 h-10" src={instituteLogo} alt="Institute Logo" />
             <img className="w-10 h-10" src={govtLogo} alt="Government Logo" />
           </div>
         </div>
