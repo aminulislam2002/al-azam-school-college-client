@@ -3,12 +3,15 @@ import { AiFillInstagram, AiFillTwitterCircle, AiFillYoutube } from "react-icons
 import { Link } from "react-router-dom";
 import logo from "../../../assets/image/madrasah-logo.png";
 import { IoMdCall } from "react-icons/io";
+import { IoCallSharp } from "react-icons/io5";
+
+import futureGenMediaLogo from "../../../assets/photogallery/FutureGen_Media_Agency-removebg-preview.png";
 
 const MainFooter = () => {
   return (
     <div>
       {/* Footer for Large Screens */}
-      <footer className="text-black lg:pt-20 pb-10 bg-gray-300 hidden lg:block">
+      <footer className="text-white lg:pt-20 pb-10 bg-blue-950 hidden lg:block">
         <div className="grid grid-cols-12">
           {/* Left Section */}
           <div className="col-span-3 p-6">
@@ -92,7 +95,7 @@ const MainFooter = () => {
       </footer>
 
       {/* Footer for Mobile and Tablet */}
-      <footer className="text-black lg:hidden">
+      <footer className="text-white lg:hidden">
         <div className="p-6">
           <img className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto" src={logo} alt="Madrasah Logo" />
           <p className="text-lg font-semibold text-green-500 text-center mt-4">Al-Azam High School and College</p>
@@ -169,6 +172,30 @@ const MainFooter = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </footer>
+
+      {/* Developed By Footer Section */}
+      <footer className="bg-blue-950 text-black py-4 text-center">
+        <div>
+          <img src={futureGenMediaLogo} alt="FutureGen Media Logo" className="w-16 h-16 lg:w-20 lg:h-20 mx-auto rounded-full" />
+        </div>
+        <div className="text-sm">
+          <div className="font-semibold text-lg text-white">Developed By</div>
+          <div className="text-green-500 text-2xl lg:text-3xl font-bold">
+            <span className="bg-gradient-to-r from-red-400 to-yellow-500 text-transparent bg-clip-text">
+              FutureGen Media Agency
+            </span>
+          </div>
+        </div>
+        <div>
+          <div className="font-semibold text-lg text-white">
+            <span>
+              <IoCallSharp className="inline-block w-5 h-5 text-green-500 mr-1" />
+            </span>
+            Helpline Number
+          </div>
+          <div className="text-green-500">09611-461888</div>
         </div>
       </footer>
 
