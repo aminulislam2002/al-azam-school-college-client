@@ -146,19 +146,6 @@ const UpdateStudentProfile = () => {
             />
           </div>
 
-          {/* Edit your institute filed */}
-          <div>
-            <label className="block text-gray-700 text-sm font-bold my-2">Edit Your Institute Name:</label>
-            <input
-              type="text"
-              {...register("instituteName")}
-              name="instituteName"
-              placeholder="Enter your institute name"
-              defaultValue={user?.instituteName}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-
           {/* Edit your class filed */}
           <div>
             <label className="block text-gray-700 text-sm font-bold my-2">Edit Your class:</label>
