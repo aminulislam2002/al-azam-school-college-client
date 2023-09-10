@@ -8,11 +8,13 @@ import "swiper/css/navigation";
 
 import "./TopSlider.css";
 
-import slider1 from "../../../assets/image/slider-1.jpg";
-import slider2 from "../../../assets/image/slider-2.jpg";
-import slider3 from "../../../assets/image/slider-3.jpg";
-import slider4 from "../../../assets/image/slider-4.jpg";
-import slider5 from "../../../assets/image/slider-5.jpg";
+import slider1 from "../../../assets/photogallery/image1.jpg";
+import slider2 from "../../../assets/photogallery/image2.jpg";
+import slider3 from "../../../assets/photogallery/image3.jpg";
+import slider4 from "../../../assets/photogallery/image4.jpg";
+import slider5 from "../../../assets/photogallery/image5.jpg";
+import slider6 from "../../../assets/photogallery/forslide.jpg";
+import slider7 from "../../../assets/photogallery/forslide2.jpg";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
@@ -49,19 +51,60 @@ const TopSlider = () => {
                   className="mySwiper"
                 >
                   <SwiperSlide>
-                    <img src={slider1} className="bg-center bg-cover" alt="Slider Image" style={{ height: "130vh" }} />
+                    <img
+                      src={slider1}
+                      className="bg-center bg-cover w-full h-auto"
+                      alt="Slider Image"
+                      style={{ height: "130vh" }}
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img src={slider2} className="bg-center bg-cover" alt="Slider Image" style={{ height: "130vh" }} />
+                    <img
+                      src={slider2}
+                      className="bg-center bg-cover w-full h-auto"
+                      alt="Slider Image"
+                      style={{ height: "130vh" }}
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img src={slider3} className="bg-center bg-cover" alt="Slider Image" style={{ height: "130vh" }} />
+                    <img
+                      src={slider3}
+                      className="bg-center bg-cover w-full h-auto"
+                      alt="Slider Image"
+                      style={{ height: "130vh" }}
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img src={slider4} className="bg-center bg-cover" alt="Slider Image" style={{ height: "130vh" }} />
+                    <img
+                      src={slider4}
+                      className="bg-center bg-cover w-full h-auto"
+                      alt="Slider Image"
+                      style={{ height: "130vh" }}
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img src={slider5} className="bg-center bg-cover" alt="Slider Image" style={{ height: "130vh" }} />
+                    <img
+                      src={slider5}
+                      className="bg-center bg-cover w-full h-auto"
+                      alt="Slider Image"
+                      style={{ height: "130vh" }}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src={slider6}
+                      className="bg-center bg-cover w-full h-auto"
+                      alt="Slider Image"
+                      style={{ height: "130vh" }}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src={slider7}
+                      className="bg-center bg-cover w-full h-auto"
+                      alt="Slider Image"
+                      style={{ height: "130vh" }}
+                    />
                   </SwiperSlide>
                 </Swiper>
               </>

@@ -9,13 +9,14 @@ import TeachersSection from "../TeachersSection/TeachersSection";
 import TopSlider from "../TopSlider/TopSlider";
 import VideoWithInstitute from "../VideoWithInstitute/VideoWithInstitute";
 import InstituteInfoAndNotice from "../InstituteInfoAndNotice/InstituteInfoAndNotice";
+import InstituteInformation from "../InstituteInformation/InstituteInformation";
 
 const Home = () => {
   return (
     <div className="bg-gray-100">
       <NoticeHeadline></NoticeHeadline>
       <TopSlider></TopSlider>
-      <InstituteInfoAndNotice></InstituteInfoAndNotice>
+      <InstituteInformation></InstituteInformation>
       <AboutInstitute></AboutInstitute>
       <TeachersSection></TeachersSection>
       <InstituteInfoAndNotice></InstituteInfoAndNotice>

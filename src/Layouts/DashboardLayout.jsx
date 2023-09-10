@@ -191,7 +191,7 @@ const DashboardLayout = () => {
                 <div className="flex justify-center items-center">
                   <button
                     onClick={() => handleLogOut()}
-                    className="text-white hover:text-black hover:bg-white py-1 rounded-lg"
+                    className="text-white hover:text-black bg-red-500 hover:bg-white py-1 rounded-lg px-1"
                   >
                     Logout Account!
                   </button>
@@ -199,7 +199,7 @@ const DashboardLayout = () => {
                 <div className="flex justify-center items-center">
                   <button
                     onClick={() => handleDeleteUserFromFirebaseAndDatabase(currentUser._id)}
-                    className="text-white hover:text-black hover:bg-white py-1 rounded-lg"
+                    className="text-white hover:text-black bg-yellow-500 hover:bg-white py-1 rounded-lg px-1"
                   >
                     Delete Account!
                   </button>

@@ -1,4 +1,4 @@
-const MadrasahInformation = () => {
+const InstituteInformation = () => {
   return (
     <div className="grid grid-cols-4">
       <div className="bg-green-800 py-1 md:p-2">
@@ -6,7 +6,7 @@ const MadrasahInformation = () => {
         <h1 className="text-sm md:text-lg text-white text-center">130199</h1>
       </div>
       <div className="bg-green-700 py-1 md:p-2">
-        <h1 className="text-sm md:text-xl text-white text-center lg:uppercase">School Code</h1>
+        <h1 className="text-sm md:text-xl text-white text-center lg:uppercase">School Code</h1> 
         <h1 className="text-sm md:text-lg text-white text-center">1417</h1>
       </div>
       <div className="bg-green-800 py-1 md:p-2">
@@ -21,4 +21,4 @@ const MadrasahInformation = () => {
   );
 };
 
-export default MadrasahInformation;
+export default InstituteInformation;
