@@ -6,6 +6,7 @@ import "./NavBar.css";
 import { useEffect, useState } from "react";
 
 import logo from "../../../assets/image/madrasah-logo.png";
+import govtLogo from "../../../assets/photogallery/govmentlogo-removebg-preview.png"
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -444,8 +445,9 @@ const NavBar = () => {
               {navOptions}
             </ul>
           </div>
-          <div>
-            <img className="w-10 h-10" src={logo} alt="" />
+          <div className="flex">
+            <img className="w-10 h-10" src={logo} alt="Institute Logo" />
+            <img className="w-10 h-10" src={govtLogo} alt="Government Logo" />
           </div>
         </div>
         <div className="navbar-center hidden lg:flex justify-center items-center lg:w-8/12">

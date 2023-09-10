@@ -95,7 +95,7 @@ const MainFooter = () => {
       </footer>
 
       {/* Footer for Mobile and Tablet */}
-      <footer className="text-white lg:hidden">
+      <footer className="text-white bg-blue-950 lg:hidden">
         <div className="p-6">
           <img className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto" src={logo} alt="Madrasah Logo" />
           <p className="text-lg font-semibold text-green-500 text-center mt-4">Al-Azam High School and College</p>
