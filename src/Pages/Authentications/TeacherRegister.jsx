@@ -162,21 +162,7 @@ const TeacherRegister = () => {
 
   return (
     <div className="relative h-screen">
-      <div
-        className="absolute inset-0 bg-no-repeat max-h-screen bg-center"
-        style={{
-          backgroundImage:
-            "url(https://img.freepik.com/free-vector/isometric-data-protection-concept-with-parent-child-login-window-lock-3d_1284-63713.jpg?size=626&ext=jpg&uid=R93922666&ga=GA1.2.235952763.1681062999&semt=sph)",
-        }}
-      ></div>
-
-      <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="flex justify-center items-center order-2 md:order-1">
-          <div className="w-full max-w-md bg-gray-200 rounded shadow-md px-8 pt-4 pb-6">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores sint quae fugiat, quos repudiandae labore nihil
-            cum molestias esse nostrum illum quibusdam quas fuga accusamus tenetur, odit non sunt natus?
-          </div>
-        </div>
+      <div className="absolute inset-0 flex justify-center items-center">
         <div className="flex justify-center items-center order-1 md:order-2">
           <div className="w-full max-w-md bg-gray-200 rounded shadow-md px-8 pt-2 pb-4">
             <h1 className="text-xl font-bold text-center mb-1">Sign up</h1>
@@ -295,7 +281,7 @@ const TeacherRegister = () => {
             {/* Sign up route */}
             <div className="py-2 text-sm flex justify-center items-center gap-1">
               <p className="text-center text-gray-500">Already have an account?</p>
-              <Link to="/login-register/login" className="text-blue-500">
+              <Link to="/authentication/login" className="text-blue-500">
                 Sign in
               </Link>
             </div>
