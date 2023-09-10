@@ -1,4 +1,4 @@
-import image from "../../../assets/image/overview.jpg";
+import image from "../../../assets/photogallery/collage1.jpg";
 import principal from "../../../assets/image/principal.jpg";
 
 const AboutInstitute = () => {
