@@ -12,22 +12,22 @@ import "./InstitutePhotoGallery.css";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 
 import photo1 from "../../../assets/image/gallery/image1.jpg";
-import photo2 from "../../../assets/image/gallery/image1.jpg";
-import photo3 from "../../../assets/image/gallery/image1.jpg";
-import photo4 from "../../../assets/image/gallery/image1.jpg";
-import photo5 from "../../../assets/image/gallery/image1.jpg";
-import photo6 from "../../../assets/image/gallery/image1.jpg";
-import photo7 from "../../../assets/image/gallery/image1.jpg";
-import photo8 from "../../../assets/image/gallery/image1.jpg";
-import photo9 from "../../../assets/image/gallery/image1.jpg";
-import photo10 from "../../../assets/image/gallery/image1.jpg";
-import photo11 from "../../../assets/image/gallery/image1.jpg";
-import photo12 from "../../../assets/image/gallery/image1.jpg";
-import photo13 from "../../../assets/image/gallery/image1.jpg";
-import photo14 from "../../../assets/image/gallery/image1.jpg";
-import photo15 from "../../../assets/image/gallery/image1.jpg";
-import photo16 from "../../../assets/image/gallery/image1.jpg";
-import photo17 from "../../../assets/image/gallery/image1.jpg";
+import photo2 from "../../../assets/image/gallery/image2.jpg";
+import photo3 from "../../../assets/image/gallery/image3.jpg";
+import photo4 from "../../../assets/image/gallery/image4.jpg";
+import photo5 from "../../../assets/image/gallery/image5.jpg";
+import photo6 from "../../../assets/image/gallery/image6.jpg";
+import photo7 from "../../../assets/image/gallery/image7.jpg";
+import photo8 from "../../../assets/image/gallery/image8.jpg";
+import photo9 from "../../../assets/image/gallery/image9.jpg";
+import photo10 from "../../../assets/image/gallery/image10.jpg";
+import photo11 from "../../../assets/image/gallery/image11.jpg";
+import photo12 from "../../../assets/image/gallery/image12.jpg";
+import photo13 from "../../../assets/image/gallery/image13.jpg";
+import photo14 from "../../../assets/image/gallery/image14.jpg";
+import photo15 from "../../../assets/image/gallery/image15.jpg";
+import photo16 from "../../../assets/image/gallery/image16.jpg";
+import photo17 from "../../../assets/image/gallery/image17.jpg";
 
 const MadrasahPhotoGallery = () => {
   return (

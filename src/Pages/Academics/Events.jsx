@@ -1,4 +1,3 @@
-import React from "react";
 import event1 from "../../assets/image/event/event1.jpg"; // Import your event image
 // Import other event images as needed
 

@@ -46,7 +46,7 @@ const LocationAndAddress = () => {
               <div className="w-8/12 ml-2">বিশ্বনাথ</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">জেল</div>
+              <div className="w-3/12 font-semibold text-base">জেলা</div>
               <div className="w-1/12">:</div>
               <div className="w-8/12 ml-2">সিলেট</div>
             </div>

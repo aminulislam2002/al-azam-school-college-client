@@ -94,7 +94,7 @@ const InstituteInfoAndNotice = () => {
             {/* Services for students */}
             <div>
               <div className="bg-green-500 lg:px-5 py-4 mb-1">
-                <h1 className="lg:text-lg text-center text-white">ছাত্রদের জন্য সেবাসমূহ</h1>
+                <h1 className="lg:text-lg text-center text-white">ছাত্রদের জন্য সেবা</h1>
               </div>
               <div className="lg:flex gap-3">
                 <div className="flex justify-center items-start">
