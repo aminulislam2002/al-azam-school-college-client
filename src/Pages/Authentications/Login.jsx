@@ -40,6 +40,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 3000,
         });
+        navigate(from, { replace: true });
       });
   };
 
@@ -72,6 +73,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 3000,
         });
+        navigate(from, { replace: true });
       });
   };
 

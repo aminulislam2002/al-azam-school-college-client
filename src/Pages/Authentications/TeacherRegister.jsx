@@ -134,16 +134,18 @@ const TeacherRegister = () => {
                   showConfirmButton: false,
                   timer: 3000,
                 });
+                navigate("/");
               });
           })
           .catch((error) => {
             console.log(error);
             Swal.fire({
-              icon: "success",
+              icon: "warning",
               title: `${userData.name} Login Failed`,
               showConfirmButton: false,
               timer: 3000,
             });
+            navigate("/");
           });
       }
     } else {

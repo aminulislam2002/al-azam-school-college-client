@@ -394,7 +394,7 @@ const NavBar = () => {
         }}
       >
         <div className="flex justify-start items-center">
-          <p>Others</p>
+          <p>Links</p>
           <span className={`${isOthersDropdownOpen ? "rotate-180" : "rotate-0"}`}>
             <AiOutlineDown />
           </span>

@@ -52,6 +52,7 @@ const StudentRegister = () => {
           showConfirmButton: false,
           timer: 3000,
         });
+        navigate(from, { replace: true });
       });
   };
 
@@ -106,6 +107,7 @@ const StudentRegister = () => {
                 showConfirmButton: false,
                 timer: 3000,
               });
+              navigate("/");
             });
         })
         .catch((error) => {
@@ -116,6 +118,7 @@ const StudentRegister = () => {
             showConfirmButton: false,
             timer: 3000,
           });
+          navigate("/");
         });
     }
   };
