@@ -20,6 +20,7 @@ import UpdateNotice from "../Pages/Dashboard/Admin/ManageNotices/UpdateNotice";
 import ForgotPasswordField from "../Pages/Authentications/ForgotPasswordField";
 import Events from "../Pages/Academics/Events";
 import OnlineApplyForm from "../Pages/OnlineApplyForm/OnlineApplyForm";
+import ManageApplications from "../Pages/Dashboard/Admin/ManageApplications/ManageApplications";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "manageNotices",
         element: <AllNotices></AllNotices>,
+      },
+      {
+        path: "manageApplications",
+        element: <ManageApplications></ManageApplications>,
       },
       {
         path: "addNotice",

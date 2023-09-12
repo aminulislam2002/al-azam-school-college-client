@@ -13,7 +13,7 @@ const DashboardLayout = () => {
   const [currentUser, setCurrentUser] = useState({});
   const { user, logOut, deleteAnUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log(currentUser);
+  // console.log(currentUser);
 
   useEffect(() => {
     const cu = async () => {
@@ -111,22 +111,27 @@ const DashboardLayout = () => {
   const adminOptions = (
     <>
       <ActiveLink to="/dashboard/manageNotices">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+        <li className="mb-2 lg:px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Notices
         </li>
       </ActiveLink>
+      <ActiveLink to="/dashboard/manageApplications">
+        <li className="mb-2 lg:px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Manage Applications
+        </li>
+      </ActiveLink>
       <ActiveLink to="/dashboard/manageAdmins">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+        <li className="mb-2 lg:px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Admins
         </li>
       </ActiveLink>
       <ActiveLink to="/dashboard/manageTeachers">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+        <li className="mb-2 lg:px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Teachers
         </li>
       </ActiveLink>
       <ActiveLink to="/dashboard/manageStudents">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+        <li className="mb-2 lg:px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           Manage Students
         </li>
       </ActiveLink>
@@ -136,7 +141,7 @@ const DashboardLayout = () => {
   const teacherOptions = (
     <>
       <ActiveLink to="/dashboard/">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+        <li className="mb-2 lg:px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           {/* This is Teacher */}
         </li>
       </ActiveLink>
@@ -146,7 +151,7 @@ const DashboardLayout = () => {
   const studentOptions = (
     <>
       <ActiveLink to="/dashboard/">
-        <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+        <li className="mb-2 lg:px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
           {/* This is Student */}
         </li>
       </ActiveLink>
@@ -209,7 +214,7 @@ const DashboardLayout = () => {
             <div className="flex-none hidden lg:block mt-4">
               <ul className="menu-vertical">
                 <ActiveLink to="/dashboard/profile">
-                  <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+                  <li className="mb-2 lg:px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
                     Profile
                   </li>
                 </ActiveLink>
@@ -229,7 +234,7 @@ const DashboardLayout = () => {
           <label htmlFor="my-drawer-3" className="drawer-overlay overflow-x-auto max-h-[100vh]"></label>
           <ul className="p-4 w-52 bg-blue-900 overflow-y-auto">
             <ActiveLink to="/dashboard/profile">
-              <li className="mb-2 px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+              <li className="mb-2 lg:px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
                 Profile
               </li>
             </ActiveLink>
