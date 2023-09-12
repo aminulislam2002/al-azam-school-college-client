@@ -90,7 +90,7 @@ const ManageTeachers = () => {
               {/* Row */}
               {allTeachersData.map((teacher, index) => (
                 <tr key={teacher._id}>
-                  <td>{index}</td>
+                  <td>{index +1}</td>
                   <td>{teacher.name}</td>
                   <td>{teacher.email}</td>
                   <td>

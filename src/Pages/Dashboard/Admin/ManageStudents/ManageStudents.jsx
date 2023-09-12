@@ -64,7 +64,7 @@ const ManageStudents = () => {
           <tbody>
             {allStudentsData.map((student, index) => (
               <tr key={student._id}>
-                <th>{index}</th>
+                <th>{index + 1}</th>
                 <td>{student?.name}</td>
                 <td>{student?.email}</td>
                 <td>{student?.fatherName}</td>

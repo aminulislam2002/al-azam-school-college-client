@@ -90,7 +90,7 @@ const ManageAdmins = () => {
               {/* Row */}
               {allAdminsData.map((admin, index) => (
                 <tr key={admin._id}>
-                  <td>{index}</td>
+                  <td>{index + 1}</td>
                   <td>{admin.name}</td>
                   <td>{admin.email}</td>
                   <td>

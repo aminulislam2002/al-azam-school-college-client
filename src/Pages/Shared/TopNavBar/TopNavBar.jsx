@@ -57,7 +57,9 @@ const TopNavBar = () => {
         <div className="flex justify-between">
           <div className="flex justify-end items-center gap-1 md:gap-5">
             <IoLogoWhatsapp></IoLogoWhatsapp>
-            <FaFacebook></FaFacebook>
+            <Link target="_blank" to="https://www.facebook.com/profile.php?id=100085129436280&mibextid=ZbWKwL">
+              <FaFacebook></FaFacebook>
+            </Link>
             <AiFillInstagram></AiFillInstagram>
             <AiFillTwitterCircle></AiFillTwitterCircle>
             <BsYoutube></BsYoutube>

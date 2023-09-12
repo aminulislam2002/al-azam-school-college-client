@@ -15,7 +15,11 @@ const MainFooter = () => {
         <div className="grid grid-cols-12">
           {/* Left Section */}
           <div className="col-span-3 p-6">
-            <img className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto" src={instituteLogo} alt="Institute Logo" />
+            <img
+              className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto"
+              src={instituteLogo}
+              alt="Institute Logo"
+            />
             <p className="text-lg font-semibold text-green-500 text-center mt-4">Al-Azam High School and College</p>
             <div className="mt-2">
               <IoMdCall className="w-4 h-4 text-green-500 inline-block"></IoMdCall>{" "}
@@ -97,7 +101,11 @@ const MainFooter = () => {
       {/* Footer for Mobile and Tablet */}
       <footer className="text-white bg-blue-950 lg:hidden">
         <div className="p-6">
-          <img className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto" src={instituteLogo} alt="Institute Logo" />
+          <img
+            className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto"
+            src={instituteLogo}
+            alt="Institute Logo"
+          />
           <p className="text-lg font-semibold text-green-500 text-center mt-4">Al-Azam High School and College</p>
           <div className="mt-2">
             <IoMdCall className="w-4 h-4 text-green-500 inline-block"></IoMdCall>{" "}
@@ -177,6 +185,7 @@ const MainFooter = () => {
 
       {/* Developed By Footer Section */}
       <footer className="bg-blue-950 text-black py-4 text-center">
+        <div className="font-semibold text-lg text-white">Developed By</div>
         <div>
           <img
             src={futureGenMediaLogo}
@@ -185,7 +194,6 @@ const MainFooter = () => {
           />
         </div>
         <div className="text-sm">
-          <div className="font-semibold text-lg text-white">Developed By</div>
           <div className="text-green-500 text-2xl lg:text-3xl font-bold">
             <span className="bg-gradient-to-r from-red-400 to-yellow-500 text-transparent bg-clip-text">
               FutureGen Media Agency
