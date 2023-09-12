@@ -42,6 +42,44 @@ const ManageApplications = () => {
       });
   };
 
+  const handleMakeApplicationStatus = (apply, status) => {
+    fetch(`http://localhost:5000/applicationStatusUpdate/${apply._id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ status }),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to update class status");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged === true) {
+          const updatedData = allApplicationsData.map((s) => (s._id === apply._id ? { ...s, status } : s));
+          setAllApplicationsData(updatedData);
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${apply.name}'s status is now ${status}!`,
+            showConfirmButton: false,
+            timer: 5000,
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to update class status:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      });
+  };
+
   return (
     <div>
       <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500">
@@ -53,6 +91,7 @@ const ManageApplications = () => {
           <thead>
             <tr>
               <th>#</th>
+              <th>Status</th>
               <th>Name</th>
               <th>P Class</th>
               <th>GPA</th>
@@ -60,8 +99,8 @@ const ManageApplications = () => {
               <th>A Class</th>
               <th>M Number</th>
               <th>Details</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Set Status</th>
+              <th>D</th>
             </tr>
           </thead>
           <tbody>
@@ -69,6 +108,17 @@ const ManageApplications = () => {
               <tr key={apply._id}>
                 <th>{index + 1}</th>
                 <td>{apply?.name}</td>
+                <td>
+                  {apply.status === "approve" ? (
+                    <>
+                      <span className="bg-blue-500 text-white px-1 rounded-full">{apply.status}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="bg-red-500 text-white px-1 rounded-full">{apply.status}</span>
+                    </>
+                  )}
+                </td>
                 <td>{apply?.previousClass?.value}</td>
                 <td>{apply?.gpa}</td>
                 <td>{apply?.passingYear}</td>
@@ -81,8 +131,19 @@ const ManageApplications = () => {
                 </td>
                 <td>
                   <div>
-                    <button className="text-white w-1/2 bg-green-500">Approve</button>
-                    <button className="text-white w-1/2 bg-red-500">Deny</button>
+                    <button
+                      onClick={() => handleMakeApplicationStatus(apply, "deny")}
+                      className="text-white w-1/2 bg-red-500"
+                    >
+                      Deny
+                    </button>
+
+                    <button
+                      onClick={() => handleMakeApplicationStatus(apply, "approve")}
+                      className="text-white w-1/2 bg-green-500"
+                    >
+                      Approve
+                    </button>
                   </div>
                 </td>
                 <td>
