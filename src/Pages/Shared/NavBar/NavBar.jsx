@@ -458,7 +458,9 @@ const NavBar = () => {
           <ul className="flex justify-center items-center gap-8 menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end flex justify-end lg:justify-center items-center lg:w-2/12">
-          <button className="animated-button">Online Apply</button>
+          <Link to="/onlineApplyForm">
+            <button className="animated-button">Online Apply</button>
+          </Link>
         </div>
       </div>
     </>

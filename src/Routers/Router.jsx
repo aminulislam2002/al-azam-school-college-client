@@ -19,6 +19,7 @@ import AddNotice from "../Pages/Dashboard/Admin/ManageNotices/AddNotice";
 import UpdateNotice from "../Pages/Dashboard/Admin/ManageNotices/UpdateNotice";
 import ForgotPasswordField from "../Pages/Authentications/ForgotPasswordField";
 import Events from "../Pages/Academics/Events";
+import OnlineApplyForm from "../Pages/OnlineApplyForm/OnlineApplyForm";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "onlineApplyForm",
+        element: <OnlineApplyForm></OnlineApplyForm>,
       },
       {
         path: "events",
