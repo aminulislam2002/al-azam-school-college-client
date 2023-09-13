@@ -202,7 +202,7 @@ const InstituteInfoAndNotice = () => {
               {allNotices.map((notice) => (
                 <div key={notice?._id}>
                   <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
-                    <Link to={notice?.link} className="hover:underline hover:text-red-500">
+                    <Link to={notice?._id} className="hover:underline hover:text-red-500">
                       {notice?.noticeHeadline}
                     </Link>
                     <p className="text-sm mt-2">
