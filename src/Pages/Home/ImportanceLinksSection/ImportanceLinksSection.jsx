@@ -67,32 +67,32 @@ const ImportanceLinksSection = () => {
           <div className="shadow-emerald-300 shadow-lg py-3">
             <ul>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://dshe.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   মাধ্যমিক ও উচ্চ শিক্ষা অধিদপ্তর
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
-                  বাংলাদেশ কারিগরি শিক্ষা বোর্ড
+                <Link target="_blank" to="/" className="hover:underline hover:text-red-500 px-5">
+                  N/A
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
-                  বরিশাল শিক্ষা বোর্ড
+                <Link target="_blank" to="https://sylhetboard.gov.bd/" className="hover:underline hover:text-red-500 px-5">
+                  সিলেট শিক্ষা বোর্ড
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://bmeb.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   মাদ্রাসা শিক্ষা বোর্ড
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
-                  জাতীয় বিশ্ব বিদ্যালয়
+                <Link target="_blank" to="https://bteb.gov.bd/" className="hover:underline hover:text-red-500 px-5">
+                  বাংলাদেশ কারিগরি শিক্ষা বোর্ড
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://www.nu.ac.bd/" className="hover:underline hover:text-red-500 px-5">
                   জাতীয় বিশ্ব বিদ্যালয়
                 </Link>
               </li>
@@ -106,34 +106,40 @@ const ImportanceLinksSection = () => {
           <div className="shadow-emerald-300 shadow-lg py-3">
             <ul>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
-                  ই.এম.আই.এস সেল
-                </Link>
-              </li>
-
-              <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://moedu.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   শিক্ষা মন্ত্রনালয়
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link
+                  target="_blank"
+                  to="https://dhakaeducationboard.gov.bd/"
+                  className="hover:underline hover:text-red-500 px-5"
+                >
+                  ঢাকা শিক্ষা বোর্ড
+                </Link>
+              </li>
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link
+                  target="_blank"
+                  to="https://barisalboard.portal.gov.bd/"
+                  className="hover:underline hover:text-red-500 px-5"
+                >
+                  বরিশাল শিক্ষা বোর্ড
+                </Link>
+              </li>
+              <li className="mb-3 hover:bg-green-500 border-b">
+                <Link target="_blank" to="https://teachers.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   শিক্ষক বাতায়ন
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="/" className="hover:underline hover:text-red-500 px-5">
                   বাংলা সংবাদ পত্র
                 </Link>
               </li>
-
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
-                  ব্যানবেইস
-                </Link>
-              </li>
-              <li className="mb-3 hover:bg-green-500 border-b">
-                <Link to="/" className="hover:underline hover:text-red-500 px-5">
+                <Link target="_blank" to="https://banbeis.gov.bd/" className="hover:underline hover:text-red-500 px-5">
                   ব্যানবেইস
                 </Link>
               </li>

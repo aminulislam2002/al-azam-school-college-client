@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+import { PiArrowElbowRightBold } from "react-icons/pi";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ManageApplications = () => {
   const [allApplicationsData, setAllApplicationsData] = useState([]);
@@ -98,8 +101,8 @@ const ManageApplications = () => {
           <thead>
             <tr>
               <th>#</th>
-              <th>Status</th>
               <th>Name</th>
+              <th>Status</th>
               <th>P Class</th>
               <th>GPA</th>
               <th>P Year</th>
@@ -118,11 +121,11 @@ const ManageApplications = () => {
                 <td>
                   {apply.status === "approve" ? (
                     <>
-                      <span className="bg-blue-500 text-white px-1 rounded-full">{apply.status}</span>
+                      <PiArrowElbowRightBold className="w-5 h-5 text-green-500"></PiArrowElbowRightBold>
                     </>
                   ) : (
                     <>
-                      <span className="bg-red-500 text-white px-1 rounded-full">{apply.status}</span>
+                      <AiOutlineClose className="w-5 h-5 text-red-500"></AiOutlineClose>
                     </>
                   )}
                 </td>
@@ -133,7 +136,9 @@ const ManageApplications = () => {
                 <td>{apply?.mobileNumber}</td>
                 <td>
                   <div>
-                    <button className="text-white w-full bg-blue-500">View</button>
+                    <Link to={`application-details/${apply?._id}`}>
+                      <button className="text-white w-full bg-blue-500">View</button>
+                    </Link>
                   </div>
                 </td>
                 <td>

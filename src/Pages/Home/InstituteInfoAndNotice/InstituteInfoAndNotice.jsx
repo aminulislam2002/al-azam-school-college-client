@@ -12,7 +12,8 @@ const InstituteInfoAndNotice = () => {
     const notices = async () => {
       const res = await fetch("http://localhost:5000/getAllNotices");
       const data = await res.json();
-      setAllNotices(data);
+      const sortedNotices = data.sort((a, b) => new Date(b.publishedDateTime) - new Date(a.publishedDateTime));
+      setAllNotices(sortedNotices);
     };
     notices();
   }, []);
@@ -202,7 +203,7 @@ const InstituteInfoAndNotice = () => {
               {allNotices.map((notice) => (
                 <div key={notice?._id}>
                   <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
-                    <Link to={notice?._id} className="hover:underline hover:text-red-500">
+                    <Link to={`/notice/${notice?._id}`} className="hover:underline hover:text-red-500">
                       {notice?.noticeHeadline}
                     </Link>
                     <p className="text-sm mt-2">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const NoticeHeadline = () => {
   const [noticesData, setNoticesData] = useState([]);
@@ -7,7 +8,8 @@ const NoticeHeadline = () => {
     const notices = async () => {
       const res = await fetch("http://localhost:5000/getAllNotices");
       const data = await res.json();
-      setNoticesData(data);
+      const sortedNotices = data.sort((a, b) => new Date(b.publishedDateTime) - new Date(a.publishedDateTime));
+      setNoticesData(sortedNotices);
     };
     notices();
   }, []);
@@ -20,8 +22,8 @@ const NoticeHeadline = () => {
       <div className="bg-blue-600 w-9/12 md:w-10/12 lg:w-11/12 h-full flex justify-center items-center">
         <marquee className="text-sm lg:text-lg">
           {noticesData.map((notice) => (
-            <span key={notice._id} className="mr-4 lg:mr-10">
-              {notice.noticeHeadline}
+            <span key={notice?._id} className="mr-4 lg:mr-10 hover:text-red-500">
+              <Link to={`notice/${notice._id}`}>{notice?.noticeHeadline}</Link>
             </span>
           ))}
         </marquee>

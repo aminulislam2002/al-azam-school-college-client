@@ -12,7 +12,8 @@ const AllNotices = () => {
     const notices = async () => {
       const res = await fetch("http://localhost:5000/getAllNotices");
       const data = await res.json();
-      setAllNotices(data);
+      const sortedNotices = data.sort((a, b) => new Date(b.publishedDateTime) - new Date(a.publishedDateTime));
+      setAllNotices(sortedNotices);
     };
     notices();
   }, []);
@@ -68,7 +69,7 @@ const AllNotices = () => {
                     Published Date & Time: {notice.publishedDateTime.slice(8, 10)}-{notice.publishedDateTime.slice(5, 7)}-
                     {notice.publishedDateTime.slice(0, 4)} {notice.publishedDateTime.slice(11, 16)}
                   </p>
-                  <Link to={notice._id}>
+                  <Link to={`/notice/${notice._id}`}>
                     <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
                       Read More
                     </button>

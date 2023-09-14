@@ -244,20 +244,26 @@ const NavBar = () => {
         >
           {/* Dropdown content */}
           <ul>
-            <Link to="/students-results">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Result</li>
+            <Link to="/onlineApplyForm">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Six-06</li>
             </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Events</li>
+            <Link to="/onlineApplyForm">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Seven-07</li>
             </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">News</li>
+            <Link to="/onlineApplyForm">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Eight-08</li>
             </Link>
-            <Link to="/students-routines">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
+            <Link to="/onlineApplyForm">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Nine-09</li>
             </Link>
-            <Link to="/help-for-admission">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Help</li>
+            <Link to="/onlineApplyForm">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Ten-10</li>
+            </Link>
+            <Link to="/onlineApplyForm">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Eleven-11</li>
+            </Link>
+            <Link to="/onlineApplyForm">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Twelve-12</li>
             </Link>
           </ul>
         </div>
@@ -406,26 +412,17 @@ const NavBar = () => {
         >
           {/* Dropdown content */}
           <ul>
-            <Link to="/notice-board">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Notice Board</li>
+            <Link target="_blank" to="/notice-board">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">N/A</li>
             </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Student Protal</li>
+            <Link target="_blank" to="https://dshe.gov.bd/">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">মাধ্যমিক ও উচ্চ শিক্ষা অধিদপ্তর</li>
             </Link>
-            <Link to="/students-results">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Result</li>
+            <Link target="_blank" to="https://moedu.gov.bd/">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">শিক্ষা মন্ত্রনালয়</li>
             </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Events</li>
-            </Link>
-            <Link>
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">News</li>
-            </Link>
-            <Link to="/students-routines">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Students Routine</li>
-            </Link>
-            <Link to="/classes-syllabus">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Class Syllabus</li>
+            <Link target="_blank" to="https://sylhetboard.gov.bd/">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">সিলেট শিক্ষা বোর্ড</li>
             </Link>
           </ul>
         </div>

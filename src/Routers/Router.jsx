@@ -28,6 +28,8 @@ import StudentsRoutine from "../Pages/Students/StudentsRoutine";
 import ClassSyllabus from "../Pages/Students/ClassSyllabus";
 import ScienceLab from "../Pages/Facilities/ScienceLab";
 import ComputerLab from "../Pages/Facilities/ComputerLab";
+import ViewNotice from "../Pages/Home/InstituteInfoAndNotice/ViewNotice";
+import ApplicationDetails from "../Pages/Dashboard/Admin/ManageApplications/ApplicationDetails";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +76,11 @@ const router = createBrowserRouter([
         path: "computer-lab",
         element: <ComputerLab></ComputerLab>,
       },
+      {
+        path: "notice/:id",
+        element: <ViewNotice></ViewNotice>,
+        loader: ({ params }) => fetch(`http://localhost:5000/getNoticeById/${params.id}`),
+      },
     ],
   },
   {
@@ -110,6 +117,11 @@ const router = createBrowserRouter([
       {
         path: "manageApplications",
         element: <ManageApplications></ManageApplications>,
+      },
+      {
+        path: "manageApplications/application-details/:id",
+        element: <ApplicationDetails></ApplicationDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/getApplicationById/${params.id}`),
       },
       {
         path: "addNotice",
