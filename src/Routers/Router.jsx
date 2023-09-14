@@ -21,6 +21,13 @@ import ForgotPasswordField from "../Pages/Authentications/ForgotPasswordField";
 import Events from "../Pages/Academics/Events";
 import OnlineApplyForm from "../Pages/OnlineApplyForm/OnlineApplyForm";
 import ManageApplications from "../Pages/Dashboard/Admin/ManageApplications/ManageApplications";
+import News from "../Pages/Academics/News";
+import StudentProtocol from "../Pages/Academics/StudentProtocol";
+import InstituteInfoAndNotice from "../Pages/Home/InstituteInfoAndNotice/InstituteInfoAndNotice";
+import StudentsRoutine from "../Pages/Students/StudentsRoutine";
+import ClassSyllabus from "../Pages/Students/ClassSyllabus";
+import ScienceLab from "../Pages/Facilities/ScienceLab";
+import ComputerLab from "../Pages/Facilities/ComputerLab";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +45,34 @@ const router = createBrowserRouter([
       {
         path: "events",
         element: <Events></Events>,
+      },
+      {
+        path: "news",
+        element: <News></News>,
+      },
+      {
+        path: "student-protocol",
+        element: <StudentProtocol></StudentProtocol>,
+      },
+      {
+        path: "notice-board",
+        element: <InstituteInfoAndNotice></InstituteInfoAndNotice>,
+      },
+      {
+        path: "students-routines",
+        element: <StudentsRoutine></StudentsRoutine>,
+      },
+      {
+        path: "classes-syllabus",
+        element: <ClassSyllabus></ClassSyllabus>,
+      },
+      {
+        path: "science-lab",
+        element: <ScienceLab></ScienceLab>,
+      },
+      {
+        path: "computer-lab",
+        element: <ComputerLab></ComputerLab>,
       },
     ],
   },
