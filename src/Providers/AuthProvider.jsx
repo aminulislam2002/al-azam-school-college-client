@@ -74,7 +74,6 @@ const AuthProvider = ({children}) => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                // Warning! Local storage is not the best place to store access token (Second place!)
                 localStorage.setItem("access-token", data.token);
                 })
                 .catch((error) => console.log(error));

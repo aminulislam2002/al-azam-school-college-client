@@ -6,9 +6,16 @@ import Swal from "sweetalert2";
 const ManageAdmins = () => {
   const [allAdminsData, setAllAdminsData] = useState([]);
 
+  const url = "http://localhost:5000/getAllAdmins";
+
   useEffect(() => {
     const admins = async () => {
-      const res = await fetch("http://localhost:5000/getAllAdmins");
+      const res = await fetch(url, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("access-token")}`,
+        },
+      });
       const data = await res.json();
       setAllAdminsData(data);
     };

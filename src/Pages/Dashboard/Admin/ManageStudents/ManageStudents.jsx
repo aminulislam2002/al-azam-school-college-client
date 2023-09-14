@@ -6,9 +6,16 @@ import Swal from "sweetalert2";
 const ManageStudents = () => {
   const [allStudentsData, setAllStudentsData] = useState([]);
 
+  const url = "http://localhost:5000/getAllStudents";
+
   useEffect(() => {
     const students = async () => {
-      const res = await fetch("http://localhost:5000/getAllStudents");
+      const res = await fetch(url, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("access-token")}`,
+        },
+      });
       const data = await res.json();
       setAllStudentsData(data);
     };

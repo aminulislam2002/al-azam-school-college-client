@@ -6,9 +6,16 @@ import Swal from "sweetalert2";
 const ManageTeachers = () => {
   const [allTeachersData, setAllTeachersData] = useState([]);
 
+  const url = "http://localhost:5000/getAllTeachers";
+
   useEffect(() => {
     const teachers = async () => {
-      const res = await fetch("http://localhost:5000/getAllTeachers");
+      const res = await fetch(url, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("access-token")}`,
+        },
+      });
       const data = await res.json();
       setAllTeachersData(data);
     };
@@ -90,7 +97,7 @@ const ManageTeachers = () => {
               {/* Row */}
               {allTeachersData.map((teacher, index) => (
                 <tr key={teacher._id}>
-                  <td>{index +1}</td>
+                  <td>{index + 1}</td>
                   <td>{teacher.name}</td>
                   <td>{teacher.email}</td>
                   <td>

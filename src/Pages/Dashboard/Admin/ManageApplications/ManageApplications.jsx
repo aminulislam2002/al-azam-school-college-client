@@ -5,9 +5,16 @@ import Swal from "sweetalert2";
 const ManageApplications = () => {
   const [allApplicationsData, setAllApplicationsData] = useState([]);
 
+  const url = "http://localhost:5000/getAllApplication";
+
   useEffect(() => {
     const applications = async () => {
-      const res = await fetch("http://localhost:5000/getAllApplication");
+      const res = await fetch(url, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("access-token")}`,
+        },
+      });
       const data = await res.json();
       setAllApplicationsData(data);
     };
