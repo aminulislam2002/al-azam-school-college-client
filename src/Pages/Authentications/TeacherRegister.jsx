@@ -52,7 +52,7 @@ const TeacherRegister = () => {
               photo: loggedInUser.photoURL,
               role: "teacher",
             };
-            fetch("http://localhost:5000/users", {
+            fetch("https://al-azam-school-college-server.vercel.app/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -104,7 +104,7 @@ const TeacherRegister = () => {
               .then(() => {
                 const saveUserData = { name: userData.name, email: userData.email, role: userData.role };
                 // User information saved db logic here
-                fetch("http://localhost:5000/users", {
+                fetch("https://al-azam-school-college-server.vercel.app/users", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",

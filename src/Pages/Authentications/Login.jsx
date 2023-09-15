@@ -53,7 +53,7 @@ const Login = () => {
           email: loggedInUser.email,
           photo: loggedInUser.photoURL,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://al-azam-school-college-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

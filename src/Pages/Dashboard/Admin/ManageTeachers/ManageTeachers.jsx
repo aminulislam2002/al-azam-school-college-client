@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const ManageTeachers = () => {
   const [allTeachersData, setAllTeachersData] = useState([]);
 
-  const url = "http://localhost:5000/getAllTeachers";
+  const url = "https://al-azam-school-college-server.vercel.app/getAllTeachers";
 
   useEffect(() => {
     const teachers = async () => {
@@ -23,7 +23,7 @@ const ManageTeachers = () => {
   }, []);
 
   const handleMakeAdmin = (id) => {
-    fetch(`http://localhost:5000/makeAdmin/${id}`, {
+    fetch(`https://al-azam-school-college-server.vercel.app/makeAdmin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -50,7 +50,7 @@ const ManageTeachers = () => {
   };
 
   const handleDeleteTeacher = (id) => {
-    fetch(`http://localhost:5000/deleteUser/${id}`, {
+    fetch(`https://al-azam-school-college-server.vercel.app/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

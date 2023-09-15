@@ -13,7 +13,7 @@ const AddNotice = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/postNotices", {
+    fetch("https://al-azam-school-college-server.vercel.app/postNotices", {
       method: "POST",
       headers: {
         "content-type": "application/json",

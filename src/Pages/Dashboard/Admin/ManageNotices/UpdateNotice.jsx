@@ -14,7 +14,7 @@ const UpdateNotice = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/noticeUpdate/${notice._id}`, {
+    fetch(`https://al-azam-school-college-server.vercel.app/noticeUpdate/${notice._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

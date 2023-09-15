@@ -11,7 +11,7 @@ const UpdateStudentProfile = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/userUpdate/${user._id}`, {
+    fetch(`https://al-azam-school-college-server.vercel.app/userUpdate/${user._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

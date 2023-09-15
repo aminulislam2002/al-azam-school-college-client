@@ -79,7 +79,7 @@ const router = createBrowserRouter([
       {
         path: "notice/:id",
         element: <ViewNotice></ViewNotice>,
-        loader: ({ params }) => fetch(`http://localhost:5000/getNoticeById/${params.id}`),
+        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getNoticeById/${params.id}`),
       },
     ],
   },
@@ -98,17 +98,17 @@ const router = createBrowserRouter([
       {
         path: "profile/update-student-profile/:id",
         element: <UpdateStudentProfile></UpdateStudentProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getUserById/${params.id}`),
       },
       {
         path: "profile/update-teacher-profile/:id",
         element: <UpdateTeacherProfile></UpdateTeacherProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getUserById/${params.id}`),
       },
       {
         path: "profile/update-admin-profile/:id",
         element: <UpdateAdminProfile></UpdateAdminProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getUserById/${params.id}`),
       },
       {
         path: "manageNotices",
@@ -121,7 +121,7 @@ const router = createBrowserRouter([
       {
         path: "manageApplications/application-details/:id",
         element: <ApplicationDetails></ApplicationDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/getApplicationById/${params.id}`),
+        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getApplicationById/${params.id}`),
       },
       {
         path: "addNotice",
@@ -130,7 +130,7 @@ const router = createBrowserRouter([
       {
         path: "manageNotices/update-notice/:id",
         element: <UpdateNotice></UpdateNotice>,
-        loader: ({ params }) => fetch(`http://localhost:5000/getNoticeById/${params.id}`),
+        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getNoticeById/${params.id}`),
       },
       {
         path: "manageAdmins",

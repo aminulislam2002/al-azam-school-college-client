@@ -17,7 +17,7 @@ const DashboardLayout = () => {
 
   useEffect(() => {
     const cu = async () => {
-      const res = await fetch(`http://localhost:5000/getUserByEmail/${user.email}`);
+      const res = await fetch(`https://al-azam-school-college-server.vercel.app/getUserByEmail/${user.email}`);
       const data = await res.json();
       setCurrentUser(data);
     };
@@ -58,7 +58,7 @@ const DashboardLayout = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Delete the user from the database first
-        fetch(`http://localhost:5000/deleteUser/${id}`, {
+        fetch(`https://al-azam-school-college-server.vercel.app/deleteUser/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

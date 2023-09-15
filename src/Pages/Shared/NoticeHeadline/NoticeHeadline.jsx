@@ -6,7 +6,7 @@ const NoticeHeadline = () => {
 
   useEffect(() => {
     const notices = async () => {
-      const res = await fetch("http://localhost:5000/getAllNotices");
+      const res = await fetch("https://al-azam-school-college-server.vercel.app/getAllNotices");
       const data = await res.json();
       const sortedNotices = data.sort((a, b) => new Date(b.publishedDateTime) - new Date(a.publishedDateTime));
       setNoticesData(sortedNotices);

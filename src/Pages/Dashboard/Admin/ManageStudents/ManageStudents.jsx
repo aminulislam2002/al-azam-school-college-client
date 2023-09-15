@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const ManageStudents = () => {
   const [allStudentsData, setAllStudentsData] = useState([]);
 
-  const url = "http://localhost:5000/getAllStudents";
+  const url = "https://al-azam-school-college-server.vercel.app/getAllStudents";
 
   useEffect(() => {
     const students = async () => {
@@ -23,7 +23,7 @@ const ManageStudents = () => {
   }, []);
 
   const handleDeleteStudent = (id) => {
-    fetch(`http://localhost:5000/deleteUser/${id}`, {
+    fetch(`https://al-azam-school-college-server.vercel.app/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

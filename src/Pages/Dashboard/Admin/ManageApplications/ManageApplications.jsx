@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const ManageApplications = () => {
   const [allApplicationsData, setAllApplicationsData] = useState([]);
 
-  const url = "http://localhost:5000/getAllApplication";
+  const url = "https://al-azam-school-college-server.vercel.app/getAllApplication";
 
   useEffect(() => {
     const applications = async () => {
@@ -27,7 +27,7 @@ const ManageApplications = () => {
   console.log(allApplicationsData);
 
   const handleDeleteStudent = (id) => {
-    fetch(`http://localhost:5000/deleteApplication/${id}`, {
+    fetch(`https://al-azam-school-college-server.vercel.app/deleteApplication/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -53,7 +53,7 @@ const ManageApplications = () => {
   };
 
   const handleMakeApplicationStatus = (apply, status) => {
-    fetch(`http://localhost:5000/applicationStatusUpdate/${apply._id}`, {
+    fetch(`https://al-azam-school-college-server.vercel.app/applicationStatusUpdate/${apply._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

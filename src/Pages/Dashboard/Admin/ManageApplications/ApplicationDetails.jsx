@@ -7,7 +7,7 @@ const ApplicationDetails = () => {
   const { id } = useParams();
   const [application, setApplication] = useState(null);
 
-  const url = `http://localhost:5000/getApplicationById/${id}`;
+  const url = `https://al-azam-school-college-server.vercel.app/getApplicationById/${id}`;
 
   useEffect(() => {
     const fetchApplication = async () => {

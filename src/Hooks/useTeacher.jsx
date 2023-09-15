@@ -9,7 +9,7 @@ const useTeacher = () => {
     queryKey: ["isTeacher", user?.email],
     enabled: !loading,
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/getTeacherUser/${user.email}`);
+      const res = await fetch(`https://al-azam-school-college-server.vercel.app/getTeacherUser/${user.email}`);
       const data = await res.json();
       return data.teacher;
     },

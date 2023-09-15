@@ -30,7 +30,7 @@ const OnlineApplyForm = () => {
   const [showGuide, setShowGuide] = useState(false); // Add state for showing/hiding the guide
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/postApplication", {
+    fetch("https://al-azam-school-college-server.vercel.app/postApplication", {
       method: "POST",
       headers: {
         "content-type": "application/json",

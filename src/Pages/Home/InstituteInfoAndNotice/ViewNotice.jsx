@@ -5,7 +5,7 @@ const ViewNotice = () => {
   const { id } = useParams();
   const [notice, setNotice] = useState(null);
 
-  const url = `http://localhost:5000/getNoticeById/${id}`;
+  const url = `https://al-azam-school-college-server.vercel.app/getNoticeById/${id}`;
 
   useEffect(() => {
     const fetchNotice = async () => {
