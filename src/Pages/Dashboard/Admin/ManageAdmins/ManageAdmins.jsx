@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 const ManageAdmins = () => {
   const [allAdminsData, setAllAdminsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const url = "https://al-azam-school-college-server.vercel.app/getAllAdmins";
 
@@ -18,6 +19,7 @@ const ManageAdmins = () => {
       });
       const data = await res.json();
       setAllAdminsData(data);
+      setIsLoading(false);
     };
     admins();
   }, []);
@@ -81,47 +83,53 @@ const ManageAdmins = () => {
         <h1 className="text-lg lg:text-2xl text-center uppercase text-white">Manage all admins</h1>
       </div>
       <div>
-        <div className="overflow-x-auto">
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Set Role</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* Row */}
-              {allAdminsData.map((admin, index) => (
-                <tr key={admin._id}>
-                  <td>{index + 1}</td>
-                  <td>{admin.name}</td>
-                  <td>{admin.email}</td>
-                  <td>
-                    {admin.role === "admin" && (
-                      <button onClick={() => handleRemoveAdmin(admin._id)} className="btn btn-xs btn-outline btn-primary">
-                        Remove Admin
-                      </button>
-                    )}
-                  </td>
-                  <td>
-                    <div>
-                      <button>
-                        <FcViewDetails className="w-8 h-8"></FcViewDetails>
-                      </button>
-                      <button onClick={() => handleDeleteAdmin(admin._id)}>
-                        <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
-                      </button>
-                    </div>
-                  </td>
+        {isLoading ? ( 
+          <div className="text-center my-4">
+            <span className="loading loading-dots loading-lg"></span>
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="table">
+              {/* head */}
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Set Role</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {/* Row */}
+                {allAdminsData.map((admin, index) => (
+                  <tr key={admin._id}>
+                    <td>{index + 1}</td>
+                    <td>{admin.name}</td>
+                    <td>{admin.email}</td>
+                    <td>
+                      {admin.role === "admin" && (
+                        <button onClick={() => handleRemoveAdmin(admin._id)} className="btn btn-xs btn-outline btn-primary">
+                          Remove Admin
+                        </button>
+                      )}
+                    </td>
+                    <td>
+                      <div>
+                        <button>
+                          <FcViewDetails className="w-8 h-8"></FcViewDetails>
+                        </button>
+                        <button onClick={() => handleDeleteAdmin(admin._id)}>
+                          <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </div>
   );

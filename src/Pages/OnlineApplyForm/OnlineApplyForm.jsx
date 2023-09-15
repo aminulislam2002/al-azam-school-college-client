@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -15,9 +16,9 @@ const OnlineApplyForm = () => {
       mobileNumber: "",
       parentsMobileNumber: "",
       address: "",
-      admissionClass: null, // Set the default value for the Select field
+      admissionClass: null, 
       previousSchoolName: "",
-      previousClass: null, // Set the default value for the Select field
+      previousClass: null, 
       passingYear: "",
       gpa: "",
       sscBoardRoll: "",
@@ -27,7 +28,12 @@ const OnlineApplyForm = () => {
 
   const navigate = useNavigate();
 
-  const [showGuide, setShowGuide] = useState(false); // Add state for showing/hiding the guide
+  const [showGuide, setShowGuide] = useState(false);
+
+  const { data, isLoading } = useQuery("applicationData", async () => {
+    const res = await fetch("https://al-azam-school-college-server.vercel.app/fetchApplicationData");
+    return res.json();
+  });
 
   const onSubmit = (data) => {
     fetch("https://al-azam-school-college-server.vercel.app/postApplication", {
@@ -64,6 +70,15 @@ const OnlineApplyForm = () => {
   const toggleGuide = () => {
     setShowGuide(!showGuide); // Toggle the showGuide state
   };
+
+  if (isLoading) {
+    // Display a loading spinner while data is loading
+    return (
+      <div className="text-center my-4">
+        <span className="loading loading-dots loading-lg"></span>
+      </div>
+    );
+  }
 
   return (
     <div className="md:container md:mx-auto mx-10 py-10 md:py-30 md:max-w-xl">
@@ -243,6 +258,7 @@ const OnlineApplyForm = () => {
                 <Select
                   {...field}
                   options={[
+                    { value: "Five", label: "Five" },
                     { value: "Six", label: "Six" },
                     { value: "Seven", label: "Seven" },
                     { value: "JSC", label: "JSC" },

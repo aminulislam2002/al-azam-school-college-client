@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 
 const AllNotices = () => {
   const [allNotices, setAllNotices] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     const notices = async () => {
@@ -14,6 +15,7 @@ const AllNotices = () => {
       const data = await res.json();
       const sortedNotices = data.sort((a, b) => new Date(b.publishedDateTime) - new Date(a.publishedDateTime));
       setAllNotices(sortedNotices);
+      setIsLoading(false);
     };
     notices();
   }, []);
@@ -59,38 +61,49 @@ const AllNotices = () => {
             </div>
           </Link>
         </div>
-        <div className="overflow-y-auto max-h-[70vh]">
-          {allNotices.map((notice) => (
-            <div key={notice._id} className="notice-list overflow-y-auto max-h-[80vh] bg-white">
-              <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-md transition duration-300 mb-5 flex justify-center items-center">
-                <div className="w-11/12">
-                  <h2 className="font-semibold">{notice?.noticeHeadline}</h2>
-                  <p className="text-sm text-gray-500 mt-2">
-                    Published Date & Time: {notice.publishedDateTime.slice(8, 10)}-{notice.publishedDateTime.slice(5, 7)}-
-                    {notice.publishedDateTime.slice(0, 4)} {notice.publishedDateTime.slice(11, 16)}
-                  </p>
-                  <Link to={`/notice/${notice._id}`}>
-                    <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
-                      Read More
-                    </button>
-                  </Link>
-                </div>
-                <div className="w-1/12">
-                  <div className="flex flex-col-reverse justify-center items-center gap-10">
-                    <button onClick={() => handleDeleteNotice(notice?._id)}>
-                      <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
-                    </button>
-                    <Link to={`update-notice/${notice._id}`}>
-                      <button>
-                        <FiEdit className="w-7 h-7 text-blue-500"></FiEdit>
-                      </button>
-                    </Link>
+
+        {isLoading ? (
+          <>
+            <div className="text-center my-4">
+              <span className="loading loading-dots loading-lg"></span>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="overflow-y-auto max-h-[70vh]">
+              {allNotices.map((notice) => (
+                <div key={notice._id} className="notice-list overflow-y-auto max-h-[80vh] bg-white">
+                  <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-md transition duration-300 mb-5 flex justify-center items-center">
+                    <div className="w-11/12">
+                      <h2 className="font-semibold">{notice?.noticeHeadline}</h2>
+                      <p className="text-sm text-gray-500 mt-2">
+                        Published Date & Time: {notice.publishedDateTime.slice(8, 10)}-{notice.publishedDateTime.slice(5, 7)}
+                        -{notice.publishedDateTime.slice(0, 4)} {notice.publishedDateTime.slice(11, 16)}
+                      </p>
+                      <Link to={`/notice/${notice._id}`}>
+                        <button className="mt-3 px-4 py-2 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
+                          Read More
+                        </button>
+                      </Link>
+                    </div>
+                    <div className="w-1/12">
+                      <div className="flex flex-col-reverse justify-center items-center gap-10">
+                        <button onClick={() => handleDeleteNotice(notice?._id)}>
+                          <MdDelete className="w-8 h-8 text-red-500"></MdDelete>
+                        </button>
+                        <Link to={`update-notice/${notice._id}`}>
+                          <button>
+                            <FiEdit className="w-7 h-7 text-blue-500"></FiEdit>
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
       </div>
     </div>
   );

@@ -6,14 +6,22 @@ import { useParams } from "react-router-dom";
 const ApplicationDetails = () => {
   const { id } = useParams();
   const [application, setApplication] = useState(null);
-
+  const [isLoading, setIsLoading] = useState(true);
   const url = `https://al-azam-school-college-server.vercel.app/getApplicationById/${id}`;
 
   useEffect(() => {
     const fetchApplication = async () => {
-      const response = await fetch(url);
-      const data = await response.json();
-      setApplication(data);
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setApplication(data);
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+      }
     };
     fetchApplication();
   }, [url]);
@@ -47,7 +55,13 @@ const ApplicationDetails = () => {
 
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
-      {application ? (
+      {isLoading ? (
+        <>
+          <div className="text-center my-4">
+            <span className="loading loading-dots loading-lg"></span>
+          </div>
+        </>
+      ) : (
         <>
           <h1 className="text-2xl font-bold mb-4 flex items-center">
             <div className="flex justify-center items-center">
@@ -69,8 +83,6 @@ const ApplicationDetails = () => {
             </tbody>
           </table>
         </>
-      ) : (
-        <div className="text-center text-red-500">Application Information not found.</div>
       )}
     </div>
   );

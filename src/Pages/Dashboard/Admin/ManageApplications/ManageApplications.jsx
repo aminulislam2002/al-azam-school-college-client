@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const ManageApplications = () => {
   const [allApplicationsData, setAllApplicationsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const url = "https://al-azam-school-college-server.vercel.app/getAllApplication";
 
@@ -20,6 +21,7 @@ const ManageApplications = () => {
       });
       const data = await res.json();
       setAllApplicationsData(data);
+      setIsLoading(false); 
     };
     applications();
   }, []);
@@ -96,80 +98,90 @@ const ManageApplications = () => {
         <h1 className="text-lg lg:text-2xl text-center uppercase text-white">Manage all Applications</h1>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="table table-xs table-pin-rows table-pin-cols">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Status</th>
-              <th>P Class</th>
-              <th>GPA</th>
-              <th>P Year</th>
-              <th>A Class</th>
-              <th>M Number</th>
-              <th>Details</th>
-              <th>Set Status</th>
-              <th>D</th>
-            </tr>
-          </thead>
-          <tbody>
-            {allApplicationsData.map((apply, index) => (
-              <tr key={apply._id}>
-                <th>{index + 1}</th>
-                <td>{apply?.name}</td>
-                <td>
-                  {apply.status === "approve" ? (
-                    <>
-                      <PiArrowElbowRightBold className="w-5 h-5 text-green-500"></PiArrowElbowRightBold>
-                    </>
-                  ) : (
-                    <>
-                      <AiOutlineClose className="w-5 h-5 text-red-500"></AiOutlineClose>
-                    </>
-                  )}
-                </td>
-                <td>{apply?.previousClass?.value}</td>
-                <td>{apply?.gpa}</td>
-                <td>{apply?.passingYear}</td>
-                <td>{apply?.admissionClass?.value}</td>
-                <td>{apply?.mobileNumber}</td>
-                <td>
-                  <div>
-                    <Link to={`application-details/${apply?._id}`}>
-                      <button className="text-white w-full bg-blue-500">View</button>
-                    </Link>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <button
-                      onClick={() => handleMakeApplicationStatus(apply, "deny")}
-                      className="text-white w-1/2 bg-red-500"
-                    >
-                      Deny
-                    </button>
+      {isLoading ? (
+        <>
+          <div className="text-center my-4">
+            <span className="loading loading-dots loading-lg"></span>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="overflow-x-auto">
+            <table className="table table-xs table-pin-rows table-pin-cols">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Status</th>
+                  <th>P Class</th>
+                  <th>GPA</th>
+                  <th>P Year</th>
+                  <th>A Class</th>
+                  <th>M Number</th>
+                  <th>Details</th>
+                  <th>Set Status</th>
+                  <th>D</th>
+                </tr>
+              </thead>
+              <tbody>
+                {allApplicationsData.map((apply, index) => (
+                  <tr key={apply._id}>
+                    <th>{index + 1}</th>
+                    <td>{apply?.name}</td>
+                    <td>
+                      {apply.status === "approve" ? (
+                        <>
+                          <PiArrowElbowRightBold className="w-5 h-5 text-green-500"></PiArrowElbowRightBold>
+                        </>
+                      ) : (
+                        <>
+                          <AiOutlineClose className="w-5 h-5 text-red-500"></AiOutlineClose>
+                        </>
+                      )}
+                    </td>
+                    <td>{apply?.previousClass?.value}</td>
+                    <td>{apply?.gpa}</td>
+                    <td>{apply?.passingYear}</td>
+                    <td>{apply?.admissionClass?.value}</td>
+                    <td>{apply?.mobileNumber}</td>
+                    <td>
+                      <div>
+                        <Link to={`application-details/${apply?._id}`}>
+                          <button className="text-white w-full bg-blue-500">View</button>
+                        </Link>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <button
+                          onClick={() => handleMakeApplicationStatus(apply, "deny")}
+                          className="text-white w-1/2 bg-red-500"
+                        >
+                          Deny
+                        </button>
 
-                    <button
-                      onClick={() => handleMakeApplicationStatus(apply, "approve")}
-                      className="text-white w-1/2 bg-green-500"
-                    >
-                      Approve
-                    </button>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <button onClick={() => handleDeleteStudent(apply._id)}>
-                      <MdDelete className="w-5 h-5 text-red-500"></MdDelete>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                        <button
+                          onClick={() => handleMakeApplicationStatus(apply, "approve")}
+                          className="text-white w-1/2 bg-green-500"
+                        >
+                          Approve
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <button onClick={() => handleDeleteStudent(apply._id)}>
+                          <MdDelete className="w-5 h-5 text-red-500"></MdDelete>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
     </div>
   );
 };

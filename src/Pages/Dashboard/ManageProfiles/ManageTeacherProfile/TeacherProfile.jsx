@@ -7,10 +7,18 @@ import { useQuery } from "@tanstack/react-query";
 const TeacherProfile = () => {
   const { user } = useContext(AuthContext);
 
-  const { data: currentUser = {} } = useQuery(["currentUser"], async () => {
+  const { data: currentUser = {}, isLoading } = useQuery(["currentUser"], async () => {
     const res = await fetch(`https://al-azam-school-college-server.vercel.app/getUserByEmail/${user.email}`);
     return res.json();
   });
+
+  if (isLoading) {
+    return (
+      <div className="text-center my-4">
+        <span className="loading loading-dots loading-lg"></span>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-gray-100 min-h-screen p-4">

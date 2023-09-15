@@ -22,7 +22,7 @@ const MainFooter = () => {
             />
             <p className="text-lg font-semibold text-green-500 text-center mt-4">Al-Azam High School and College</p>
             <div className="mt-2">
-              <IoMdCall className="w-4 h-4 text-green-500 inline-block"></IoMdCall>{" "}
+              <IoMdCall className="w-4 h-4 text-green-500 inline-block"></IoMdCall>
               <span className="text-sm lg:text-base">01715-356338</span>
             </div>
             <div className="mt-2">
@@ -108,7 +108,7 @@ const MainFooter = () => {
           />
           <p className="text-lg font-semibold text-green-500 text-center mt-4">Al-Azam High School and College</p>
           <div className="mt-2">
-            <IoMdCall className="w-4 h-4 text-green-500 inline-block"></IoMdCall>{" "}
+            <IoMdCall className="w-4 h-4 text-green-500 inline-block"></IoMdCall>
             <span className="text-sm lg:text-base">01715-356338</span>
           </div>
           <div className="mt-2">

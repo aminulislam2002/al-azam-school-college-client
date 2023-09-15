@@ -7,30 +7,37 @@ import { useEffect, useState } from "react";
 
 const InstituteInfoAndNotice = () => {
   const [allNotices, setAllNotices] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const notices = async () => {
-      const res = await fetch("https://al-azam-school-college-server.vercel.app/getAllNotices");
-      const data = await res.json();
-      const sortedNotices = data.sort((a, b) => new Date(b.publishedDateTime) - new Date(a.publishedDateTime));
-      setAllNotices(sortedNotices);
+    const fetchNotices = async () => {
+      try {
+        const res = await fetch("https://al-azam-school-college-server.vercel.app/getAllNotices");
+        const data = await res.json();
+        const sortedNotices = data.sort((a, b) => new Date(b.publishedDateTime) - new Date(a.publishedDateTime));
+        setAllNotices(sortedNotices);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching notices:", error);
+        setIsLoading(false);
+      }
     };
-    notices();
+
+    fetchNotices();
   }, []);
 
   const iconStyles = {
-    fontSize: "2rem", // Adjust the size as needed
-    marginRight: "0.5rem", // Adjust spacing
+    fontSize: "2rem",
+    marginRight: "0.5rem",
   };
 
   const buttonStyles = {
-    // Define specific colors for each button here
-    aboutMadrasah: { color: "#FF5733" }, // Example color for "About Madrasah"
-    admissionContact: { color: "#4287f5" }, // Example color for "Admission and Contact"
-    servicesForStudents: { color: "#13c608" }, // Example color for "Services for students"
-    teachersStaffs: { color: "#ff00ff" }, // Color for "Teachers and Staffs"
-    results: { color: "#ff9900" }, // Color for "Results"
-    managingCommittee: { color: "#0066cc" }, // Color for "Managing Committee"
+    aboutMadrasah: { color: "#FF5733" },
+    admissionContact: { color: "#4287f5" },
+    servicesForStudents: { color: "#13c608" },
+    teachersStaffs: { color: "#ff00ff" },
+    results: { color: "#ff9900" },
+    managingCommittee: { color: "#0066cc" },
   };
 
   return (
@@ -199,21 +206,28 @@ const InstituteInfoAndNotice = () => {
             <div className="bg-green-500 lg:px-5 py-4 mb-1">
               <h1 className="text-lg lg:text-2xl text-center text-white">নোটিশ বোর্ড</h1>
             </div>
-            <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
-              {allNotices.map((notice) => (
-                <div key={notice?._id}>
-                  <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-md transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
-                    <Link to={`/notice/${notice?._id}`} className="hover:underline hover:text-red-500">
-                      {notice?.noticeHeadline}
-                    </Link>
-                    <p className="text-sm mt-2">
-                      {notice.publishedDateTime.slice(8, 10)}-{notice.publishedDateTime.slice(5, 7)}-
-                      {notice.publishedDateTime.slice(0, 4)} {notice.publishedDateTime.slice(11, 16)}
-                    </p>
+
+            {isLoading ? (
+              <div className="text-center my-4">
+                <span className="loading loading-dots loading-lg"></span>
+              </div>
+            ) : (
+              <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
+                {allNotices.map((notice) => (
+                  <div key={notice?._id}>
+                    <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-md transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
+                      <Link to={`/notice/${notice?._id}`} className="hover:underline hover:text-red-500">
+                        {notice?.noticeHeadline}
+                      </Link>
+                      <p className="text-sm mt-2">
+                        {notice.publishedDateTime.slice(8, 10)}-{notice.publishedDateTime.slice(5, 7)}-
+                        {notice.publishedDateTime.slice(0, 4)} {notice.publishedDateTime.slice(11, 16)}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
