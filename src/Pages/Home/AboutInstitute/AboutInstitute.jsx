@@ -39,7 +39,7 @@ const AboutInstitute = () => {
           </div>
         </div>
         <div className="md:col-span-4">
-          <div className="shadow-emerald-300 shadow-lg">
+          <div className="shadow-md">
             <div className="w-full py-3 bg-green-500">
               <h1 className="text-lg lg:text-2xl text-center text-white">অধ্যক্ষ</h1>
             </div>
@@ -54,7 +54,7 @@ const AboutInstitute = () => {
               </div>
             </div>
           </div>
-          <div className="shadow-emerald-300 shadow-lg mt-6">
+          <div className="shadow-md mt-6">
             <div className="border-2 p-4 overflow-y-auto max-h-[80vh] lg:max-h-[40vh] content">
               <p className="text-justify">
                 <span className="font-bold me-1">অধ্যক্ষের বার্তা-</span>

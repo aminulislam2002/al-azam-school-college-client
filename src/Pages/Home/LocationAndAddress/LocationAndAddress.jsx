@@ -9,7 +9,7 @@ const LocationAndAddress = () => {
           <div className="w-full py-3 bg-green-500">
             <h1 className="text-lg lg:text-2xl text-center text-white">প্রতিষ্ঠানের মেইলিং ঠিকানা</h1>
           </div>
-          <div className="bg-white p-2 rounded shadow-lg">
+          <div className="bg-white p-2 rounded shadow-md">
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
               <div className="w-3/12 font-semibold text-base">প্রতিষ্ঠানের নাম</div>
               <div className="w-1/12">:</div>
@@ -29,7 +29,7 @@ const LocationAndAddress = () => {
               <div className="w-3/12 font-semibold text-base">ই-মেইল</div>
               <div className="w-1/12">:</div>
               <div className="w-8/12 ml-2 text-xs md:text-base">alazamhighschoolandcollege@gmail.com</div>
-            </div> 
+            </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
               <div className="w-3/12 font-semibold text-base">পোস্ট অফিস</div>
               <div className="w-1/12">:</div>

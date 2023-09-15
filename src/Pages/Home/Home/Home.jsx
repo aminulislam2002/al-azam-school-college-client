@@ -1,6 +1,6 @@
 import NoticeHeadline from "../../Shared/NoticeHeadline/NoticeHeadline";
 import AboutInstitute from "../AboutInstitute/AboutInstitute";
-import ContactInformation from "../ContactInformation/ContactInformation";
+// import ContactInformation from "../ContactInformation/ContactInformation";
 import ImportanceLinksSection from "../ImportanceLinksSection/ImportanceLinksSection";
 import LocationAndAddress from "../LocationAndAddress/LocationAndAddress";
 import InstitutePhotoGallery from "../InstitutePhotoGallery/InstitutePhotoGallery";

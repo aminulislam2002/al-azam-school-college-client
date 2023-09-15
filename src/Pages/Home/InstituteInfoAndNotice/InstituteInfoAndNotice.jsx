@@ -202,7 +202,7 @@ const InstituteInfoAndNotice = () => {
             <div className="notice-list overflow-y-auto max-h-[80vh] bg-white">
               {allNotices.map((notice) => (
                 <div key={notice?._id}>
-                  <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
+                  <div className="bg-gray-200 p-4 rounded-lg shadow-md hover:shadow-md transition duration-300 mb-5 hover:bg-green-500 hover:text-white">
                     <Link to={`/notice/${notice?._id}`} className="hover:underline hover:text-red-500">
                       {notice?.noticeHeadline}
                     </Link>

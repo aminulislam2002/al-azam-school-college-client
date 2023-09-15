@@ -46,7 +46,7 @@ const ApplicationDetails = () => {
   const headerNameColorClass = application?.status === "approve" ? "text-green-500" : "text-red-500";
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4">
+    <div className="bg-white rounded-lg shadow-md p-4">
       {application ? (
         <>
           <h1 className="text-2xl font-bold mb-4 flex items-center">

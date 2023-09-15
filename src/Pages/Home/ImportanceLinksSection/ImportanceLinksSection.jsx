@@ -34,7 +34,7 @@ const ImportanceLinksSection = () => {
             <div className="w-full py-3 bg-green-500">
               <h1 className="text-lg lg:text-2xl text-center text-white">Opening Hours</h1>
             </div>
-            <div className="shadow-emerald-300 shadow-lg py-3 px-5">
+            <div className="shadow-md py-3 px-5">
               <div className="grid grid-cols-2 gap-2 pb-2">
                 <div className="text-gray-600">Sunday:</div>
                 <div className={currentDay === 0 ? dayClasses[currentDay] : ""}>{openingHours[0]}</div>
@@ -64,7 +64,7 @@ const ImportanceLinksSection = () => {
           <div className="w-full py-3 bg-green-500">
             <h1 className="text-lg lg:text-2xl text-center text-white">শিক্ষা বোর্ডের লিংক</h1>
           </div>
-          <div className="shadow-emerald-300 shadow-lg py-3">
+          <div className="shadow-md py-3">
             <ul>
               <li className="mb-3 hover:bg-green-500 border-b">
                 <Link target="_blank" to="https://dshe.gov.bd/" className="hover:underline hover:text-red-500 px-5">
@@ -103,7 +103,7 @@ const ImportanceLinksSection = () => {
           <div className="w-full py-3 bg-green-500">
             <h1 className="text-lg lg:text-2xl text-center text-white">গুরুত্বপূর্ণ লিংক</h1>
           </div>
-          <div className="shadow-emerald-300 shadow-lg py-3">
+          <div className="shadow-md py-3">
             <ul>
               <li className="mb-3 hover:bg-green-500 border-b">
                 <Link target="_blank" to="https://moedu.gov.bd/" className="hover:underline hover:text-red-500 px-5">

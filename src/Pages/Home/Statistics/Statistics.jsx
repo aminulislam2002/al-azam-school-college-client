@@ -12,11 +12,11 @@ const Statistics = () => {
     <div className="my-20 bg-green-400">
       <div className="header-bg">
         <div className="text-center mb-5">
-          <h1 className="text-lg lg:text-2xl font-semibold text-black uppercase py-2">
+          <h1 className="text-lg lg:text-2xl font-semibold text-black uppercase py-5 lg:py-10">
             আল-আজম উচ্চ বিদ্যালয় ও কলেজের কিছু তথ্য
           </h1>
           <p className="text-base text-white">
-            <span className="text-black">ঠিকানা: </span>
+            <span className="text-black font-bold">ঠিকানা: </span>
             <span className="text-gray-200">আমতৈল-৩১৩০, বিশ্বনাথ উপজেলা। সিলেট, বাংলাদেশ</span>
           </p>
         </div>
