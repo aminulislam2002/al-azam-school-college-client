@@ -336,7 +336,7 @@ const TeacherRegister = () => {
             </div>
             <div className="flex justify-center items-center gap-5">
               <button onClick={handleGoogleSignUp}>
-                <FcGoogle className="w-8 h-8"></FcGoogle>
+                <FcGoogle className={`w-8 h-8 ${isLoading ? "pointer-events-none" : ""}`}></FcGoogle>
               </button>
             </div>
           </div>
