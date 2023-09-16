@@ -30,6 +30,12 @@ import ScienceLab from "../Pages/Facilities/ScienceLab";
 import ComputerLab from "../Pages/Facilities/ComputerLab";
 import ViewNotice from "../Pages/Home/InstituteInfoAndNotice/ViewNotice";
 import ApplicationDetails from "../Pages/Dashboard/Admin/ManageApplications/ApplicationDetails";
+import Library from "../Pages/Facilities/Library";
+import HistoryOfInstitute from "../Pages/AboutUs/HistoryOfInstitute";
+import MissionAndVision from "../Pages/AboutUs/MissionAndVision";
+import PhotoGallery from "../Pages/AboutUs/PhotoGallery";
+import OurStudents from "../Pages/AboutUs/OurStudents";
+import Committee from "../Pages/AboutUs/Committee";
 
 const router = createBrowserRouter([
   {
@@ -77,9 +83,33 @@ const router = createBrowserRouter([
         element: <ComputerLab></ComputerLab>,
       },
       {
+        path: "library",
+        element: <Library></Library>,
+      },
+      {
         path: "notice/:id",
         element: <ViewNotice></ViewNotice>,
         loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/getNoticeById/${params.id}`),
+      },
+      {
+        path: "history-of-institute",
+        element: <HistoryOfInstitute></HistoryOfInstitute>,
+      },
+      {
+        path: "mission-and-vision",
+        element: <MissionAndVision></MissionAndVision>,
+      },
+      {
+        path: "photos-gallery",
+        element: <PhotoGallery></PhotoGallery>,
+      },
+      {
+        path: "our-students",
+        element: <OurStudents></OurStudents>,
+      },
+      {
+        path: "authority-and-committee",
+        element: <Committee></Committee>,
       },
     ],
   },

@@ -340,6 +340,9 @@ const NavBar = () => {
             <Link to="/computer-lab">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Computer Lab</li>
             </Link>
+            <Link to="/library">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Library</li>
+            </Link>
           </ul>
         </div>
       </li>
@@ -413,7 +416,7 @@ const NavBar = () => {
           {/* Dropdown content */}
           <ul>
             <Link target="_blank" to="/notice-board">
-              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">N/A</li>
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">ইএমআইএস লগইন</li>
             </Link>
             <Link target="_blank" to="https://dshe.gov.bd/">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">মাধ্যমিক ও উচ্চ শিক্ষা অধিদপ্তর</li>

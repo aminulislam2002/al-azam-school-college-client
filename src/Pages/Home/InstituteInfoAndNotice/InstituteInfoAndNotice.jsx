@@ -26,7 +26,7 @@ const InstituteInfoAndNotice = () => {
     };
 
     fetchNotices();
-  }, []);
+  }, [url]);
 
   const iconStyles = {
     fontSize: "2rem",
@@ -59,7 +59,7 @@ const InstituteInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের ল্যাব সম্পর্কিত তথ্য</Link>
+                    <Link to="" className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের ল্যাব সম্পর্কিত তথ্য</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
@@ -92,11 +92,11 @@ const InstituteInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">এসএসসি ভর্তি</Link>
+                    <Link to="/onlineApplyForm" className="hover:underline text-sm hover:text-red-500">এসএসসি ভর্তি</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">এইচএসসি ভর্তি</Link>
+                    <Link  className="hover:underline text-sm hover:text-red-500">এইচএসসি ভর্তি</Link>
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@ const InstituteInfoAndNotice = () => {
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">প্রয়োজনীয় বই সমূহ</Link>
+                    <Link to="/library" className="hover:underline text-sm hover:text-red-500">প্রয়োজনীয় বই সমূহ</Link>
                   </div>
                 </div>
               </div>

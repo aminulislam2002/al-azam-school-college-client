@@ -72,8 +72,8 @@ const ImportanceLinksSection = () => {
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
-                <Link target="_blank" to="/" className="hover:underline hover:text-red-500 px-5">
-                  N/A
+                <Link target="_blank" to="http://emis.gov.bd/SSO/Account/Login?ReturnUrl=%2FSSO" className="hover:underline hover:text-red-500 px-5">
+                ইএমআইএস লগইন
                 </Link>
               </li>
               <li className="mb-3 hover:bg-green-500 border-b">
