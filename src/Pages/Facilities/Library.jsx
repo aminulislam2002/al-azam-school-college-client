@@ -91,7 +91,7 @@ const Library = () => {
         <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md">
           <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">Our Library</h1>
         </div>
-        <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md mt-10">
+        <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md mt-10 lg:mt-20">
           <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">
             লাইব্রেরীর পাঠ্য পুস্তকের তালিকা
           </h1>
@@ -120,7 +120,7 @@ const Library = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md mt-10">
+        <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md mt-10 lg:mt-20">
           <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">
             লাইব্রেরীর অন্যান্য উপকরণ তালিকা
           </h1>

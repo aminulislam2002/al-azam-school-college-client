@@ -111,6 +111,14 @@ const router = createBrowserRouter([
         path: "authority-and-committee",
         element: <Committee></Committee>,
       },
+      {
+        path: "our-lab",
+        element: (
+          <>
+            <ComputerLab></ComputerLab> <ScienceLab></ScienceLab>
+          </>
+        ),
+      },
     ],
   },
   {

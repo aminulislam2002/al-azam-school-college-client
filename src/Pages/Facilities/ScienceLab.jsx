@@ -188,7 +188,7 @@ const ScienceLab = () => {
         <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md">
           <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">Our Science Lab</h1>
         </div>
-        <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md mt-10">
+        <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md mt-10 lg:mt-20">
           <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">
             বিজ্ঞানাগারের যন্ত্রপাতির তালিকা
           </h1>
