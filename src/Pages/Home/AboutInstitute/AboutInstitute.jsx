@@ -1,4 +1,4 @@
-import instituteOverview from "../../../assets/image/overview/overview1.jpg";
+import instituteOverview from "../../../assets/image/school/school-7.jpg";
 import principal from "../../../assets/image/teacher/principal.jpg";
 
 const AboutInstitute = () => {
@@ -50,7 +50,7 @@ const AboutInstitute = () => {
                 <span className="text-base font-medium">Contact Number:</span> +880 1715-356338
               </div>
               <div className="text-center py-1">
-                <span className="text-base font-medium">Email:</span> examplemail@gmail.com
+                <span className="text-base font-medium">Email:</span> abdulahadphs@gmail.com
               </div>
             </div>
           </div>

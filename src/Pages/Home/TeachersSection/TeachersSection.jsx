@@ -20,7 +20,7 @@ const TeachersSection = () => {
       name: "এ.কে.এম আব্দুল আহাদ",
       position: "অধ্যক্ষ",
       mobileNumber: "+880 1715-356338",
-      email: "examplemail@gmail.com",
+      email: "abdulahadphs@gmail.com",
       address: "বিশ্বনাথ, সিলেট",
     },
     {
@@ -44,7 +44,7 @@ const TeachersSection = () => {
     {
       id: 4,
       image: image4,
-      name: "মো: শাহীন ইসলাম",
+      name: "শাহীন আহমদ",
       position: "কম্পিউটার ল্যাব অপারেটর",
       mobileNumber: "+880 1575-586028",
       email: "srdl.alazam.clo@gmail.com",
@@ -148,12 +148,12 @@ const TeachersSection = () => {
         {dataToShow.map((teacher) => (
           <div
             key={teacher.id}
-            className="bg-blue-100 text-gray-800 hover:bg-blue-200 hover:text-gray-900 rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:-translate-y-1"
+            className="lg:bg-blue-100 text-gray-800 hover:bg-blue-200 hover:text-gray-900 rounded-lg shadow-md p-6 transition duration-300 ease-in-out transform hover:-translate-y-1"
           >
             <div className="bg-blue-200 rounded p-10 lg:p-2 mx-auto">
               {teacher.image ? (
                 <>
-                  <img src={teacher?.image} className="w-full h-52" alt="Teacher" />
+                  <img src={teacher?.image} className="w-full lg:h-52 h-60" alt="Teacher" />
                 </>
               ) : (
                 <>
@@ -166,19 +166,30 @@ const TeachersSection = () => {
             <div className="mt-2">
               <div className="flex items-center gap-1">
                 <FaHome className="text-blue-500 text-lg" />
-                <span className="text-sm">{teacher.address}</span>
+                <a
+                  href={`https://www.google.com/maps/search/?q=${encodeURIComponent(teacher.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm"
+                >
+                  {teacher.address}
+                </a>
               </div>
             </div>
             <div className="mt-2">
               <div className="flex items-center gap-1">
                 <MdCall className="text-green-500 text-lg" />
-                <span className="text-sm">{teacher.mobileNumber}</span>
+                <a href={`tel:${teacher.mobileNumber}`} className="text-sm">
+                  {teacher.mobileNumber}
+                </a>
               </div>
             </div>
             <div className="mt-2">
               <div className="flex items-center gap-1">
                 <AiOutlineMail className="text-yellow-500 text-lg" />
-                <span className="text-sm">{teacher.email}</span>
+                <a href={`mailto:${teacher.email}`} className="text-sm">
+                  {teacher.email}
+                </a>
               </div>
             </div>
           </div>

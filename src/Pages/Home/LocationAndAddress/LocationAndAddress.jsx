@@ -11,49 +11,49 @@ const LocationAndAddress = () => {
           </div>
           <div className="bg-white p-2 rounded shadow-md">
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">প্রতিষ্ঠানের নাম</div>
+              <div className="w-3/12 font-semibold text-xs lg:text-base">প্রতিষ্ঠানের নাম</div>
               <div className="w-1/12">:</div>
-              <div className="w-8/12 ml-2">আল-আজম হাইস্কুল এন্ড কলেজ</div>
+              <div className="w-8/12 ml-2 text-xs md:text-base">আল-আজম হাইস্কুল এন্ড কলেজ</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">ই.আই.আই.এন</div>
+              <div className="w-3/12 font-semibold text-xs lg:text-base">ইআইআইএন</div>
               <div className="w-1/12">:</div>
-              <div className="w-8/12 ml-2">১৩০১৯৯</div>
+              <div className="w-8/12 ml-2 text-xs md:text-base">১৩০১৯৯</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">মোবাইল</div>
+              <div className="w-3/12 font-semibold text-xs lg:text-base">মোবাইল</div>
               <div className="w-1/12">:</div>
-              <div className="w-8/12 ml-2">+৮৮০ ১৭১৫-৩৫৬৩৩৮ </div>
+              <div className="w-8/12 ml-2 text-xs md:text-base">+৮৮০ ১৭১৫-৩৫৬৩৩৮ </div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">ই-মেইল</div>
+              <div className="w-3/12 font-semibold text-xs lg:text-base">ই-মেইল</div>
               <div className="w-1/12">:</div>
               <div className="w-8/12 ml-2 text-xs md:text-base">alazamhighschoolandcollege@gmail.com</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">পোস্ট অফিস</div>
+              <div className="w-3/12 font-semibold text-xs lg:text-base">পোস্ট অফিস</div>
               <div className="w-1/12">:</div>
-              <div className="w-8/12 ml-2">আমতৈল</div>
+              <div className="w-8/12 ml-2 text-xs md:text-base">আমতৈল</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">পোস্ট কোড</div>
+              <div className="w-3/12 font-semibold text-xs lg:text-base">পোস্ট কোড</div>
               <div className="w-1/12">:</div>
-              <div className="w-8/12 ml-2">৩১৩০</div>
+              <div className="w-8/12 ml-2 text-xs md:text-base">৩১৩০</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">উপজেলা</div>
+              <div className="w-3/12 font-semibold text-xs lg:text-base">উপজেলা</div>
               <div className="w-1/12">:</div>
-              <div className="w-8/12 ml-2">বিশ্বনাথ</div>
+              <div className="w-8/12 ml-2 text-xs md:text-base">বিশ্বনাথ</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">জেলা</div>
+              <div className="w-3/12 font-semibold text-xs lg:text-base">জেলা</div>
               <div className="w-1/12">:</div>
-              <div className="w-8/12 ml-2">সিলেট</div>
+              <div className="w-8/12 ml-2 text-xs md:text-base">সিলেট</div>
             </div>
             <div className="py-1 px-3 flex justify-start items-center hover:bg-green-500">
-              <div className="w-3/12 font-semibold text-base">স্থাপিত</div>
+              <div className="w-3/12 font-semibold text-xs lg:text-base">স্থাপিত</div>
               <div className="w-1/12">:</div>
-              <div className="w-8/12 ml-2">১৯৯৪ খ্রিঃ</div>
+              <div className="w-8/12 ml-2 text-xs md:text-base">১৯৯৪ খ্রিঃ</div>
             </div>
           </div>
         </div>
