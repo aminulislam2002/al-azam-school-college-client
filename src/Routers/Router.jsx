@@ -36,6 +36,9 @@ import MissionAndVision from "../Pages/AboutUs/MissionAndVision";
 import PhotoGallery from "../Pages/AboutUs/PhotoGallery";
 import OurStudents from "../Pages/AboutUs/OurStudents";
 import Committee from "../Pages/AboutUs/Committee";
+import YearlyHolly from "../Pages/Students/YearlyHolly";
+import TcAndTranscript from "../Pages/Students/TcAndTranscript";
+import TeachersSection from "../Pages/Home/TeachersSection/TeachersSection";
 
 const router = createBrowserRouter([
   {
@@ -118,6 +121,22 @@ const router = createBrowserRouter([
             <ComputerLab></ComputerLab> <ScienceLab></ScienceLab>
           </>
         ),
+      },
+      {
+        path: "yearly-holyday-information",
+        element: <YearlyHolly></YearlyHolly>,
+      },
+      {
+        path: "tc-and-transcript",
+        element: <TcAndTranscript></TcAndTranscript>,
+      },
+      {
+        path: "about-land-and-build-information",
+        element: <TcAndTranscript></TcAndTranscript>,
+      },
+      {
+        path: "teachers",
+        element: <TeachersSection></TeachersSection>,
       },
     ],
   },

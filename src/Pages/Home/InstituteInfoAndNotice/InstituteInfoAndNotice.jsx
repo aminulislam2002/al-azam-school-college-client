@@ -59,25 +59,27 @@ const InstituteInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link to="our-lab" className="hover:underline text-sm hover:text-red-500">
+                    <Link to="/our-lab" className="hover:underline text-sm hover:text-red-500">
                       প্রতিষ্ঠানের ল্যাব সম্পর্কিত তথ্য
                     </Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের শিক্ষার্থী সম্পর্কে তথ্য</Link>
+                    <Link to="/our-students" className="hover:underline text-sm hover:text-red-500">
+                      প্রতিষ্ঠানের শিক্ষার্থী সম্পর্কে তথ্য
+                    </Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">অবকাঠামো সম্পর্কিত তথ্য</Link>
+                    <Link to="/about-land-and-build-information" className="hover:underline text-sm hover:text-red-500">অবকাঠামো সম্পর্কিত তথ্য</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের পরিচিতি এবং ইতিহাস</Link>
+                    <Link to="/history-of-institute" className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের পরিচিতি এবং ইতিহাস</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের জমি সংক্রান্ত তথ্য</Link>
+                    <Link to="/about-land-and-build-information" className="hover:underline text-sm hover:text-red-500">প্রতিষ্ঠানের জমি সংক্রান্ত তথ্য</Link>
                   </div>
                 </div>
               </div>
@@ -100,7 +102,9 @@ const InstituteInfoAndNotice = () => {
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link to="/onlineApplyForm" className="hover:underline text-sm hover:text-red-500">এইচএসসি ভর্তি</Link>
+                    <Link to="/onlineApplyForm" className="hover:underline text-sm hover:text-red-500">
+                      এইচএসসি ভর্তি
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -117,19 +121,19 @@ const InstituteInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">ক্লাস রুটিন</Link>
+                    <Link to="/students-routines" className="hover:underline text-sm hover:text-red-500">ক্লাস রুটিন</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">পরীক্ষা সম্পরকিত তথ্য</Link>
+                    <Link to="/classes-syllabus" className="hover:underline text-sm hover:text-red-500">ক্লাস সিলেবাস</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">বাৎসরিক ছুটির তালিকা</Link>
+                    <Link to="/yearly-holyday-information" className="hover:underline text-sm hover:text-red-500">বাৎসরিক ছুটির তালিকা</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">টিসি বা প্রংসাপত্র</Link>
+                    <Link to="/tc-and-transcript" className="hover:underline text-sm hover:text-red-500">টিসি বা প্রংসাপত্র</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
@@ -152,15 +156,15 @@ const InstituteInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">উচ্চ মাধ্যমিক স্তরের শিক্ষক</Link>
+                    <Link to="/teachers" className="hover:underline text-sm hover:text-red-500">উচ্চ মাধ্যমিক স্তরের শিক্ষক</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">মাধ্যমিক স্তরের শিক্ষক</Link>
+                    <Link to="/teachers" className="hover:underline text-sm hover:text-red-500">মাধ্যমিক স্তরের শিক্ষক</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">কর্মচারীবৃন্দ</Link>
+                    <Link to="/teachers" className="hover:underline text-sm hover:text-red-500">কর্মচারীবৃন্দ</Link>
                   </div>
                 </div>
               </div>
@@ -178,7 +182,7 @@ const InstituteInfoAndNotice = () => {
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
                     <Link to="" className="hover:underline text-sm hover:text-red-500">
-                      টিসি বা প্রংসাপত্র
+                      স্কুল/কলেজের বার্ষিক পরীক্ষার ফলাফল
                     </Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
@@ -216,7 +220,7 @@ const InstituteInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link className="hover:underline text-sm hover:text-red-500">কমিটির সদস্যবৃন্দ</Link>
+                    <Link to="/authority-and-committee" className="hover:underline text-sm hover:text-red-500">কমিটির সদস্যবৃন্দ</Link>
                   </div>
                 </div>
               </div>
