@@ -3,12 +3,14 @@ import { AuthContext } from "../../../../Providers/AuthProvider";
 import { Link } from "react-router-dom";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { useQuery } from "@tanstack/react-query";
+import useBaseURL from "../../../../Hooks/useBaseURL";
 
 const TeacherProfile = () => {
   const { user } = useContext(AuthContext);
+  const [url] = useBaseURL();
 
   const { data: currentUser = {}, isLoading } = useQuery(["currentUser"], async () => {
-    const res = await fetch(`https://al-azam-school-college-server.vercel.app/getUserByEmail/${user.email}`);
+    const res = await fetch(`${url}/getUserByEmail/${user.email}`);
     return res.json();
   });
 

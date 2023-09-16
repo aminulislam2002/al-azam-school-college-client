@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { PiArrowElbowRightBold } from "react-icons/pi";
 import { useParams } from "react-router-dom";
+import useBaseURL from "../../../../Hooks/useBaseURL";
 
 const ApplicationDetails = () => {
   const { id } = useParams();
   const [application, setApplication] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const url = `https://al-azam-school-college-server.vercel.app/getApplicationById/${id}`;
+  const [url] = useBaseURL();
 
   useEffect(() => {
     const fetchApplication = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(`${url}/getApplicationById/${id}`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -24,7 +25,7 @@ const ApplicationDetails = () => {
       }
     };
     fetchApplication();
-  }, [url]);
+  }, [url, id]);
 
   const rows = [
     { label: "Name", value: application?.name },

@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useBaseURL from "../../../Hooks/useBaseURL";
 
 const ViewNotice = () => {
   const { id } = useParams();
   const [notice, setNotice] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
-  const url = `https://al-azam-school-college-server.vercel.app/getNoticeById/${id}`;
+  const [url] = useBaseURL();
 
   useEffect(() => {
     const fetchNotice = async () => {
-      const response = await fetch(url);
+      const response = await fetch(`${url}/getNoticeById/${id}`);
       const data = await response.json();
       setNotice(data);
       setIsLoading(false);

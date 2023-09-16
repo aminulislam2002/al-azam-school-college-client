@@ -4,11 +4,13 @@ import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useBaseURL from "../../Hooks/useBaseURL";
 
 const TeacherRegister = () => {
   const [isAgreed, setIsAgreed] = useState(false);
   const [passwordMismatchError, setPasswordMismatchError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [url] = useBaseURL();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -55,7 +57,7 @@ const TeacherRegister = () => {
               photo: loggedInUser.photoURL,
               role: "teacher",
             };
-            fetch("https://al-azam-school-college-server.vercel.app/users", {
+            fetch(`${url}/users`, {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -68,6 +70,7 @@ const TeacherRegister = () => {
                 navigate(from, { replace: true });
               })
               .catch((error) => {
+                navigate(from, { replace: true });
                 console.log(error);
                 Swal.fire({
                   icon: "warning",
@@ -79,6 +82,7 @@ const TeacherRegister = () => {
               });
           })
           .catch((error) => {
+            navigate(from, { replace: true });
             console.log(error);
             Swal.fire({
               icon: "warning",
@@ -89,6 +93,7 @@ const TeacherRegister = () => {
             setIsLoading(false);
           });
       } else {
+        navigate(from, { replace: true });
         Swal.fire({
           icon: "error",
           title: "Validation Failed",
@@ -123,7 +128,7 @@ const TeacherRegister = () => {
               .then(() => {
                 const saveUserData = { name: userData.name, email: userData.email, role: userData.role };
                 // User information saved db logic here
-                fetch("https://al-azam-school-college-server.vercel.app/users", {
+                fetch(`${url}/users`, {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
@@ -132,6 +137,7 @@ const TeacherRegister = () => {
                 })
                   .then((res) => res.json())
                   .then((data) => {
+                    navigate(from, { replace: true });
                     console.log(data);
                     if (data.insertedId) {
                       reset();
@@ -143,9 +149,10 @@ const TeacherRegister = () => {
                       });
                       navigate("/");
                     }
-                    setIsLoading(false); // Step 4: Set loading to false after receiving the API response
+                    setIsLoading(false);
                   })
                   .catch((error) => {
+                    navigate(from, { replace: true });
                     console.log(error);
                     Swal.fire({
                       icon: "warning",
@@ -157,6 +164,7 @@ const TeacherRegister = () => {
                   });
               })
               .catch((error) => {
+                navigate(from, { replace: true });
                 console.log(error);
                 Swal.fire({
                   icon: "warning",
@@ -168,6 +176,7 @@ const TeacherRegister = () => {
               });
           })
           .catch((error) => {
+            navigate(from, { replace: true });
             console.log(error);
             Swal.fire({
               icon: "warning",
@@ -179,13 +188,14 @@ const TeacherRegister = () => {
           });
       }
     } else {
+      navigate(from, { replace: true });
       Swal.fire({
         title: "Sorry!",
         text: "You are not a valid Teacher.",
         icon: "warning",
         confirmButtonText: "Okay",
       });
-      setIsLoading(false); // Step 4: Set loading to false after validation failure
+      setIsLoading(false);
     }
   };
 

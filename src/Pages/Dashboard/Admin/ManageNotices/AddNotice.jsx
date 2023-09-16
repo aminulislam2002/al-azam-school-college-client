@@ -2,8 +2,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useBaseURL from "../../../../Hooks/useBaseURL";
 
 const AddNotice = () => {
+  const [url] = useBaseURL();
+
   const {
     handleSubmit,
     register,
@@ -16,7 +19,7 @@ const AddNotice = () => {
   const onSubmit = (data) => {
     setIsLoading(true);
 
-    fetch("https://al-azam-school-college-server.vercel.app/postNotices", {
+    fetch(`${url}/postNotices`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,6 +50,7 @@ const AddNotice = () => {
         setIsLoading(false);
       });
   };
+
   return (
     <div className="mx-20">
       <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500">

@@ -4,24 +4,26 @@ import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useBaseURL from "../../../../Hooks/useBaseURL";
 
 const AllNotices = () => {
   const [allNotices, setAllNotices] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
+  const [url] = useBaseURL();
 
   useEffect(() => {
     const notices = async () => {
-      const res = await fetch("https://al-azam-school-college-server.vercel.app/getAllNotices");
+      const res = await fetch(`${url}/getAllNotices`);
       const data = await res.json();
       const sortedNotices = data.sort((a, b) => new Date(b.publishedDateTime) - new Date(a.publishedDateTime));
       setAllNotices(sortedNotices);
       setIsLoading(false);
     };
     notices();
-  }, []);
+  }, [url]);
 
   const handleDeleteNotice = (id) => {
-    fetch(`https://al-azam-school-college-server.vercel.app/deleteNotice/${id}`, {
+    fetch(`${url}/deleteNotice/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

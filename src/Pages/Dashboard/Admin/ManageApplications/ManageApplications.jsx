@@ -4,16 +4,16 @@ import { PiArrowElbowRightBold } from "react-icons/pi";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import useBaseURL from "../../../../Hooks/useBaseURL";
 
 const ManageApplications = () => {
   const [allApplicationsData, setAllApplicationsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const url = "https://al-azam-school-college-server.vercel.app/getAllApplication";
+  const [url] = useBaseURL();
 
   useEffect(() => {
     const applications = async () => {
-      const res = await fetch(url, {
+      const res = await fetch(`${url}/getAllApplication`, {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("access-token")}`,
@@ -21,15 +21,13 @@ const ManageApplications = () => {
       });
       const data = await res.json();
       setAllApplicationsData(data);
-      setIsLoading(false); 
+      setIsLoading(false);
     };
     applications();
-  }, []);
-
-  console.log(allApplicationsData);
+  }, [url]);
 
   const handleDeleteStudent = (id) => {
-    fetch(`https://al-azam-school-college-server.vercel.app/deleteApplication/${id}`, {
+    fetch(`${url}/deleteApplication/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -55,7 +53,7 @@ const ManageApplications = () => {
   };
 
   const handleMakeApplicationStatus = (apply, status) => {
-    fetch(`https://al-azam-school-college-server.vercel.app/applicationStatusUpdate/${apply._id}`, {
+    fetch(`${url}/applicationStatusUpdate/${apply._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

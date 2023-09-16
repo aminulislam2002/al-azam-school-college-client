@@ -4,15 +4,17 @@ import { Link } from "react-router-dom";
 import { AiFillCaretRight } from "react-icons/ai";
 import { HiMiniBuildingLibrary } from "react-icons/hi2";
 import { useEffect, useState } from "react";
+import useBaseURL from "../../../Hooks/useBaseURL";
 
 const InstituteInfoAndNotice = () => {
   const [allNotices, setAllNotices] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [url] = useBaseURL();
 
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const res = await fetch("https://al-azam-school-college-server.vercel.app/getAllNotices");
+        const res = await fetch(`${url}/getAllNotices`);
         const data = await res.json();
         const sortedNotices = data.sort((a, b) => new Date(b.publishedDateTime) - new Date(a.publishedDateTime));
         setAllNotices(sortedNotices);

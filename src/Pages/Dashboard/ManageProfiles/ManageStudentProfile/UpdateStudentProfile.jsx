@@ -2,19 +2,19 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import useBaseURL from "../../../../Hooks/useBaseURL";
 
 const UpdateStudentProfile = () => {
-  const user = useLoaderData();
-
-  const navigate = useNavigate();
-
-  const { register, handleSubmit } = useForm();
   const [isLoading, setIsLoading] = useState(false);
+  const user = useLoaderData();
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm();
+  const [url] = useBaseURL();
 
   const onSubmit = (data) => {
     setIsLoading(true);
 
-    fetch(`https://al-azam-school-college-server.vercel.app/userUpdate/${user._id}`, {
+    fetch(`${url}/userUpdate/${user._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

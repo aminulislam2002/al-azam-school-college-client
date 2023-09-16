@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import { FcViewDetails } from "react-icons/fc";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
+import useBaseURL from "../../../../Hooks/useBaseURL";
 
 const ManageStudents = () => {
   const [allStudentsData, setAllStudentsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const url = "https://al-azam-school-college-server.vercel.app/getAllStudents";
+  const [url] = useBaseURL();
 
   useEffect(() => {
     const students = async () => {
-      const res = await fetch(url, {
+      const res = await fetch(`${url}/getAllStudents`, {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("access-token")}`,
@@ -22,10 +22,10 @@ const ManageStudents = () => {
       setIsLoading(false);
     };
     students();
-  }, []);
+  }, [url]);
 
   const handleDeleteStudent = (id) => {
-    fetch(`https://al-azam-school-college-server.vercel.app/deleteUser/${id}`, {
+    fetch(`${url}/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

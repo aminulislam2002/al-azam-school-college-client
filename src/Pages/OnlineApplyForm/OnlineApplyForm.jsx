@@ -4,8 +4,13 @@ import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import Swal from "sweetalert2";
+import useBaseURL from "../../Hooks/useBaseURL";
 
 const OnlineApplyForm = () => {
+  const navigate = useNavigate();
+  const [showGuide, setShowGuide] = useState(false);
+  const [url] = useBaseURL();
+
   const { register, control, handleSubmit, reset } = useForm({
     defaultValues: {
       name: "",
@@ -16,9 +21,9 @@ const OnlineApplyForm = () => {
       mobileNumber: "",
       parentsMobileNumber: "",
       address: "",
-      admissionClass: null, 
+      admissionClass: null,
       previousSchoolName: "",
-      previousClass: null, 
+      previousClass: null,
       passingYear: "",
       gpa: "",
       sscBoardRoll: "",
@@ -26,17 +31,13 @@ const OnlineApplyForm = () => {
     },
   });
 
-  const navigate = useNavigate();
-
-  const [showGuide, setShowGuide] = useState(false);
-
   const { data, isLoading } = useQuery("applicationData", async () => {
-    const res = await fetch("https://al-azam-school-college-server.vercel.app/fetchApplicationData");
+    const res = await fetch(`${url}/fetchApplicationData`);
     return res.json();
   });
 
   const onSubmit = (data) => {
-    fetch("https://al-azam-school-college-server.vercel.app/postApplication", {
+    fetch(`${url}/postApplication`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

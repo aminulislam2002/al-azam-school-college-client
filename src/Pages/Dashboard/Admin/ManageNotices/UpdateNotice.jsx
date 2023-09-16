@@ -1,11 +1,12 @@
 import { useForm } from "react-hook-form";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useBaseURL from "../../../../Hooks/useBaseURL";
 
 const UpdateNotice = () => {
   const notice = useLoaderData();
-  //   console.log(notice);
   const navigate = useNavigate();
+  const [url] = useBaseURL();
 
   const {
     handleSubmit,
@@ -14,7 +15,7 @@ const UpdateNotice = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`https://al-azam-school-college-server.vercel.app/noticeUpdate/${notice._id}`, {
+    fetch(`${url}/noticeUpdate/${notice._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

@@ -79,7 +79,7 @@ const router = createBrowserRouter([
       {
         path: "notice/:id",
         element: <ViewNotice></ViewNotice>,
-        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getNoticeById/${params.id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/getNoticeById/${params.id}`),
       },
     ],
   },
@@ -98,17 +98,17 @@ const router = createBrowserRouter([
       {
         path: "profile/update-student-profile/:id",
         element: <UpdateStudentProfile></UpdateStudentProfile>,
-        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/getUserById/${params.id}`),
       },
       {
         path: "profile/update-teacher-profile/:id",
         element: <UpdateTeacherProfile></UpdateTeacherProfile>,
-        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/getUserById/${params.id}`),
       },
       {
         path: "profile/update-admin-profile/:id",
         element: <UpdateAdminProfile></UpdateAdminProfile>,
-        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getUserById/${params.id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/getUserById/${params.id}`),
       },
       {
         path: "manageNotices",
@@ -121,7 +121,7 @@ const router = createBrowserRouter([
       {
         path: "manageApplications/application-details/:id",
         element: <ApplicationDetails></ApplicationDetails>,
-        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getApplicationById/${params.id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/getApplicationById/${params.id}`),
       },
       {
         path: "addNotice",
@@ -130,7 +130,7 @@ const router = createBrowserRouter([
       {
         path: "manageNotices/update-notice/:id",
         element: <UpdateNotice></UpdateNotice>,
-        loader: ({ params }) => fetch(`https://al-azam-school-college-server.vercel.app/getNoticeById/${params.id}`),
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/getNoticeById/${params.id}`),
       },
       {
         path: "manageAdmins",

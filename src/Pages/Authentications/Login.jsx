@@ -4,13 +4,14 @@ import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useBaseURL from "../../Hooks/useBaseURL";
 
 const Login = () => {
   const { signIn, user, createUserWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-
   const from = location.state?.from?.pathname || "/";
+  const [url] = useBaseURL();
 
   const {
     register,
@@ -26,6 +27,7 @@ const Login = () => {
 
     signIn(data.email, data.password)
       .then(() => {
+        navigate(from, { replace: true });
         setIsLoading(false);
         Swal.fire({
           icon: "success",
@@ -34,9 +36,9 @@ const Login = () => {
           timer: 3000,
         });
         reset();
-        navigate(from, { replace: true });
       })
       .catch((error) => {
+        navigate(from, { replace: true });
         setIsLoading(false);
         console.log(error);
         Swal.fire({
@@ -46,7 +48,6 @@ const Login = () => {
           showConfirmButton: false,
           timer: 3000,
         });
-        navigate(from, { replace: true });
       });
   };
 
@@ -62,7 +63,7 @@ const Login = () => {
           email: loggedInUser.email,
           photo: loggedInUser.photoURL,
         };
-        fetch("https://al-azam-school-college-server.vercel.app/users", {
+        fetch(`${url}/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -75,7 +76,8 @@ const Login = () => {
           });
       })
       .catch((error) => {
-        setIsLoading(false); // Set isLoading to false on error
+        navigate(from, { replace: true });
+        setIsLoading(false);
         console.log(error);
         Swal.fire({
           icon: "warning",
@@ -83,7 +85,6 @@ const Login = () => {
           showConfirmButton: false,
           timer: 3000,
         });
-        navigate(from, { replace: true });
       });
   };
 

@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import { FcViewDetails } from "react-icons/fc";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
+import useBaseURL from "../../../../Hooks/useBaseURL";
 
 const ManageAdmins = () => {
   const [allAdminsData, setAllAdminsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const url = "https://al-azam-school-college-server.vercel.app/getAllAdmins";
+  const [url] = useBaseURL();
 
   useEffect(() => {
     const admins = async () => {
-      const res = await fetch(url, {
+      const res = await fetch(`${url}/getAllAdmins`, {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("access-token")}`,
@@ -22,10 +22,10 @@ const ManageAdmins = () => {
       setIsLoading(false);
     };
     admins();
-  }, []);
+  }, [url]);
 
   const handleRemoveAdmin = (id) => {
-    fetch(`https://al-azam-school-college-server.vercel.app/removeAdmin/${id}`, {
+    fetch(`${url}/removeAdmin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -52,7 +52,7 @@ const ManageAdmins = () => {
   };
 
   const handleDeleteAdmin = (id) => {
-    fetch(`https://al-azam-school-college-server.vercel.app/deleteUser/${id}`, {
+    fetch(`${url}/deleteUser/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -83,7 +83,7 @@ const ManageAdmins = () => {
         <h1 className="text-lg lg:text-2xl text-center uppercase text-white">Manage all admins</h1>
       </div>
       <div>
-        {isLoading ? ( 
+        {isLoading ? (
           <div className="text-center my-4">
             <span className="loading loading-dots loading-lg"></span>
           </div>

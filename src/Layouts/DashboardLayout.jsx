@@ -8,21 +8,25 @@ import useStudent from "../Hooks/useStudent";
 import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import useBaseURL from "../Hooks/useBaseURL";
 
 const DashboardLayout = () => {
   const [currentUser, setCurrentUser] = useState({});
   const { user, logOut, deleteAnUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  // console.log(currentUser);
+  const [isAdmin] = useAdmin();
+  const [isTeacher] = useTeacher();
+  const [isStudent] = useStudent();
+  const [url] = useBaseURL();
 
   useEffect(() => {
     const cu = async () => {
-      const res = await fetch(`https://al-azam-school-college-server.vercel.app/getUserByEmail/${user.email}`);
+      const res = await fetch(`${url}/getUserByEmail/${user.email}`);
       const data = await res.json();
       setCurrentUser(data);
     };
     cu();
-  }, [user]);
+  }, [user, url]);
 
   const handleLogOut = () => {
     logOut()
@@ -58,17 +62,14 @@ const DashboardLayout = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Delete the user from the database first
-        fetch(`https://al-azam-school-college-server.vercel.app/deleteUser/${id}`, {
+        fetch(`${url}/deleteUser/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-
-            // Assuming you have a function to delete the user from Firebase called deleteFromFirebase
             deleteAnUser()
               .then(() => {
-                // Once the user is deleted from Firebase, you can display a success message and navigate
                 Swal.fire({
                   icon: "success",
                   title: `${user.displayName} delete your account Successfully`,
@@ -99,14 +100,6 @@ const DashboardLayout = () => {
       }
     });
   };
-
-  const [isAdmin] = useAdmin();
-  const [isTeacher] = useTeacher();
-  const [isStudent] = useStudent();
-
-  // const isAdmin = true;
-  // const isTeacher = false;
-  // const isStudent = false;
 
   const adminOptions = (
     <>
@@ -174,25 +167,6 @@ const DashboardLayout = () => {
                 </label>
               </div>
               <div className="px-2 w-full grid grid-cols-2">
-                {/* <div className="text-lg font-semibold text-yellow-500">
-                  <span>
-                    {isAdmin && (
-                      <>
-                        <span className="text-black bg-white text-sm ms-1 px-3 font-bold rounded-full">Admin</span>
-                      </>
-                    )}
-                    {isTeacher && (
-                      <>
-                        <span className="text-black bg-white text-sm ms-1 px-3 font-bold rounded-full">Teacher</span>
-                      </>
-                    )}
-                    {isStudent && (
-                      <>
-                        <span className="text-black bg-white text-sm ms-1 px-3 font-bold rounded-full">Student</span>
-                      </>
-                    )}
-                  </span>
-                </div> */}
                 <div className="flex justify-center items-center">
                   <button
                     onClick={() => handleLogOut()}

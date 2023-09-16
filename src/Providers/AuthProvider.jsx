@@ -75,7 +75,7 @@ const AuthProvider = ({ children }) => {
         const loggedUser = {
           email: currentUser.email,
         };
-        fetch("https://al-azam-school-college-server.vercel.app/jwt", {
+        fetch(`${import.meta.env.VITE_SERVER_BASE_URL}/jwt`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

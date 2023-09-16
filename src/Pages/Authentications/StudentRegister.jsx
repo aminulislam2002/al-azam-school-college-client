@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useBaseURL from "../../Hooks/useBaseURL";
 
 const StudentRegister = () => {
   const [isAgreed, setIsAgreed] = useState(false);
@@ -13,6 +14,7 @@ const StudentRegister = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const [url] = useBaseURL();
 
   const {
     register,
@@ -35,7 +37,7 @@ const StudentRegister = () => {
           photo: loggedInUser.photoURL,
           role: "student",
         };
-        fetch("https://al-azam-school-college-server.vercel.app/users", {
+        fetch(`${url}/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -44,11 +46,12 @@ const StudentRegister = () => {
         })
           .then((res) => res.json())
           .then(() => {
-            setIsLoading(false);
             navigate(from, { replace: true });
+            setIsLoading(false);
           });
       })
       .catch((error) => {
+        navigate(from, { replace: true });
         console.log(error);
         Swal.fire({
           icon: "warning",
@@ -57,7 +60,6 @@ const StudentRegister = () => {
           timer: 3000,
         });
         setIsLoading(false);
-        navigate(from, { replace: true });
       });
   };
 
@@ -83,7 +85,7 @@ const StudentRegister = () => {
             .then(() => {
               const saveUserData = { name: userData.name, email: userData.email, role: userData.role };
 
-              fetch("https://al-azam-school-college-server.vercel.app/users", {
+              fetch(`${url}/users`, {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -94,6 +96,7 @@ const StudentRegister = () => {
                 .then((data) => {
                   console.log(data);
                   if (data.insertedId) {
+                    navigate("/");
                     reset();
                     Swal.fire({
                       icon: "success",
@@ -101,7 +104,6 @@ const StudentRegister = () => {
                       showConfirmButton: false,
                       timer: 3000,
                     });
-                    navigate("/");
                   }
                 })
                 .finally(() => {
@@ -109,6 +111,7 @@ const StudentRegister = () => {
                 });
             })
             .catch((error) => {
+              navigate("/");
               console.log(error);
               Swal.fire({
                 icon: "warning",
@@ -117,10 +120,10 @@ const StudentRegister = () => {
                 timer: 3000,
               });
               setIsLoading(false);
-              navigate("/");
             });
         })
         .catch((error) => {
+          navigate("/");
           console.log(error);
           Swal.fire({
             icon: "warning",
@@ -129,7 +132,6 @@ const StudentRegister = () => {
             timer: 3000,
           });
           setIsLoading(false);
-          navigate("/");
         });
     }
   };
@@ -263,7 +265,7 @@ const StudentRegister = () => {
             </div>
             <div className="flex justify-center items-center gap-5">
               <button onClick={handleGoogleSignUp}>
-                <FcGoogle  className={`w-8 h-8 ${isLoading ? "pointer-events-none" : ""}`}></FcGoogle>
+                <FcGoogle className={`w-8 h-8 ${isLoading ? "pointer-events-none" : ""}`}></FcGoogle>
               </button>
             </div>
           </div>

@@ -2,13 +2,15 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
+import useBaseURL from "./useBaseURL";
 
 const useAxiosSecure = () => {
   const { logOut } = useAuth();
   const navigate = useNavigate();
+  const [url] = useBaseURL();
 
   const axiosSecure = axios.create({
-    baseURL: "https://al-azam-school-college-server.vercel.app/",
+    baseURL: `${url}/`,
   });
 
   useEffect(() => {
