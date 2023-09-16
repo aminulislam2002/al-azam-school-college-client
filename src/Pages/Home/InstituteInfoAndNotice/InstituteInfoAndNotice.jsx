@@ -181,7 +181,7 @@ const InstituteInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link to="" className="hover:underline text-sm hover:text-red-500">
+                    <Link to="/result" className="hover:underline text-sm hover:text-red-500">
                       স্কুল/কলেজের বার্ষিক পরীক্ষার ফলাফল
                     </Link>
                   </div>

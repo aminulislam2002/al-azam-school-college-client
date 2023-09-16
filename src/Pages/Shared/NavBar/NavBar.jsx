@@ -373,16 +373,25 @@ const NavBar = () => {
         >
           {/* Dropdown content */}
           <ul>
-            <Link to="/class-nine-result">
+            <Link to="/result">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">six-06</li>
+            </Link>
+            <Link to="/result">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">seven-07</li>
+            </Link>
+            <Link to="/result">
+              <li className="text-white hover:bg-white hover:text-black ps-2 rounded">eight-08</li>
+            </Link>
+            <Link to="/result">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Nine-09</li>
             </Link>
-            <Link to="/class-ten-result">
+            <Link to="/result">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Ten-10</li>
             </Link>
-            <Link to="/class-eleven-result">
+            <Link to="/result">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Eleven-11</li>
             </Link>
-            <Link to="/class-twelve-result">
+            <Link to="/result">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">Twelve-12</li>
             </Link>
           </ul>

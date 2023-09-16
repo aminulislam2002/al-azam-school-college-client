@@ -1,0 +1,22 @@
+[
+  { "name": "আলি", "roll": 101, "class": 6, "passingYear": 2023, "bangla": 85, "english": 90, "math": 75, "ict": 60 },
+  { "name": "বেলা", "roll": 102, "class": 6, "passingYear": 2023, "bangla": 88, "english": 92, "math": 78, "ict": 65 },
+  { "name": "চার্লি", "roll": 103, "class": 7, "passingYear": 2023, "bangla": 82, "english": 88, "math": 77, "ict": 63 },
+  { "name": "ডেভ", "roll": 104, "class": 7, "passingYear": 2023, "bangla": 86, "english": 85, "math": 76, "ict": 68 },
+  { "name": "ইমা", "roll": 105, "class": 8, "passingYear": 2023, "bangla": 89, "english": 91, "math": 79, "ict": 70 },
+  { "name": "ফ্র্যাঙ্ক", "roll": 106, "class": 8, "passingYear": 2023, "bangla": 87, "english": 89, "math": 75, "ict": 67 },
+  { "name": "গ্রেস", "roll": 107, "class": 9, "passingYear": 2023, "bangla": 90, "english": 94, "math": 80, "ict": 72 },
+  { "name": "হ্যারি", "roll": 108, "class": 9, "passingYear": 2023, "bangla": 85, "english": 93, "math": 78, "ict": 69 },
+  { "name": "আইভি", "roll": 109, "class": 10, "passingYear": 2023, "bangla": 92, "english": 95, "math": 82, "ict": 75 },
+  { "name": "জেক", "roll": 110, "class": 10, "passingYear": 2023, "bangla": 88, "english": 90, "math": 76, "ict": 68 },
+  { "name": "কেটি", "roll": 111, "class": 6, "passingYear": 2023, "bangla": 84, "english": 89, "math": 73, "ict": 64 },
+  { "name": "লিও", "roll": 112, "class": 6, "passingYear": 2023, "bangla": 86, "english": 91, "math": 74, "ict": 66 },
+  { "name": "মাইক", "roll": 113, "class": 7, "passingYear": 2023, "bangla": 83, "english": 87, "math": 72, "ict": 62 },
+  { "name": "নেট", "roll": 114, "class": 7, "passingYear": 2023, "bangla": 85, "english": 88, "math": 75, "ict": 67 },
+  { "name": "অলিভিয়া", "roll": 115, "class": 8, "passingYear": 2023, "bangla": 88, "english": 92, "math": 77, "ict": 68 },
+  { "name": "পোল", "roll": 116, "class": 8, "passingYear": 2023, "bangla": 87, "english": 90, "math": 76, "ict": 65 },
+  { "name": "রোজ", "roll": 117, "class": 9, "passingYear": 2023, "bangla": 90, "english": 94, "math": 81, "ict": 73 },
+  { "name": "স্যাম", "roll": 118, "class": 9, "passingYear": 2023, "bangla": 86, "english": 91, "math": 78, "ict": 68 },
+  { "name": "টেড", "roll": 119, "class": 10, "passingYear": 2023, "bangla": 92, "english": 95, "math": 82, "ict": 75 },
+  { "name": "ইউজি", "roll": 120, "class": 10, "passingYear": 2023, "bangla": 88, "english": 90, "math": 76, "ict": 67 }
+]

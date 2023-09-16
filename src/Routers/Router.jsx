@@ -39,6 +39,7 @@ import Committee from "../Pages/AboutUs/Committee";
 import YearlyHolly from "../Pages/Students/YearlyHolly";
 import TcAndTranscript from "../Pages/Students/TcAndTranscript";
 import TeachersSection from "../Pages/Home/TeachersSection/TeachersSection";
+import ViewResult from "../Pages/Result/ViewResult";
 
 const router = createBrowserRouter([
   {
@@ -137,6 +138,10 @@ const router = createBrowserRouter([
       {
         path: "teachers",
         element: <TeachersSection></TeachersSection>,
+      },
+      {
+        path: "result",
+        element: <ViewResult></ViewResult>,
       },
     ],
   },
