@@ -128,6 +128,11 @@ const DashboardLayout = () => {
           Manage Students
         </li>
       </ActiveLink>
+      <ActiveLink to="/dashboard/publishResults">
+        <li className="mb-2 lg:px-5 py-1 rounded text-white hover:text-black hover:bg-white mx-2 lg:text-xl font-semibold">
+          Published Result
+        </li>
+      </ActiveLink>
     </>
   );
 

@@ -40,6 +40,7 @@ import YearlyHolly from "../Pages/Students/YearlyHolly";
 import TcAndTranscript from "../Pages/Students/TcAndTranscript";
 import TeachersSection from "../Pages/Home/TeachersSection/TeachersSection";
 import ViewResult from "../Pages/Result/ViewResult";
+import ResultPublishedForm from "../Pages/Dashboard/Admin/PublishedResult/ResultPublishedForm";
 
 const router = createBrowserRouter([
   {
@@ -205,6 +206,10 @@ const router = createBrowserRouter([
       {
         path: "manageStudents",
         element: <ManageStudents></ManageStudents>,
+      },
+      {
+        path: "publishResults",
+        element: <ResultPublishedForm></ResultPublishedForm>,
       },
     ],
   },
