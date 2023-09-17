@@ -15,6 +15,7 @@ const ResultPublishedForm = () => {
   };
 
   const onSubmit = (data) => {
+    const currentYear = new Date().getFullYear();
     // Create an object to hold the data for each visibleDiv
     const visibleDivData = visibleDivs.map((divIndex) => ({
       subject: data[`input${divIndex}_1`],
@@ -26,9 +27,10 @@ const ResultPublishedForm = () => {
       birthdayDate: data.birthdayDate,
       fatherName: data.fatherName,
       motherName: data.motherName,
-      class: data.class,
-      roll: data.roll,
-      dynamicData: visibleDivData,
+      class: parseFloat(data.class),
+      roll: parseFloat(data.roll),
+      passingYear: currentYear,
+      results: visibleDivData,
     };
     // Push the formData into the array
     setDynamicFormData([...dynamicFormData, formData]);

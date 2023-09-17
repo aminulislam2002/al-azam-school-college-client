@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+import useBaseURL from "../../Hooks/useBaseURL";
 
 const ViewResult = () => {
   const [studentsData, setStudentsData] = useState([]);
@@ -10,15 +11,18 @@ const ViewResult = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const [url] = useBaseURL();
 
   useEffect(() => {
     const studentsResult = async () => {
-      const res = await fetch("studentsResultsData.json");
+      const res = await fetch(`${url}/getAllResults`);
       const data = await res.json();
       setStudentsData(data);
     };
     studentsResult();
-  }, []);
+  }, [url]);
+
+  console.log(studentsData);
 
   const onSubmit = (data) => {
     const { classInput, rollInput, passingYearInput } = data;
@@ -31,6 +35,56 @@ const ViewResult = () => {
     } else {
       setStudentInfo(null);
     }
+  };
+
+  // Function to calculate letterGrade and gradePoint
+  function calculateGradeAndPoint(subject, marks, maxMarks) {
+    let letterGrade;
+    let gradePoint;
+
+    // Get the maximum marks for the subject
+    const maxMark = maxMarks[subject];
+
+    // Calculate the percentage for the subject
+    const percentage = (marks / maxMark) * 100;
+
+    if (percentage >= 80) {
+      letterGrade = "A+";
+      gradePoint = 5.0;
+    } else if (percentage >= 70) {
+      letterGrade = "A";
+      gradePoint = 4.0;
+    } else if (percentage >= 60) {
+      letterGrade = "A-";
+      gradePoint = 3.5;
+    } else if (percentage >= 50) {
+      letterGrade = "B";
+      gradePoint = 3.0;
+    } else if (percentage >= 40) {
+      letterGrade = "C";
+      gradePoint = 2.0;
+    } else if (percentage >= 33) {
+      letterGrade = "D";
+      gradePoint = 1.0;
+    } else {
+      letterGrade = "F";
+      gradePoint = 0.0;
+    }
+
+    return { letterGrade, gradePoint };
+  }
+
+  const maxMarks = {
+    "Bangla 1st": 100,
+    "Bangla 2nd": 50,
+    "English 1st": 100,
+    "English 2nd": 50,
+    "Higher Mathematics": 100,
+    Mathematics: 100,
+    Physics: 100,
+    Chemistry: 100,
+    Biology: 100,
+    ICT: 50,
   };
 
   return (
@@ -116,60 +170,60 @@ const ViewResult = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="py-1 flex justify-start items-center">
+                  <div className="py-1 flex justify-start items-center text-black">
                     <div className="w-4/12 text-base">Name of Student</div>
                     <div className="w-8/12 ml-2 text-base font-semibold italic">
                       <span className="mr-1">:</span>
-                      {studentInfo.name}
+                      {studentInfo?.studentName}
                     </div>
                   </div>
-                  <div className="py-1 flex justify-start items-center">
+                  <div className="py-1 flex justify-start items-center text-black">
                     <div className="w-4/12 text-base">Father's Name</div>
                     <div className="w-8/12 ml-2 text-base font-semibold italic">
                       <span className="mr-1">:</span>
-                      {studentInfo.fatherName}
+                      {studentInfo?.fatherName}
                     </div>
                   </div>
-                  <div className="py-1 flex justify-start items-center">
+                  <div className="py-1 flex justify-start items-center text-black">
                     <div className="w-4/12 text-base">Mother's Name</div>
                     <div className="w-8/12 ml-2 text-base font-semibold italic">
                       <span className="mr-1">:</span>
-                      {studentInfo.motherName}
+                      {studentInfo?.motherName}
                     </div>
                   </div>
-                  <div className="py-1 flex justify-start items-center">
+                  <div className="py-1 flex justify-start items-center text-black">
                     <div className="w-4/12 text-base">Date of Birth</div>
                     <div className="w-8/12 ml-2 text-base font-semibold italic">
                       <span className="mr-1">:</span>
-                      {studentInfo.birthdayDate}
+                      {studentInfo?.birthdayDate}
                     </div>
                   </div>
-                  <div className="py-1 flex justify-start items-center">
+                  <div className="py-1 flex justify-start items-center text-black">
                     <div className="w-4/12 text-base">Class</div>
                     <div className="w-8/12 ml-2 text-base font-semibold italic">
                       <span className="mr-1">:</span>
-                      {studentInfo.class}
+                      {studentInfo?.class}
                     </div>
                   </div>
-                  <div className="py-1 flex justify-start items-center">
+                  <div className="py-1 flex justify-start items-center text-black">
                     <div className="w-4/12 text-base">Roll No.</div>
                     <div className="w-8/12 ml-2 text-base font-semibold italic">
                       <span className="mr-1">:</span>
-                      {studentInfo.roll}
+                      {studentInfo?.roll}
                     </div>
                   </div>
-                  <div className="py-1 flex justify-start items-center">
+                  <div className="py-1 flex justify-start items-center text-black">
                     <div className="w-4/12 text-base">Passing Year</div>
                     <div className="w-8/12 ml-2 text-base font-semibold italic">
                       <span className="mr-1">:</span>
-                      {studentInfo.passingYear}
+                      {studentInfo?.passingYear}
                     </div>
                   </div>
-                  <div className="py-1 flex justify-start items-center">
+                  <div className="py-1 flex justify-start items-center text-black">
                     <div className="w-4/12 text-base">Type of Student</div>
                     <div className="w-8/12 ml-2 text-base font-semibold italic">
                       <span className="mr-1">:</span>
-                      {studentInfo.typeOfStudent}
+                      Regular
                     </div>
                   </div>
                 </div>
@@ -181,94 +235,28 @@ const ViewResult = () => {
                     {/* head */}
                     <thead>
                       <tr>
-                        <th className="border border-black">Sl. No.</th>
-                        <th className="border border-black">Name of Subjects</th>
-                        <th className="border border-black">Number</th>
-                        <th className="border border-black">Letter Grade</th>
-                        <th className="border border-black">Grade Point</th>
+                        <th className="border border-black text-black">Sl. No.</th>
+                        <th className="border border-black text-black">Name of Subjects</th>
+                        <th className="border border-black text-black">Number</th>
+                        <th className="border border-black text-black">Letter Grade</th>
+                        <th className="border border-black text-black">Grade Point</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {/* row 1 */}
-                      <tr className="border border-black">
-                        <th className="border border-black">1</th>
-                        <td className="border border-black">Quality Control Specialist Control Specialist</td>
-                        <td className="border border-black">80</td>
-                        <td className="border border-black">A</td>
-                        <td className="border border-black">5.00</td>
-                      </tr>
-                      {/* row 2 */}
-                      <tr className="border border-black">
-                        <th className="border border-black">2</th>
-                        <td className="border border-black">Quality Control Specialist Control Specialist</td>
-                        <td className="border border-black">80</td>
-                        <td className="border border-black">A</td>
-                        <td className="border border-black">5.00</td>
-                      </tr>
-                      {/* row 3 */}
-                      <tr className="border border-black">
-                        <th className="border border-black">3</th>
-                        <td className="border border-black">Quality Control Specialist Control Specialist</td>
-                        <td className="border border-black">80</td>
-                        <td className="border border-black">A</td>
-                        <td className="border border-black">5.00</td>
-                      </tr>
-                      {/* row 3 */}
-                      <tr className="border border-black">
-                        <th className="border border-black">4</th>
-                        <td className="border border-black">Quality Control Specialist Control Specialist</td>
-                        <td className="border border-black">80</td>
-                        <td className="border border-black">A</td>
-                        <td className="border border-black">5.00</td>
-                      </tr>
-                      {/* row 3 */}
-                      <tr className="border border-black">
-                        <th className="border border-black">5</th>
-                        <td className="border border-black">Quality Control Specialist Control Specialist</td>
-                        <td className="border border-black">80</td>
-                        <td className="border border-black">A</td>
-                        <td className="border border-black">5.00</td>
-                      </tr>
-                      {/* row 3 */}
-                      <tr className="border border-black">
-                        <th className="border border-black">6</th>
-                        <td className="border border-black">Quality Control Specialist Control Specialist</td>
-                        <td className="border border-black">80</td>
-                        <td className="border border-black">A</td>
-                        <td className="border border-black">5.00</td>
-                      </tr>
-                      {/* row 3 */}
-                      <tr className="border border-black">
-                        <th className="border border-black">7</th>
-                        <td className="border border-black">Quality Control Specialist Control Specialist</td>
-                        <td className="border border-black">80</td>
-                        <td className="border border-black">A</td>
-                        <td className="border border-black">5.00</td>
-                      </tr>
-                      {/* row 3 */}
-                      <tr className="border border-black">
-                        <th className="border border-black">8</th>
-                        <td className="border border-black">Quality Control Specialist Control Specialist</td>
-                        <td className="border border-black">80</td>
-                        <td className="border border-black">A</td>
-                        <td className="border border-black">5.00</td>
-                      </tr>
-                      {/* row 3 */}
-                      <tr className="border border-black">
-                        <th className="border border-black">9</th>
-                        <td className="border border-black">Quality Control Specialist Control Specialist</td>
-                        <td className="border border-black">80</td>
-                        <td className="border border-black">A</td>
-                        <td className="border border-black">5.00</td>
-                      </tr>
-                      {/* row 3 */}
-                      <tr className="border border-black">
-                        <th className="border border-black">10</th>
-                        <td className="border border-black">Quality Control Specialist Control Specialist</td>
-                        <td className="border border-black">80</td>
-                        <td className="border border-black">A</td>
-                        <td className="border border-black">5.00</td>
-                      </tr>
+                      {studentInfo?.results?.map((result, index) => {
+                        const { subject, marks } = result;
+                        const { letterGrade, gradePoint } = calculateGradeAndPoint(subject, marks, maxMarks);
+
+                        return (
+                          <tr key={index} className="border border-black">
+                            <td className="border border-black text-black">{index + 1}</td>
+                            <td className="border border-black text-black">{subject}</td>
+                            <td className="border border-black text-black">{marks}</td>
+                            <td className="border border-black text-black">{letterGrade}</td>
+                            <td className="border border-black text-black">{gradePoint.toFixed(2)}</td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
@@ -277,8 +265,8 @@ const ViewResult = () => {
               <div>
                 <div className="py-1">
                   <h1>
-                    GPA without additional subjects <span className="border-b border-black italic">{`4.80`}</span> and GPA including
-                    additional subjects <span className="border-b border-black italic">{`5.00`}</span>.
+                    GPA without additional subjects <span className="border-b border-black italic">{`4.80`}</span> and GPA
+                    including additional subjects <span className="border-b border-black italic">{`5.00`}</span>.
                   </h1>
                 </div>
                 <div className="py-1">
