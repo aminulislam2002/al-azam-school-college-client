@@ -76,6 +76,46 @@ const TeachersSection = () => {
     },
     {
       id: 8,
+      name: "শ্যামল কান্তি ঘোষ",
+      position: "সহকারী প্রধান শিক্ষক",
+      mobileNumber: "01719428097",
+      email: "",
+      address: "বিশ্বনাথ, সিলেট",
+    },
+    {
+      id: 9,
+      name: "মোশারফ হোসেন",
+      position: "প্রভাষক (বাংলা)",
+      mobileNumber: "",
+      email: "",
+      address: "বিশ্বনাথ, সিলেট",
+    },
+    {
+      id: 10,
+      name: "মো: নুরুল আমিন",
+      position: "প্রভাষক ( পৌরনীতি ও সুশাসন)",
+      mobileNumber: "",
+      email: "",
+      address: "বিশ্বনাথ, সিলেট",
+    },
+    {
+      id: 11,
+      name: "বেলায়েত হোসেন খান",
+      position: "প্রভাষক ( অর্থনীতি)",
+      mobileNumber: "",
+      email: "",
+      address: "বিশ্বনাথ, সিলেট",
+    },
+    {
+      id: 12,
+      name: "সারজিমা বেগম",
+      position: "প্রভাষক ( ইসলামের ইতিহাস ও সংস্কৃতি)",
+      mobileNumber: "",
+      email: "",
+      address: "বিশ্বনাথ, সিলেট",
+    },
+    {
+      id: 13,
       name: "মরিয়ম বেগম",
       position: "সহকারী শিক্ষক (আইসিটি)",
       mobileNumber: "",
@@ -83,7 +123,7 @@ const TeachersSection = () => {
       address: "বিশ্বনাথ, সিলেট",
     },
     {
-      id: 9,
+      id: 14,
       name: "মোঃ নাজিম উদ্দিন",
       position: "সহকারী শিক্ষক (ইসলাম ধর্ম)",
       mobileNumber: "",
@@ -91,7 +131,7 @@ const TeachersSection = () => {
       address: "বিশ্বনাথ, সিলেট",
     },
     {
-      id: 10,
+      id: 15,
       name: "ফারুক হোসেন",
       position: "সহকারী শিক্ষক (শারীরিক শিক্ষা )",
       mobileNumber: "",
@@ -100,7 +140,7 @@ const TeachersSection = () => {
     },
 
     {
-      id: 12,
+      id: 16,
       name: "মোঃ রেজাউল করিম",
       position: "সহকারী গ্রন্থাগারিক কাম ক্যাটালগার",
       mobileNumber: "",
@@ -108,7 +148,7 @@ const TeachersSection = () => {
       address: "বিশ্বনাথ, সিলেট",
     },
     {
-      id: 13,
+      id: 17,
       name: "সীতা দেব",
       position: "অফিস সহকারী কাম-হিসাব সহকারী",
       mobileNumber: "",
@@ -116,7 +156,7 @@ const TeachersSection = () => {
       address: "বিশ্বনাথ, সিলেট",
     },
     {
-      id: 14,
+      id: 18,
       name: "খাইরুল ইসলাম",
       position: "অফিস সহকারী",
       mobileNumber: "",
@@ -124,7 +164,7 @@ const TeachersSection = () => {
       address: "বিশ্বনাথ, সিলেট",
     },
     {
-      id: 15,
+      id: 19,
       name: "মো: মিজানুর রহমান",
       position: "নিরাপত্তাকর্মী",
       mobileNumber: "",
@@ -132,7 +172,7 @@ const TeachersSection = () => {
       address: "বিশ্বনাথ, সিলেট",
     },
     {
-      id: 16,
+      id: 20,
       name: "সুনু মিয়া",
       position: "নৈশপ্রহরী",
       mobileNumber: "",
@@ -141,7 +181,7 @@ const TeachersSection = () => {
     },
 
     {
-      id: 17,
+      id: 21,
       name: "সালিমা বেগম পপি",
       position: "আয়া",
       mobileNumber: "",
