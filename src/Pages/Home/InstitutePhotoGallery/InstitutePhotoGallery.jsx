@@ -17,7 +17,6 @@ import photo3 from "../../../assets/image/gallery/image3.jpg";
 import photo4 from "../../../assets/image/gallery/image4.jpg";
 import photo5 from "../../../assets/image/gallery/image5.jpg";
 import photo6 from "../../../assets/image/gallery/image6.jpg";
-import photo7 from "../../../assets/image/gallery/image7.jpg";
 import photo8 from "../../../assets/image/gallery/image8.jpg";
 import photo9 from "../../../assets/image/gallery/image9.jpg";
 import photo10 from "../../../assets/image/gallery/image10.jpg";
@@ -70,9 +69,6 @@ const MadrasahPhotoGallery = () => {
           </SwiperSlide>
           <SwiperSlide>
             <img src={photo6} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={photo7} />
           </SwiperSlide>
           <SwiperSlide>
             <img src={photo8} />

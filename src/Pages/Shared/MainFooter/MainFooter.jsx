@@ -5,7 +5,7 @@ import { IoMdCall } from "react-icons/io";
 import { IoCallSharp } from "react-icons/io5";
 
 import instituteLogo from "../../../assets/image/logo/instituteLogo.png";
-import futureGenMediaLogo from "../../../assets/image/logo/futureGenAgencyLogo.png";
+import futureGenMediaLogo from "../../../assets/image/logo/futureGenAgencyLogo.jpg";
 
 const MainFooter = () => {
   return (

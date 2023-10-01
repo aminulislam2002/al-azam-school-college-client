@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 const VideoWithMadrasah = () => {
   const videoRefs = useRef([]);
@@ -9,12 +9,16 @@ const VideoWithMadrasah = () => {
       title: "বাংলাদেশের জাতীয় সংগীত, আমার সোনার বাংলা, আমি তোমায় ভালোবাসি",
     },
     {
-      src: "https://www.youtube.com/embed/_r58G5iM_NU",
-      title: "বাংলাদেশের জাতীয় সংগীত, আমার সোনার বাংলা, আমি তোমায় ভালোবাসি",
+      src: "https://www.youtube.com/embed/augHSJgUovE",
+      title: "২০৪১ সালের স্মার্ট বাংলাদেশ হবে পেপারলেস, প্রেজেন্সলেস ও ক্যাশলেস।",
     },
     {
-      src: "https://www.youtube.com/embed/_r58G5iM_NU",
-      title: "বাংলাদেশের জাতীয় সংগীত, আমার সোনার বাংলা, আমি তোমায় ভালোবাসি",
+      src: "https://www.youtube.com/embed/Kj6GTQ8kVZU",
+      title: "ডেঙ্গু প্রতিরোধে যা করণীয়। ডেঙ্গু রোধে আমরা।",
+    },
+    {
+      src: "https://www.youtube.com/embed/T8ic2RzwKmc",
+      title: "স্মার্ট বাংলাদেশ থিম সং।",
     },
   ];
 
@@ -42,10 +46,10 @@ const VideoWithMadrasah = () => {
       <div className="w-full lg:w-6/12 mx-auto py-3 mb-10 bg-green-500">
         <h1 className="text-lg lg:text-2xl text-center uppercase text-white">Video GALLERY</h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {videos.map((video, index) => (
           <div className="md:col-span-1" key={index}>
-            <div className="bg-gray-200 p-4 rounded-lg">
+            <div className="bg-gray-200 p-4 rounded-lg h-full">
               <iframe
                 title={video.title}
                 width="100%"

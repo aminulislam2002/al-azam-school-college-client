@@ -424,7 +424,7 @@ const NavBar = () => {
         >
           {/* Dropdown content */}
           <ul>
-            <Link target="_blank" to="/notice-board">
+            <Link target="_blank" to="http://emis.gov.bd/SSO/Account/Login?ReturnUrl=%2FSSO">
               <li className="text-white hover:bg-white hover:text-black ps-2 rounded">ইএমআইএস লগইন</li>
             </Link>
             <Link target="_blank" to="https://dshe.gov.bd/">
@@ -455,7 +455,9 @@ const NavBar = () => {
             </ul>
           </div>
           <div className="flex">
-            <img className="w-10 h-10" src={instituteLogo} alt="Institute Logo" />
+            <Link to="/">
+              <img className="w-10 h-10" src={instituteLogo} alt="Institute Logo" />
+            </Link>
             <img className="w-10 h-10" src={govtLogo} alt="Government Logo" />
           </div>
         </div>

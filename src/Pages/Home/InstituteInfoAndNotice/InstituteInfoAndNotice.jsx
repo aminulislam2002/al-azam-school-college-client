@@ -156,15 +156,15 @@ const InstituteInfoAndNotice = () => {
                 <div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link to="/teachers" className="hover:underline text-sm hover:text-red-500">উচ্চ মাধ্যমিক স্তরের শিক্ষক</Link>
+                    <Link to="/college-teachers" className="hover:underline text-sm hover:text-red-500">উচ্চ মাধ্যমিক স্তরের শিক্ষক</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link to="/teachers" className="hover:underline text-sm hover:text-red-500">মাধ্যমিক স্তরের শিক্ষক</Link>
+                    <Link to="/school-teachers" className="hover:underline text-sm hover:text-red-500">মাধ্যমিক স্তরের শিক্ষক</Link>
                   </div>
                   <div className="flex gap-1 items-center mb-2">
                     <AiFillCaretRight className="text-green-500"></AiFillCaretRight>
-                    <Link to="/teachers" className="hover:underline text-sm hover:text-red-500">কর্মচারীবৃন্দ</Link>
+                    <Link to="/employees" className="hover:underline text-sm hover:text-red-500">কর্মচারীবৃন্দ</Link>
                   </div>
                 </div>
               </div>

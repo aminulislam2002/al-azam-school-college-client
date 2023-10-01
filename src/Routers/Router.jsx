@@ -41,6 +41,9 @@ import TcAndTranscript from "../Pages/Students/TcAndTranscript";
 import TeachersSection from "../Pages/Home/TeachersSection/TeachersSection";
 import ViewResult from "../Pages/Result/ViewResult";
 import ResultPublishedForm from "../Pages/Dashboard/Admin/PublishedResult/ResultPublishedForm";
+import EmployeeSection from "../Pages/Home/EmployeeSection/EmployeeSection";
+import SchoolTeacherSection from "../Pages/Home/TeachersSection/SchoolTeacherSection";
+import CollageTeacherSection from "../Pages/Home/TeachersSection/CollageTeacherSection";
 
 const router = createBrowserRouter([
   {
@@ -143,6 +146,18 @@ const router = createBrowserRouter([
       {
         path: "result",
         element: <ViewResult></ViewResult>,
+      },
+      {
+        path: "employees",
+        element: <EmployeeSection></EmployeeSection>,
+      },
+      {
+        path: "college-teachers",
+        element: <CollageTeacherSection></CollageTeacherSection>,
+      },
+      {
+        path: "school-teachers",
+        element: <SchoolTeacherSection></SchoolTeacherSection>,
       },
     ],
   },

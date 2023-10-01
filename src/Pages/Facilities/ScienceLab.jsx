@@ -1,3 +1,7 @@
+import image1 from "../../assets/image/science-lab/science-lab-one.jpg"
+import image2 from "../../assets/image/science-lab/science-lab-two.jpg"
+import image3 from "../../assets/image/science-lab/science-lab-three.jpg"
+
 const ScienceLab = () => {
   const data = [
     {
@@ -188,6 +192,26 @@ const ScienceLab = () => {
         <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md">
           <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">Our Science Lab</h1>
         </div>
+
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md">
+              <img src={image1} alt="Computer Lab Image 1" className="w-full h-72" />
+            </div>
+          </div>
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md">
+              <img src={image2} alt="Computer Lab Image 2" className="w-full h-72" />
+            </div>
+          </div>
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md">
+              <img src={image3} alt="Computer Lab Image 3" className="w-full h-72" />
+            </div>
+          </div>
+        </div>
+
         <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md mt-10 lg:mt-20">
           <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">
             বিজ্ঞানাগারের যন্ত্রপাতির তালিকা
@@ -201,7 +225,7 @@ const ScienceLab = () => {
               <thead className="bg-blue-950 text-white text-base lg:text-lg">
                 <tr>
                   <th>#</th>
-                  <th>পণ্যের নাম</th>
+                  <th>যন্ত্রপাতির নাম</th>
                   <th>পরিমাণ</th>
                 </tr>
               </thead>
