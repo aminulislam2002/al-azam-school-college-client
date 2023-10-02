@@ -1,6 +1,5 @@
 import NoticeHeadline from "../../Shared/NoticeHeadline/NoticeHeadline";
 import AboutInstitute from "../AboutInstitute/AboutInstitute";
-// import ContactInformation from "../ContactInformation/ContactInformation";
 import ImportanceLinksSection from "../ImportanceLinksSection/ImportanceLinksSection";
 import LocationAndAddress from "../LocationAndAddress/LocationAndAddress";
 import InstitutePhotoGallery from "../InstitutePhotoGallery/InstitutePhotoGallery";
@@ -24,9 +23,7 @@ const Home = () => {
       <InstitutePhotoGallery></InstitutePhotoGallery>
       <VideoWithInstitute></VideoWithInstitute>
       <ImportanceLinksSection></ImportanceLinksSection>
-      {/* <ContactInformation></ContactInformation> */}
       <LocationAndAddress></LocationAndAddress>
-      <h1>Home</h1>
     </div>
   );
 };
