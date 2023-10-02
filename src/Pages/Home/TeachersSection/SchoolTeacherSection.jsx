@@ -4,7 +4,6 @@ import { FaHome } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 
 import image1 from "../../../assets/image/teacher/principal.jpg";
-import image2 from "../../../assets/image/teacher/md-sharif-hossen.jpg";
 import image3 from "../../../assets/image/teacher/md-alamgir.jpg";
 import image4 from "../../../assets/image/teacher/sahin.jpg";
 
@@ -30,15 +29,6 @@ const SchoolTeacherSection = () => {
       address: "বিশ্বনাথ, সিলেট",
     },
     {
-      id: 7,
-      image: image2,
-      name: "মো: শরীফ হোসেন",
-      position: "সহকারী শিক্ষক (ব্যবসায় শিক্ষা)",
-      mobileNumber: "+01877-686899",
-      email: " sharifhossen.info@gmail.com",
-      address: "বিশ্বনাথ, সিলেট",
-    },
-    {
       id: 8,
       image: image3,
       name: "মো. আলমগীর",
@@ -59,14 +49,6 @@ const SchoolTeacherSection = () => {
       id: 10,
       name: "নজরুল ইসলাম",
       position: "সহকারী শিক্ষক (ইংরেজি)",
-      mobileNumber: "",
-      email: "",
-      address: "বিশ্বনাথ, সিলেট",
-    },
-    {
-      id: 11,
-      name: "মোঃ শরীফ হোসেন",
-      position: "সহকারী শিক্ষক (ব্যবসায় শিক্ষা)",
       mobileNumber: "",
       email: "",
       address: "বিশ্বনাথ, সিলেট",

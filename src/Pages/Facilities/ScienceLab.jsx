@@ -1,6 +1,6 @@
-import image1 from "../../assets/image/science-lab/science-lab-one.jpg"
-import image2 from "../../assets/image/science-lab/science-lab-two.jpg"
-import image3 from "../../assets/image/science-lab/science-lab-three.jpg"
+import image1 from "../../assets/image/science-lab/science-lab-one.jpg";
+import image2 from "../../assets/image/science-lab/science-lab-two.jpg";
+import image3 from "../../assets/image/science-lab/science-lab-three.jpg";
 
 const ScienceLab = () => {
   const data = [
@@ -190,9 +190,8 @@ const ScienceLab = () => {
     <div className="bg-gray-100 min-h-screen">
       <div className="container mx-auto p-6">
         <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md">
-          <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">Our Science Lab</h1>
+          <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">বিজ্ঞানাগার</h1>
         </div>
-
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
           <div className="lg:col-span-1">

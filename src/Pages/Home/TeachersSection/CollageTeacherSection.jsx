@@ -4,6 +4,7 @@ import { FaHome } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 
 import image1 from "../../../assets/image/teacher/principal.jpg";
+import image2 from "../../../assets/image/teacher/md-sharif-hossen.jpg";
 
 const CollageTeacherSection = () => {
   const [collageTeachersData, setCollageTeachersData] = useState([]);
@@ -56,6 +57,23 @@ const CollageTeacherSection = () => {
       position: "প্রভাষক ( ইসলামের ইতিহাস ও সংস্কৃতি)",
       mobileNumber: "",
       email: "",
+      address: "বিশ্বনাথ, সিলেট",
+    },
+    {
+      id: 11,
+      name: "মোঃ শরীফ হোসেন",
+      position: "সহকারী শিক্ষক (ব্যবসায় শিক্ষা)",
+      mobileNumber: "",
+      email: "",
+      address: "বিশ্বনাথ, সিলেট",
+    },
+    {
+      id: 7,
+      image: image2,
+      name: "মো: শরীফ হোসেন",
+      position: "সহকারী শিক্ষক (ব্যবসায় শিক্ষা)",
+      mobileNumber: "+01877-686899",
+      email: " sharifhossen.info@gmail.com",
       address: "বিশ্বনাথ, সিলেট",
     },
   ];

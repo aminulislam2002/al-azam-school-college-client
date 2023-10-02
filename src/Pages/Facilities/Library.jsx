@@ -89,7 +89,7 @@ const Library = () => {
     <div className="bg-gray-100 min-h-screen">
       <div className="container mx-auto p-6">
         <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md">
-          <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">Our Library</h1>
+          <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">লাইব্রেরীর</h1>
         </div>
         <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md mt-10 lg:mt-20">
           <h1 className="text-lg lg:text-3xl text-center uppercase text-white font-semibold">

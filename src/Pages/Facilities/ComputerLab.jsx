@@ -35,7 +35,7 @@ const ComputerLab = () => {
     <div className="bg-gray-100 min-h-screen">
       <div className="container mx-auto p-6">
         <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500 rounded-lg shadow-md">
-          <h1 className="text-3xl lg:text-4xl text-center uppercase text-white font-semibold">Our Computer Lab</h1>
+          <h1 className="text-3xl lg:text-4xl text-center uppercase text-white font-semibold">কম্পিউটার ল‍্যাব</h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
