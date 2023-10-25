@@ -44,11 +44,13 @@ import ResultPublishedForm from "../Pages/Dashboard/Admin/PublishedResult/Result
 import EmployeeSection from "../Pages/Home/EmployeeSection/EmployeeSection";
 import SchoolTeacherSection from "../Pages/Home/TeachersSection/SchoolTeacherSection";
 import CollageTeacherSection from "../Pages/Home/TeachersSection/CollageTeacherSection";
+import Error from "../Pages/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <Error></Error>, // done
     children: [
       {
         path: "/",
@@ -168,6 +170,7 @@ const router = createBrowserRouter([
         <DashboardLayout></DashboardLayout>
       </PrivateRoute>
     ),
+    errorElement: <Error></Error>, // done
     children: [
       {
         path: "profile",
@@ -231,6 +234,7 @@ const router = createBrowserRouter([
   {
     path: "/authentication",
     element: <AuthenticationLayout></AuthenticationLayout>,
+    errorElement: <Error></Error>, // done
     children: [
       {
         path: "login",
