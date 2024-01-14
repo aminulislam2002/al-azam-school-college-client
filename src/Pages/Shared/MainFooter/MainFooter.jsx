@@ -207,7 +207,7 @@ const MainFooter = () => {
             </span>
             Helpline Number
           </div>
-          <div className="text-green-500">09611-461888</div>
+          <div className="text-green-500">+880 1310-112464</div>
         </div>
       </footer>
 
