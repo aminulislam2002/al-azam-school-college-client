@@ -51,13 +51,13 @@ const AllNotices = () => {
   return (
     <div>
       <div className="w-full">
-        <div className="text-center mb-5 grid grid-cols-2">
-          <div className="w-full lg:w-2/3 mx-auto py-3 bg-green-500">
+        <div className="text-center mb-5 grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="w-full mx-auto py-3 bg-green-500">
             <h1 className="text-lg lg:text-2xl text-center uppercase text-white">Manage all notices</h1>
           </div>
 
           <Link to="/dashboard/addNotice">
-            <div className="flex justify-center items-center gap-1 w-1/3 h-10 rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
+            <div className="flex justify-center items-center gap-1 w-full py-3 h-full lg:rounded-full border-2 text-blue-950 hover:text-white border-blue-950 hover:bg-blue-950 focus:outline-none focus:ring-2 focus:border-blue-950">
               <span className="text-xl font-semibold">Add Notice</span>
               <BiMessageAdd className="w-7 h-7 text-green-500"></BiMessageAdd>
             </div>

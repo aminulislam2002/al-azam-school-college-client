@@ -5,7 +5,7 @@ const AboutInstitute = () => {
   return (
     <div className="container mx-auto py-10 lg:py-20">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-        <div className="md:col-span-8">
+        <div className="md:col-span-6 lg:col-span-8">
           <div>
             <div className="w-full py-3 bg-green-500">
               <h1 className="text-lg lg:text-2xl text-center text-white">প্রতিষ্ঠান পরিচিতি</h1>
@@ -14,7 +14,7 @@ const AboutInstitute = () => {
               <img src={instituteOverview} className="w-full h-60 lg:h-72 bg-cover bg-center" alt="Institute Overview" />
               <h5 className="text-center py-1">ছবি : আল-আজম হাইস্কুল এন্ড কলেজ</h5>
               <div>
-                <div className="p-4 overflow-y-auto max-h-[80vh] lg:max-h-[40vh] content">
+                <div className="p-4 overflow-y-auto max-h-[80vh] md:max-h-[60vh] lg:max-h-[40vh] content text-justify">
                   <span className="font-bold">ওভারভিউ:</span> আল-আজম হাই স্কুল এন্ড কলেজ মাধ্যমিক ও উচ্চমাধ্যমিক শিক্ষাবোর্ড
                   সিলেট-এর আওতাধীন বিশ্বনাথ উপজেলার আমতৈল এ ১৯৯৪ সালে প্রতিষ্ঠিত হওয়ার পর থেকে মানসম্পন্ন শিক্ষা প্রদানের
                   জন্য নিবেদিত রয়েছে। আমরা শিক্ষার্থীকে উন্নত শিক্ষার উপকরণ ব্যবহার করে শিক্ষা দিই এবং একটি সহনশীল শিক্ষার
@@ -38,7 +38,7 @@ const AboutInstitute = () => {
             </div>
           </div>
         </div>
-        <div className="md:col-span-4">
+        <div className="md:col-span-6 lg:col-span-4">
           <div className="shadow-md">
             <div className="w-full py-3 bg-green-500">
               <h1 className="text-lg lg:text-2xl text-center text-white">অধ্যক্ষ</h1>

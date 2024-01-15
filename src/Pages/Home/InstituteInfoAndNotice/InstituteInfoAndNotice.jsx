@@ -227,7 +227,7 @@ const InstituteInfoAndNotice = () => {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-4/12 h-full">
+        <div className="w-full lg:w-4/12 h-full pt-20 lg:pt-0">
           <div>
             <div className="bg-green-500 lg:px-5 py-4 mb-1">
               <h1 className="text-lg lg:text-2xl text-center text-white">নোটিশ বোর্ড</h1>

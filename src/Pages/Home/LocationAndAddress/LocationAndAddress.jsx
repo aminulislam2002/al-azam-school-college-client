@@ -4,8 +4,8 @@ const LocationAndAddress = () => {
 
   return (
     <div className="container mx-auto lg:py-20 py-10">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-        <div className="md:col-span-6 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5">
+        <div className="w-full">
           <div className="w-full py-3 bg-green-500">
             <h1 className="text-lg lg:text-2xl text-center text-white">প্রতিষ্ঠানের মেইলিং ঠিকানা</h1>
           </div>
@@ -57,7 +57,7 @@ const LocationAndAddress = () => {
             </div>
           </div>
         </div>
-        <div className="md:col-span-6 w-full">
+        <div className="w-full">
           <div className="w-full py-3 bg-green-500">
             <h1 className="text-lg lg:text-2xl text-center text-white">প্রতিষ্ঠানের গুগল ম্যাপ এর লোকেশন</h1>
           </div>

@@ -69,7 +69,10 @@ const ResultPublishedForm = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold">Result Published Form</h1>
+      <div className="w-full lg:w-6/12 mx-auto py-3 bg-green-500">
+        <h1 className="text-lg lg:text-2xl text-center uppercase text-white">Result Published Form</h1>
+      </div>
+
       {isLoading ? (
         <>
           <div className="text-center my-4">

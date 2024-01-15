@@ -32,7 +32,7 @@ const TopSlider = () => {
   return (
     <div>
       <>
-        <div className="relative lg:h-screen h-[50vh]">
+        <div className="relative lg:h-screen h-[40vh]">
           <div className="absolute inset-0 bg-cover bg-center mt-16"></div>
           <div>
             <div style={sliderContainerPosition}>
