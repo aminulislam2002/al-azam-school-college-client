@@ -187,16 +187,20 @@ const MainFooter = () => {
       <footer className="bg-blue-950 text-black py-4 text-center">
         <div className="font-semibold text-lg text-white">Developed By</div>
         <div>
-          <img
-            src={futureGenMediaLogo}
-            alt="FutureGen Media Logo"
-            className="w-16 h-16 lg:w-20 lg:h-20 mx-auto rounded-full"
-          />
+          <Link to="https://www.futuregenitmedia.com/" target="_blank">
+            <img
+              src={futureGenMediaLogo}
+              alt="FutureGen Media Logo"
+              className="w-16 h-16 lg:w-20 lg:h-20 mx-auto rounded-full"
+            />
+          </Link>
         </div>
         <div className="text-sm">
           <div className="text-green-500 text-2xl lg:text-3xl font-bold">
             <span className="bg-gradient-to-r from-red-400 to-yellow-500 text-transparent bg-clip-text">
-              FutureGen Media Agency
+              <Link to="https://www.futuregenitmedia.com/" target="_blank">
+                FutureGen IT Media
+              </Link>
             </span>
           </div>
         </div>
